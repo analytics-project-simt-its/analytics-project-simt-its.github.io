@@ -1,0 +1,29 @@
+RawMaterial,Type,Unit,EOQ,LeadTime,Cost,CostUnit
+RM1,Bulk,Ton/month,0,0,815,USD/Ton
+RM2,Bulk,Kg/month,6000,60,4.25,USD/Kg 
+RM3,Bulk,Kg/month,360,45,9.3,USD/Kg 
+RM4,Bulk,m3/month,4000,14,0.407155504,USD/m3
+RM5,Bulk,Kg/month,1440,60,420,USD/Kg
+AD1,Additive,Kg/month,19000,15,5.4,USD/kg additive
+AD2,Additive,Kg/month,14400,45,6.11,USD/kg additive
+AD3,Additive,Kg/month,7000,30,1.77,USD/kg additive
+AD4,Additive,Kg/month,8000,30,3.2,USD/kg additive
+AD5,Additive,Kg/month,10240,15,2.4,USD/kg additive
+AD6,Additive,Kg/month,8960,15,3.1,USD/kg additive
+AD7,Additive,Kg/month,8000,30,3.87,USD/kg additive
+AD8,Additive,Kg/month,20000,45,6.11,USD/kg additive
+AD9,Additive,Kg/month,24000,45,2.83,USD/kg additive
+AD10,Additive,Kg/month,10000,15,3.63,USD/kg additive
+AD11,Additive,Kg/month,10000,30,3.72,USD/kg additive
+AD12,Additive,Kg/month,0,30,5.34,USD/kg additive
+AD13,Additive,Kg/month,700,30,5.7,USD/kg additive
+AD14,Additive,Kg/month,5200,45,15.64,USD/kg additive
+AD15,Additive,Kg/month,300,30,31.5,USD/kg additive
+AD16,Additive,Kg/month,20000,15,1.98,USD/kg additive
+AD17,Additive,Kg/month,0,0,0,USD/kg additive
+AD18,Additive,Kg/month,2000,60,40,USD/kg additive
+AD19,Additive,Kg/month,2000,60,40,USD/kg additive
+AD20,Additive,Kg/month,25500,30,2,USD/kg additive
+AD21,Additive,Kg/month,2700,60,11.5,USD/kg additive
+AD22,Additive,Kg/month,15000,15,1.5,USD/kg additive
+AD23,Additive,Kg/month,10000,30,7.75,USD/kg additive
