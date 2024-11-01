@@ -1,0 +1,4 @@
+\beamer@sectionintoc {1}{What we have discussed}{3}{0}{1}
+\beamer@sectionintoc {2}{Optimization Modeling}{5}{0}{2}
+\beamer@sectionintoc {3}{Identifying the optimal solution}{8}{0}{3}
+\beamer@sectionintoc {4}{Examples}{14}{0}{4}

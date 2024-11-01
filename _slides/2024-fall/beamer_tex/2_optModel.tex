@@ -1,0 +1,299 @@
+\documentclass [xcolor=svgnames, handout]{beamer} 
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor}
+\usepackage{booktabs, comment} 
+\usepackage{pgfpages}
+\usepackage{csquotes}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usetheme{Madrid}
+
+\setbeamercovered{still covered={\opaqueness<1->{10}},again covered={\opaqueness<1->{10}}}
+
+% COLORS 
+\definecolor{mqred}{RGB}{166, 25, 46}
+\definecolor{mqdeepred}{RGB}{118, 35, 47}
+\definecolor{mqgray}{RGB}{55, 58, 54}
+\definecolor{mqlightgray}{RGB}{237, 235, 229}
+\definecolor{mqmagenta}{RGB}{198, 0, 126}
+\usecolortheme[named=mqred]{structure}
+\setbeamercolor{title in head/foot}{bg=mqlightgray, fg=mqgray}
+\setbeamercolor{author in head/foot}{bg=mqdeepred}
+\setbeamercolor{page number in head/foot}{bg=mqdeepred, fg=mqlightgray}
+
+% FOOTNOTE ARRANGEMENTS
+
+\makeatletter
+\setbeamertemplate{footline}{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\insertshortauthor\expandafter\ifblank\expandafter{\beamer@shortinstitute}{}{~~(\insertshortinstitute)}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.4\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.1\paperwidth,ht=2.25ex,dp=1ex,center]{page number in head/foot}%
+    \usebeamerfont{page number in head/foot}\insertframenumber{} / \inserttotalframenumber 
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+\makeatother
+\beamertemplatenavigationsymbolsempty
+
+
+% TITLE, AUTHORS, INSTITUTE, DATE
+
+\title[Analytics Projects]{Analytics Projects, Part 2\\ \textit{Data-Driven Prescriptive Analytics Projects}}
+\author[SIMT]{By: Mansur M. Arief}
+\institute[ITS]{Interdisciplinary School of Management and Technology (SIMT)\\
+Institute of Technology Sepuluh Nopember (ITS), Surabaya, Indonesia}
+\date{1 November 2024}
+
+% LOGO
+\titlegraphic{\includegraphics[width=\linewidth]{../fig/simt-header.png}} 
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+    \tableofcontents
+\end{frame}
+
+% Section and Frame examples
+\section{What we have discussed}
+\begin{frame}{Last time...}
+    \begin{itemize}[<.->]
+        \item Agenda:
+        \begin{itemize}[<+->]
+            \item Announcements:
+            \begin{itemize}[<.->]
+                \item Fill out the (new) \textbf{group assignment sheet} (\href{https://docs.google.com/spreadsheets/d/1_mN_J-3uRzDQ53xzkgWDEBVIDeFnHoe5iv-0J0cxXSg/edit?usp=sharing}{link in the email})
+                \item Assignment due: \textbf{\href{https://forms.gle/38kh5oDHYgAkg1MZ9}{Reflection 1 (Nov 1, 23:59 AoE)}}
+                \item Next assignment:\textbf{ Midterm Report (due Nov 15)}, \href{https://docs.google.com/document/d/1Un62s0U9jwrVVOQ03iipmCRprsh3jK5__RQc7DHLCjc/edit?tab=t.0}{check rubrics at the course website}
+                \item Office hour \textbf{tomorrow 8-9AM WIB} (\href{https://stanford.zoom.us/j/98612871859?pwd=XnkcsTdJKYSbBxuNOe8jhCW4Q0E12g.1&from=addon}{Zoom link in MyITS}).
+            \end{itemize}
+            \item Questions since our last class?
+            \item Discuss the group acvitity (Exercise 1.2)        
+            \item Optimization Modeling Basics (Ch. 2)
+            \item Group activity
+        \end{itemize}        
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{[Exercise 1.2] Discuss with your group}
+    You are a sales manager tasked to increase sales for the upcoming quarter. You want to optimize allocation of the marketing budget to achieve this goal. You work with the marketing team, the sales team, the inventory management team, and the data and IT for the project.
+    
+    \begin{enumerate}
+        \item The marketing team has historical data on the marketing budget allocation for all products, but they only use customer engagement metrics.
+        \item The sales team has data on the sales volume for each product item but only record sales if the product is in stock.
+        \item The inventory team has data on the inventory levels for each product item and the order received from the sales team, but not on lost sales.
+        \item The data and IT team maintains the data infrastructure and systems for the company. They can provide historical data and predictive models for sales volume with 100\% accuracy!
+    \end{enumerate}
+    
+    \textbf{Identify a proper scope for the project! What risks and obstacles you might face?}
+\end{frame}
+
+
+\section{Optimization Modeling}
+\begin{frame}{Optimization Modeling}
+    \begin{itemize}[<+->]
+        \item Model components:
+        \begin{itemize}[<+->]
+            \item Objective function $f(x)$: function to minimize (or maximize)
+            \item Decision variable $x$: parameter to optimize
+            \item Constraints $g(x) \leq 0$ and $h(x) = 0$: conditions for $x$ to satisfy
+            \item Feasible set $\mathcal{X}$: set of all possible values for $x$
+            \item Parameters: other (static) values that affect the objective function and constraints
+        \end{itemize}
+        
+        \item Mathematical model:
+            \begin{equation}
+                \begin{aligned}
+                    & \underset{x}{\text{minimize}}
+                    & f(x) \\
+                    & \text{subject to}
+                    & g(x) \leq 0, \\
+                    & & h(x) = 0, \\
+                    & & x \in \mathcal{X}
+                \end{aligned}
+                \label{eq:basic_optimization}
+            \end{equation}            
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Example [Exercise 2.1]}
+    \begin{itemize}[<.->]
+        \item PLX is an electricity provider that is looking to optimize its service levels to maximize its profits. The company formulates the profit $f(x)$ (in millions of Rupiah) as a function of the service level $x$ as 
+        \begin{equation}
+            f(x) = -\frac{(x-95)^2 \cdot (x+100)^2}{1000} + 10000.
+            \label{eq:PLX_profit_function}
+        \end{equation}
+    
+        \item The service level $x$ is a continuous value between 0 and 100 (for this function to be valid).
+        \begin{enumerate}[<.->]
+            \item What is the \textbf{objective function}?
+            \item What is the \textbf{decision variable}?
+            \item What is the \textbf{constraints}?
+            \item What are the \textbf{parameters}?
+            \item What is the \textbf{optimal solution}? 
+            \item What is the \textbf{value of the optimal solution}?
+        \end{enumerate}
+    \end{itemize}
+\end{frame}
+\begin{frame}{Example [Exercise 2.1]}
+    \begin{itemize}[<.->]
+        \item PLX is an electricity provider that is looking to optimize its service levels to maximize its profits. The company formulates the profit $f(x)$ (in millions of Rupiah) as a function of the service level $x$ as 
+        \begin{equation}
+            f(x) = -\frac{(x-95)^2 \cdot (x+100)^2}{1000} + 10000. \nonumber
+        \end{equation}
+    
+        \item The service level $x$ is a continuous value between 0 and 100 (for this function to be valid).
+        \begin{enumerate}[<+->]
+            \item The \textbf{objective function}: $f(x) = -\frac{(x-95)^2 \cdot (x+100)^2}{1000} + 10000$
+            \item The \textbf{decision variable}: $x$ (service level)
+            \item The \textbf{constraints}: $0 \leq x \leq 100$
+            \item The \textbf{parameters}: $\{-95, +100, \frac{1}{1000}, +10000, \cdots \}$
+            \item The \textbf{optimal solution}: $x^* = 95$ (why?)
+            \item The \textbf{value of the optimal solution}: $f(x^*) = 10000$ (million Rupiah)
+        \end{enumerate}
+    \end{itemize}
+\end{frame}
+
+\section{Identifying the optimal solution}
+\begin{frame}{Identifying the optimal solution}
+    \begin{itemize}[<+->]
+        \item The optimal solution $x^*$ is the value of $x$ that maximizes the objective function $f(x)$.
+        \item The value of the optimal solution is $f(x^*)$.
+        \item For the PLX example, we can find the optimal solution by:
+        \begin{itemize}[<+->]
+            \item Plotting the objective function $f(x)$
+            \item Finding the value of $x$ that maximizes $f(x)$
+            \begin{figure}
+                \centering
+                \input{../fig/plx_fx_plot.tex}        
+            \end{figure} 
+            \item The optimal solution is $x^* = 95$.
+            \item The value of the optimal solution is $f(x^*) = 10000$ (million Rupiah).   
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}{About the model and its optimal solution(s)}
+    \begin{itemize}[<+->]
+        \item We can have multiple optimal solutions.
+        \begin{figure}
+            \centering
+            \input{../fig/multiple_optima_1.tex}~\input{../fig/multiple_optima_2.tex}        
+        \end{figure} 
+    \end{itemize}        
+\end{frame}
+
+
+\begin{frame}{About the model and its optimal solution(s)}
+    \begin{itemize}[<+->]
+        \item The decision variable can be multi-dimensional.
+        \begin{equation}
+            \begin{aligned}
+                & \underset{x_1, x_2}{\text{minimize}}
+                & & (x_1-2)^2 \cdot (x_2-3)^2 \cdot \left(x_1 x_2 - \frac52 \right)\\
+                & \text{subject to}
+                & & 1 \leq x_1 \leq 4, \\
+                & & & 1 \leq x_2 \leq 4.
+            \end{aligned}
+            \label{eq:2D_optimization}
+        \end{equation}
+        \begin{figure}
+            \centering
+            \input{../fig/2d_opt_problem.tex}
+        \end{figure}
+        \item $x_1^* = 1.438$, $x_2^* = 2.158$, $f(x_1^*, x_2^*) = 0.1350$.
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}{About the model and its optimal solution(s)}
+    \begin{itemize}[<+->]
+        \item The decision variable can be multi-dimensional.
+        \begin{figure}
+            \centering
+            \input{../fig/2d_opt_problem.tex}
+        \end{figure}
+        \item There are values in the plot with lower objective values than the optimal solution. Why are they not optimal?
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Sometimes the objective function itself is not fully known}
+    \begin{itemize}[<+->]
+        \item Example [Exercise 2.3]:
+        \begin{equation}
+            \begin{aligned}
+                & \underset{x}{\text{maximize}}
+                & & f(x) = \text{CO}_2 \text{ capture economic value}(x) - x \\
+                & \text{subject to}
+                & & 0 \leq x \leq 1 \text{ billion Rupiah}.
+            \end{aligned}
+            \label{eq:Qertamina_optimization}
+        \end{equation}
+        \item $f(x)$ is only evaluated at $x \in \{0, 100, 200, \ldots, 1000\}$ million Rupiah. 
+        \begin{figure}
+            \centering
+            \input{../fig/qertamina_ccs.tex}
+        \end{figure}
+        \item What is the optimal solution? If you are given more chances to evaluate $f(x)$ at some $x$'s, which $x$ values would you choose?
+        
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Summary}
+    \begin{itemize}[<+->]
+        \item When modeling an optimization problem, spend time to identify the objective function, decision variables, constraints, and parameters (and therefore the data you need).
+        \item The optimal solution is the value of the decision variable that minimizes (or maximizes) the objective function.
+        \item The optimal solution can be multi-dimensional, and there can be multiple optimal solutions.
+    \end{itemize}
+\end{frame}
+
+\section{Examples}
+\begin{frame}{Let's now take a look at some examples}
+    \begin{itemize}[<+->]
+        \item Example 1: \href{https://colab.research.google.com/drive/1fkSbxvqUKUXSYWVWAXwGBWoc-8NCRFHS?usp=sharing}{PLX profit maximization}
+        \item Example 2: \href{https://colab.research.google.com/drive/1dvgO3HJ0mT7kNphkEqfGdHYISbJ2lT_r?usp=sharing}{2D optimization problem}
+        \item Example 3: \href{https://colab.research.google.com/drive/1wPqfn7aTNdO3aikmQnaeyLAeLD4yh4VK?usp=sharing}{Production planning}
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}{What's next?}
+    \begin{itemize}[<+->]
+        \item Next week: 
+        \begin{itemize}[<+->]
+            \item Data Collection and Processing (Ch. 3)
+            \item Proposal Presentation (Group 1-2, random order)
+        \end{itemize}
+        \item Next reading: Ch. 3 -- Data Collection and Processing
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Thank you!}
+    \begin{itemize}[<+->]
+        \item Questions?
+    \end{itemize}
+\end{frame}
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
