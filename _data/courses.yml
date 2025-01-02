@@ -6,7 +6,7 @@
   projects: 5
   url: "/previous-classes/2024-gasal"
   image: "/assets/img/simt-header.png"
-  gallery: "/previous-classes/2024-gasal-gallery/"
+  gallery: "/previous-classes/2024-gasal-gallery"
 
 - id: 2024-genap
   title: "Analytics Projects, Genap 2024 - Part 2"
@@ -16,4 +16,4 @@
   projects: 5
   url: "/previous-classes/2024-genap"
   image: "/assets/img/simt-header.png" 
-  gallery: "/previous-classes/2024-genap-gallery/"
+  gallery: "/previous-classes/2024-genap-gallery"

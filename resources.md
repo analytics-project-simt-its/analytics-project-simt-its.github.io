@@ -58,8 +58,8 @@ This page contains various resources to support your learning in the Analytics P
 ## 5. Past Projects
 
 - [Project Template](https://colab.research.google.com/drive/1jC-uPCJsBEE-OUNbxAqs9MYOjy45zyCu?usp=sharing) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1jC-uPCJsBEE-OUNbxAqs9MYOjy45zyCu?usp=sharing)
-- [2024 Gasal Project Galleries](/previous-classes/2024-gasal/gallery)
-- [2024 Genap Project Gallery](/previous-classes/2024-genap/gallery)
+- [2024 Gasal Project Galleries](/previous-classes/2024-gasal-gallery)
+- [2024 Genap Project Gallery](/previous-classes/2024-genap-gallery)
 
 ## 6. Open-source Modeling Tools
 
