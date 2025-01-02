@@ -1,0 +1,59 @@
+- semester: "2024-gasal"
+  projects:
+    - id: "delivery-optimization"
+      title: "Delivery Fleet Management and Optimization: Case Study of JNE Bogor"
+      description: "Fleet management is a complex and challenging task that requires constant monitoring, planning, and decision-making. Effective delivery fleet management is crucial for businesses to maintain a competitive edge in the market. Managing a fleet of vehicles involves various aspects, such as routing, scheduling, dispatching, maintenance, fuel management, driver behavior, safety, compliance, and customer satisfaction. It directly impacts customer satisfaction, operational costs, and overall efficiency of the supply chain. One of the companies in logistics sector is JNE. JNE has many agents in Indonesia, one of them is in Bogor. To minimizing operational cost need to leverage the power of data. JNE Bogor has multiple types of fleet to pick up some packages from JNE agents in the area. Companies that rely on delivery services need to ensure that their fleet operations are optimized to meet customer demands while minimizing operational expenses."
+      # team_lead: "Budi Santoso"
+      team_members:
+        - "Kelompok 1"
+      main_image: "/assets/img/img-placeholder.webp"
+      links:
+        # code: "https://github.com/simt-its/port-optimization"
+        # report: "/assets/pdf/2024-gasal/port-optimization-report.pdf"
+        # webpage: "/projects/2024-gasal/port-optimization"
+      tags: ["logistics", "optimization"]
+      status: "completed"
+      
+    - id: "plastic-extrusion"
+      title: "Plastic Extrusion Optimization"
+      description: "Plastic extrusion is a pivotal manufacturing process used to create a wide range of products, from pipes and tubing to window frames and insulation. The process involves melting raw plastic and forming it into continuous shapes through a die, which requires precise control over temperature and speed to ensure quality. Despite its widespread use, the industry faces challenges with optimizing energy use and maintaining consistent product quality, largely due to the variable nature of the materials and the complex settings required for different product lines."
+      # team_lead: "Siti Rahayu"
+      team_members:
+        - "Kelompok 4"
+      main_image: "/assets/img/img-placeholder.webp"
+      links:
+        # code: "https://github.com/simt-its/healthcare-scheduling"
+        # report: "/assets/pdf/2024-gasal/healthcare-scheduling-report.pdf"
+        # webpage: "/projects/2024-gasal/healthcare-scheduling"
+      tags: ["manufacturing", "optimization"]
+      status: "completed"
+    
+    - id: "cellular-service-marketing-allocation"
+      title: "Cellular Service Marketing Budget Optimization"
+      description: "Cellular service providers face the challenge of allocating their marketing budget effectively to maximize customer acquisition and retention. The goal is to optimize the budget allocation across different marketing channels, such as TV, radio, and digital platforms, to achieve the highest return on investment (ROI). The challenge lies in balancing the cost-effectiveness of each channel while ensuring that the overall marketing strategy is aligned with the company's goals and customer acquisition targets."
+      # team_lead: "Ahmad Wijaya"
+      team_members:
+        - "Kelompok 5"
+      main_image: "/assets/img/img-placeholder.webp"
+      links:
+        # code: "https://github.com/simt-its/smart-waste"
+        # report: "/assets/pdf/2024-gasal/waste-collection-report.pdf"
+        # webpage: "/projects/2024-gasal/waste-collection"
+      tags: ["marketing", "internet-service-provider", "optimization"]
+      status: "completed"
+
+- semester: "2024-genap"
+  projects:
+    - id: "portfolio-stock-optimization"
+      title: "Investment Portfolio Optimization"
+      description: "Portfolio stock optimization is a crucial task for investors to maximize returns while minimizing risk. The goal is to optimize the allocation of funds across different stocks to achieve the highest return on investment (ROI). The challenge lies in balancing the risk and return of each stock while ensuring that the overall portfolio is well-diversified and aligned with the investor's risk tolerance and investment goals."
+      # team_lead: "Alex Johnson"
+      team_members:
+        - "Kelompok 2"
+      main_image: "/assets/img/img-placeholder.webp"
+      links:
+        code: "https://github.com/ShinyQ/Streamlit_Stock-Allocation-Optimization-SLSQP"
+        # report: "/assets/pdf/2024-genap/traffic-report.pdf"
+        # webpage: "/projects/2024-genap/traffic"
+      tags: ["finance", "investment", "slsqp", "streamlit"]
+      status: "completed" 

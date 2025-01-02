@@ -13,8 +13,11 @@ GEM
   specs:
     addressable (2.8.5)
       public_suffix (>= 2.0.2, < 6.0)
+    base64 (0.2.0)
+    bigdecimal (3.1.9)
     colorator (1.1.0)
     concurrent-ruby (1.2.2)
+    csv (3.3.2)
     em-websocket (0.5.3)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0)
@@ -57,13 +60,13 @@ GEM
     mercenary (0.3.6)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
-    public_suffix (5.0.3)
+    public_suffix (4.0.7)
     rake (12.3.3)
     rb-fsevent (0.11.2)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     rexml (3.2.6)
-    rouge (3.30.0)
+    rouge (3.26.0)
     safe_yaml (1.0.5)
     sass (3.7.4)
       sass-listen (~> 4.0.0)
@@ -76,9 +79,13 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  base64
   beautiful-jekyll-theme!
+  bigdecimal
   bundler (>= 1.16)
+  csv
   jekyll-redirect-from
+  kramdown-parser-gfm
   rake (~> 12.0)
   webrick
 

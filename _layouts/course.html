@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} | {{ page.subtitle }}</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="{{ page.description | default: 'Course page for ' | append: page.title | append: ' at ' | append: page.subtitle }}">
+    <meta name="author" content="{{ page.instructor | default: site.author }}">
+    <meta name="keywords" content="{{ page.keywords | default: page.title | append: ', ' | append: page.subtitle | append: ', course, education' }}">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="{{ page.title }} | {{ page.subtitle }}">
+    <meta property="og:description" content="{{ page.description | default: 'Course page for ' | append: page.title | append: ' at ' | append: page.subtitle }}">
+    <meta property="og:image" content="{{ page.og_image | default: 'https://mansurarief.github.io/assets/img/simt-header.png' }}">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ page.title }} | {{ page.subtitle }}">
+    <meta name="twitter:description" content="{{ page.description | default: 'Course page for ' | append: page.title | append: ' at ' | append: page.subtitle }}">
+    <meta name="twitter:image" content="{{ page.og_image | default: 'https://mansurarief.github.io/assets/img/simt-header.png' }}">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/css/course.css">
+
+    <!-- Schema.org markup for Google -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": "{{ page.title }}",
+        "description": "{{ page.description }}",
+        "provider": {
+            "@type": "Organization",
+            "name": "{{ page.subtitle }}",
+            "sameAs": "https://www.its.ac.id/"
+        },
+        "instructor": {
+            "@type": "Person",
+            "name": "{{ page.instructor }}"
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- Skip link for keyboard users -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="site-header" role="banner">
+        <div class="site-logo">
+            <a href="/" aria-label="Home">
+                <img src="https://mansurarief.github.io/assets/img/simt-header.png" alt="SIMT ITS Logo" width="200" height="60">
+            </a>
+        </div>
+
+        <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">
+            <span class="sr-only">Toggle menu</span>
+            <svg width="24" height="24" aria-hidden="true" focusable="false">
+                <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+            </svg>
+        </button>
+
+        <nav class="main-nav" id="main-nav" role="navigation" aria-label="Main navigation">
+            <ul>
+                <li><a href="/" aria-current="page">Home</a></li>
+                <li><a href="/previous-classes">Previous Classes</a></li>
+                <li><a href="/resources">Resources</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <ol>
+            <li><a href="/">Home</a></li>
+            {% if page.url contains 'previous-classes' %}
+                <li><a href="/previous-classes">Previous Classes</a></li>
+                {% if page.url != '/previous-classes/' %}
+                    <li aria-current="page">{{ page.title }}</li>
+                {% endif %}
+            {% else %}
+                <li aria-current="page">{{ page.title }}</li>
+            {% endif %}
+        </ol>
+    </nav>
+
+    <main id="main-content" class="main-content" role="main" tabindex="-1">
+        <div class="table-wrapper">
+            {{ content | replace: '<table>', '<table class="table-schedule">' }}
+        </div>
+    </main>
+
+    {% if page.toc != false %}
+    <aside class="sidebar" role="complementary" aria-label="Table of contents">
+        <h2>Table of Contents</h2>
+        <nav aria-label="On this page navigation">
+            {% if page.auto_toc %}
+                <ul>
+                {% assign content_lines = content | newline_to_br | split: '<br />' %}
+                {% for line in content_lines %}
+                    {% if line contains '<h2' and line contains 'id=' %}
+                        {% assign id = line | split: 'id="' | last | split: '"' | first %}
+                        {% assign title = line | split: '>' | last | split: '</h2' | first %}
+                        <li><a href="#{{ id }}">{{ title }}</a></li>
+                    {% endif %}
+                {% endfor %}
+                </ul>
+            {% else %}
+                <ul>
+                    <li><a href="#course-objectives">Course objectives</a></li>
+                    <li><a href="#lectures">Lectures</a></li>
+                    <li><a href="#office-hours">Office hours</a></li>
+                    <li><a href="#textbooks">Textbooks</a></li>
+                    <li><a href="#other-resources">Other Resources</a></li>
+                    <li><a href="#grading">Grading and assignments</a></li>
+                    <li><a href="#schedule">Schedule</a></li>
+                    <li><a href="#ai-policy">AI usage policy</a></li>
+                    <li><a href="#late-policy">Late policy</a></li>
+                    <li><a href="#disabilities">Disabilities</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#acknowledgment">Acknowledgment</a></li>
+                </ul>
+            {% endif %}
+        </nav>
+    </aside>
+    {% endif %}
+
+    <footer class="footer" role="contentinfo">
+        <nav aria-label="Footer navigation">
+            <p>
+                <a href="/">Home</a> |
+                <a href="/previous-classes">Previous Classes</a> |
+                <a href="/resources">Resources</a> |
+                <a href="/contact">Contact</a>
+            </p>
+        </nav>
+        <p>© {{ 'now' | date: "%Y" }} SIMT ITS. Created with Jekyll.</p>
+        <p>Last updated: {{ page.last_updated | default: site.time | date: "%b %d, %Y" }}</p>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            const nav = document.querySelector('.main-nav');
+            const expanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !expanded);
+            nav.classList.toggle('active');
+        });
+
+        // Add current page indicator
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPath = window.location.pathname;
+            document.querySelectorAll('.main-nav a').forEach(link => {
+                if (link.getAttribute('href') === currentPath) {
+                    link.setAttribute('aria-current', 'page');
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

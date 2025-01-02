@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include head.html %}
+</head>
+<body class="gallery-page">
+    {% include header.html %}
+
+    <main id="main-content" class="main-content" role="main">
+        <div class="gallery-header">
+            <h1>Projects Gallery - {{ course.semester }}</h1>
+        </div>
+        
+        <div class="gallery-grid">
+            {% assign semester_data = site.data.projects | where: "semester", page.course_id | first %}
+            
+            {% for project in semester_data.projects %}
+            <article class="project-card">
+                <div class="project-image-container">
+                    {% if project.status %}
+                    <div class="project-status-badge status-{{ project.status }}">
+                        {{ project.status | capitalize }}
+                    </div>
+                    {% endif %}
+                    <img src="{{ project.main_image | default: '/assets/img/project-placeholder.svg' }}" 
+                         alt="{{ project.title }}" 
+                         class="project-image">
+                </div>
+                
+                <div class="project-content">
+                    <h2 class="project-title">{{ project.title }}</h2>
+                    
+                    <div class="team-members">
+                        <h3>Team Members</h3>
+                        <div class="team-list">
+                            {% if project.team_lead %}
+                            <div class="team-lead">
+                                <i class="fas fa-user-tie"></i>
+                                {{ project.team_lead }} (Lead)
+                            </div>
+                            {% endif %}
+                            {% for member in project.team_members %}
+                            <div class="team-member">
+                                <i class="fas fa-user"></i>
+                                {{ member }}
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <p class="project-description">{{ project.description }}</p>
+                    
+                    {% if project.tags %}
+                    <div class="project-tags">
+                        {% for tag in project.tags %}
+                        <span class="project-tag">{{ tag }}</span>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                    
+                    <div class="project-links">
+                        {% if project.links.webpage %}
+                        <a href="{{ project.links.webpage }}" class="project-link" target="_blank">
+                            <i class="fas fa-globe"></i> Details
+                        </a>
+                        {% endif %}
+
+                        {% if project.links.code %}
+                        <a href="{{ project.links.code }}" class="project-link" target="_blank">
+                            <i class="fas fa-code"></i> Code
+                        </a>
+                        {% endif %}
+                        
+                        {% if project.links.report %}
+                        <a href="{{ project.links.report }}" class="project-link" target="_blank">
+                            <i class="fas fa-file-pdf"></i> Report
+                        </a>
+                        {% endif %}                    
+                    </div>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+    </main>
+
+    {% include footer.html %}
+</body>
+</html>

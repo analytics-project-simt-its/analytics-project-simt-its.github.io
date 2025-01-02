@@ -20,79 +20,43 @@
   ></div>
 {% endif %}
 
-<header class="header-section {% if page.cover-img %}has-img{% endif %}">
-{% if page.cover-img %}
-<div class="big-img intro-header">
-  <div class="container-md">
-    <div class="row">
-      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
-        <div class="{{ include.type }}-heading">
-          <h1>{% if page.title %}{{ page.title }}{% else %}<br/>{% endif %}</h1>
-          {% if page.subtitle %}
-            {% if include.type == "page" %}
-              <hr class="small">
-              <span class="{{ include.type }}-subheading">{{ page.subtitle }}</span>
-            {% else %}
-              <h2 class="{{ include.type }}-subheading">{{ page.subtitle }}</h2>
-            {% endif %}
-          {% endif %}
-
-          {% if include.type == "post" %}
-            <span class="post-meta">Posted on {{ page.date | date: date_format }}</span>
-            {% if page.last-updated %}
-              <span class="post-meta">
-                <span class="d-none d-md-inline middot">&middot;</span>
-                Last updated {{ page.last-updated | date: date_format }}
-              </span>
-            {% endif %}
-            {% if page.readtime %}
-              {% include readtime.html %}
-            {% endif %}
-          {% endif %}
-        </div>
-      </div>
+<header class="site-header" role="banner">
+    <div class="site-logo">
+        <a href="/" aria-label="Home">
+            <img src="https://mansurarief.github.io/assets/img/simt-header.png" alt="SIMT ITS Logo" width="200" height="60">
+        </a>
     </div>
-  </div>
-  <span class='img-desc'></span>
-</div>
-{% endif %}
-<div class="intro-header no-img">
-  <div class="container-md">
-    <div class="row">
-      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
-        <div class="{{ include.type }}-heading">
-          {% if page.circle-img %}
-            <p><img class="img-circle img-200" src="{{ page.circle-img }}"/></p>
-          {% endif %}
-          <h1>{% if page.title %}{{ page.title }}{% else %}<br/>{% endif %}</h1>
-          {% if page.subtitle %}
-            {% if include.type == "page" %}
-              <hr class="small">
-              <span class="{{ include.type }}-subheading">{{ page.subtitle }}</span>
-            {% else %}
-              <h2 class="{{ include.type }}-subheading">{{ page.subtitle }}</h2>
-            {% endif %}
-          {% endif %}
 
-          {% if include.type == "post" %}
-            <span class="post-meta">Posted on {{ page.date | date: date_format }}</span>
-            {% if page.last-updated %}
-              <span class="post-meta">
-                <span class="d-none d-md-inline middot">&middot;</span>
-                Last updated {{ page.last-updated | date: date_format }}
-              </span>
-            {% endif %}
-            {% if page.readtime %}
-              {% include readtime.html %}
-            {% endif %}
-          {% endif %}
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+    <nav class="main-nav" id="main-nav" role="navigation" aria-label="Main navigation">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/previous-classes">Previous Classes</a></li>
+            <li><a href="/resources">Resources</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+    </nav>
 </header>
 
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+        <li><a href="/">Home</a></li>
+        {% if page.layout == 'gallery' %}
+            <li><a href="/previous-classes">Previous Classes</a></li>
+            {% assign course = site.data.courses | where: "id", page.course_id | first %}
+            <li><a href="{{ course.url }}">{{ course.semester }}</a></li>
+            <li aria-current="page">Project Gallery</li>
+        {% else %}
+            {% if page.url contains 'previous-classes' %}
+                <li><a href="/previous-classes">Previous Classes</a></li>
+                {% if page.url != '/previous-classes/' %}
+                    <li aria-current="page">{{ page.title }}</li>
+                {% endif %}
+            {% else %}
+                <li aria-current="page">{{ page.title }}</li>
+            {% endif %}
+        {% endif %}
+    </ol>
+</nav>
 
 {% else %}
 <div class="intro-header"></div>

@@ -39,11 +39,11 @@ h1, h2, h3, h4 {
   margin-top: 1.25rem;
 }
 a {
-  color: #b00;
+  color: #008AFF;
 }
 a:hover,
 a:focus {
-  color: #b00;
+  color: #0085A1;
 }
 blockquote {
   color: #808080;
@@ -75,12 +75,12 @@ hr.small {
 ::-moz-selection {
   color: #fff;
   text-shadow: none;
-  background-color: #b00;
+  background-color: #0085A1;
 }
 ::selection {
   color: #fff;
   text-shadow: none;
-  background-color: #b00;
+  background-color: #0085A1;
 }
 img::selection {
   color: #fff;
@@ -294,7 +294,7 @@ img {
 .navbar-custom .navbar-nav .nav-link:focus,
 .navbar-custom .navbar-nav .dropdown-menu .dropdown-item:hover,
 .navbar-custom .navbar-nav .dropdown-menu .dropdown-item:focus {
-  color: #b00;
+  color: #0085A1;
 }
 
 .navbar-custom .avatar-container {
@@ -438,7 +438,7 @@ footer .footer-custom-content {
 .post-preview a:focus,
 .post-preview a:hover {
   text-decoration: none;
-  color: #b00;
+  color: #0085A1;
 }
 
 .post-preview .post-title {
@@ -785,8 +785,8 @@ nav.top-nav-short-permanent ~ header > .intro-header.big-img {
 .pagination .page-item .page-link:hover,
 .pagination .page-item .page-link:focus {
   color: #FFF;
-  border: 1px solid #b00;
-  background-color: #b00;
+  border: 1px solid #0085A1;
+  background-color: #0085A1;
 }
 
 --- Tables ---

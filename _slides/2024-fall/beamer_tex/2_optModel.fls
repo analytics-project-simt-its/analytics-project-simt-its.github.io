@@ -1,8 +1,8 @@
-PWD /Users/mansur/Work/Teaching/ITS/analytics-project-simt-its.github.io/_slides/2024-fall/beamer_tex
+PWD /Users/mansur/Work/Web/analytics-project-simt-its.github.io/_slides/2024-fall/beamer_tex
 INPUT /usr/local/texlive/2023/texmf.cnf
 INPUT /usr/local/texlive/2023/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/mansur/Work/Teaching/ITS/analytics-project-simt-its.github.io/_slides/2024-fall/beamer_tex/2_optModel.tex
+INPUT /Users/mansur/Work/Web/analytics-project-simt-its.github.io/_slides/2024-fall/beamer_tex/2_optModel.tex
 OUTPUT 2_optModel.log
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamer.cls
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamer.cls
