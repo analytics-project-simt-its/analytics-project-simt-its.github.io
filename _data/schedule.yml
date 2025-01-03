@@ -1,0 +1,85 @@
+- week: 9
+  date: "-"
+  details:
+    - name: "Class Overview"
+      link: "#"
+      type: "L"
+    - name: "Data-driven Modeling"
+      link: "#"
+      type: "L"
+  assignment: "-"
+
+- week: 10
+  date: "-"
+  details:
+    - name: "Optimization Modeling"
+      link: "#"
+      type: "L"
+  assignment: "Reflection 1"
+
+- week: 11
+  date: "-"
+  details:
+    - name: "Data Collection and Processing"
+      link: "#"
+      type: "L"
+    - name: "Discussion"
+      type: "O"
+  assignment: "-"
+
+- week: 12
+  date: "-"
+  details:
+    - name: "V&V"
+      link: "#"
+      type: "L"
+    - name: "Proposal Presentation"
+      type: "P"
+  assignment: "Midterm Report"
+
+- week: 13
+  date: "-"
+  details:
+    - name: "Benchmarking"
+      link: "#"
+      type: "L"
+    - name: "Proposal Presentation"
+      type: "P"
+  assignment: "Peer Review"
+
+- week: 14
+  date: "-"
+  details:
+    - name: "Prototyping"
+      link: "#"
+      type: "L"
+    - name: "Proposal Presentation"
+      type: "P"
+  assignment: "Midterm Feedback"
+
+- week: 15
+  date: "-"
+  details:
+    - name: "In-Class Workshops"
+      type: "O"
+  assignment: "-"
+
+- week: 16
+  date: "-"
+  details:
+    - name: "Final Presentation"
+      type: "P"
+    - name: "Remarks"
+      link: "#"
+      type: "L"
+  assignment: "Final Presentation"
+
+- week: ""
+  date: "-"
+  details: []
+  assignment: "Final Report"
+
+- week: ""
+  date: "-"
+  details: []
+  assignment: "Reflection 2"

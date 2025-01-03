@@ -58,34 +58,59 @@ A great additional resource is the Engineering Design Optimization (Joaquim Mart
 
 ## Grading and assignments {#grading}
 
-Here is the grade breakdown for this course
-
-| Assignment            | Weight | Cumulative |
-|:---------------------|:-------:|:-----------:|
-| Reflections (1 and 2)| 5%    | 5% |
-| [Proposal Presentation](https://docs.google.com/document/d/1Un62s0U9jwrVVOQ03iipmCRprsh3jK5__RQc7DHLCjc)| 15%    | 20% |
-| [Peer Review](https://docs.google.com/document/d/16a_A-K7vaBM6H_N6oB1-jLCbn4spvaQKpL03cI7XQ-g)          | 10%    | 30% |
-| [Midterm Report](https://docs.google.com/document/d/1cNyAea4Xl-RgAwayClEwN4-xF3OD9drA5GSBpF9huo)        | 15%    | 45% |
-| [Final Report](https://docs.google.com/document/d/1TCu1Xw7nJJPmGjWG22evxDxiZjPmNxWZwivlEDozZ84)          | 25%    | 70% |
-| [Final Presentation](https://docs.google.com/document/d/1YKBGs6npD6Dc4vPZMYA7lskuXOBf0SbuFBmmrvbTtww)    | 30%    | 100% |
-| Project repo/website | 5%      | (extra point) |
+<table class="table-schedule">
+  <thead>
+    <tr>
+      <th style="text-align: left">Assignment</th>
+      <th style="text-align: center">Weight</th>
+      <th style="text-align: center">Cumulative</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for assignment in site.data.assignments %}
+    <tr>
+      <td style="text-align: left">{% if assignment.link != "" %}<a href="{{ assignment.link }}">{{ assignment.name }}</a>{% else %}{{ assignment.name }}{% endif %}</td>
+      <td style="text-align: center">{{ assignment.weight }}</td>
+      <td style="text-align: center">{{ assignment.cumulative }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
 
 Please submit your assignments either by filling the form online or by uploading them in your MyITS. If it is a group assignment, only one submission is enough. The rubric for each assignment is linked in the table above and is also posted in MyITS classroom.
 
 ## Schedule {#schedule}
 
-| Week |  Date    | Session Details*                                | Assignment Due** |
-|:----:|:--------:|:-----------------------------------------------|:----------------|
-|  9   | -        | [Class Overview](#), [Data-driven Modeling](#) **(L)**                | -    |
-|  10  | -        | [Optimization Modeling](#) **(L)**    | Reflection 1               |
-|  11  | -        | [Data Collection and Processing](#) **(L)**, Discussion **(O)**                               | -                |
-|  12  | -        | [V&V](#)  **(L)**, Proposal Presentation **(P)**          | Midterm Report  |  
-|  13  | -        | [Benchmarking](#) **(L)** , Proposal Presentation **(P)**    | Peer Review     |
-|  14  | -        | [Prototyping](#) **(L)**, Proposal Presentation **(P)**          | Midterm Feedback |
-|  15  | -        | In-Class Workshops  **(O)**                               | -                |
-|  16  | -        | Final Presentation **(P)** and [Remarks](#) **(L)**                               | Final Presentation                |
-|    | -        |       | Final Report         |
-|    | -        |       | Reflection 2         |
+<table class="table-schedule">
+  <thead>
+    <tr>
+      <th style="text-align: center">Week</th>
+      <th style="text-align: center">Date</th>
+      <th style="text-align: left">Session Details*</th>
+      <th style="text-align: left">Assignment Due**</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for week in site.data.schedule %}
+    <tr>
+      <td style="text-align: center">{{ week.week }}</td>
+      <td style="text-align: center">{{ week.date }}</td>
+      <td style="text-align: left">
+        {% for detail in week.details %}
+          {% if detail.link %}
+            <a href="{{ detail.link }}">{{ detail.name }}</a>
+          {% else %}
+            {{ detail.name }}
+          {% endif %}
+          {% if detail.type %}<strong>({{ detail.type }})</strong>{% endif %}
+          {% unless forloop.last %}, {% endunless %}
+        {% endfor %}
+      </td>
+      <td style="text-align: left">{{ week.assignment }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
 
 <div class="legend">*Legend: <strong>L</strong> = Lecture, <strong>P</strong> = (Student) Presentation, <strong>O</strong> = Open-ended Session</div>
 

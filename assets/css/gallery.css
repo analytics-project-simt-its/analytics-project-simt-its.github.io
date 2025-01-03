@@ -1,9 +1,33 @@
 /* Adjust main content grid for gallery pages */
 .gallery-page {
-    grid-template-columns: 1fr !important; /* Override the default two-column layout */
+    grid-template-columns: 1fr !important;
     max-width: 100% !important;
 }
 
+/* Responsive header adjustments */
+@media (max-width: 768px) {
+    .site-header {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+    }
+
+    .site-logo {
+        margin-bottom: 1rem;
+    }
+
+    .main-nav {
+        width: 100%;
+    }
+
+    .main-nav ul {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+}
+
+/* Project card and content styles */
 .gallery-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -180,7 +204,11 @@
     }
     
     .project-content {
-        padding: 2.5rem 2rem;
+        padding: 2rem;
+    }
+
+    .project-description {
+        font-size: 1.1rem;
     }
 }
 
@@ -196,10 +224,50 @@
     }
     
     .project-content {
-        padding: 2rem;
+        padding: 1.5rem;
+    }
+
+    .project-title {
+        font-size: 1.75rem;
     }
     
+    .project-description {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .team-members h3 {
+        font-size: 1.1rem;
+    }
+
+    .team-lead, .team-member {
+        font-size: 0.9rem;
+        padding: 0.4rem 1rem;
+    }
+
+    .project-tag {
+        font-size: 0.9rem;
+        padding: 0.4rem 1rem;
+    }
+
+    .project-links {
+        flex-wrap: wrap;
+    }
+
+    .project-link {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+    }
+    
+    .gallery-header {
+        padding: 0 1rem;
+    }
+
     .gallery-header h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
+    }
+
+    .gallery-header p {
+        font-size: 1.1rem;
     }
 } 

@@ -1,0 +1,34 @@
+- name: "Reflections (1 and 2)"
+  weight: "5%"
+  cumulative: "5%"
+  link: ""
+
+- name: "Proposal Presentation"
+  weight: "15%"
+  cumulative: "20%"
+  link: "https://docs.google.com/document/d/1Un62s0U9jwrVVOQ03iipmCRprsh3jK5__RQc7DHLCjc"
+
+- name: "Peer Review"
+  weight: "10%"
+  cumulative: "30%"
+  link: "https://docs.google.com/document/d/16a_A-K7vaBM6H_N6oB1-jLCbn4spvaQKpL03cI7XQ-g"
+
+- name: "Midterm Report"
+  weight: "15%"
+  cumulative: "45%"
+  link: "https://docs.google.com/document/d/1cNyAea4Xl-RgAwayClEwN4-xF3OD9drA5GSBpF9huo"
+
+- name: "Final Report"
+  weight: "25%"
+  cumulative: "70%"
+  link: "https://docs.google.com/document/d/1TCu1Xw7nJJPmGjWG22evxDxiZjPmNxWZwivlEDozZ84"
+
+- name: "Final Presentation"
+  weight: "30%"
+  cumulative: "100%"
+  link: "https://docs.google.com/document/d/1YKBGs6npD6Dc4vPZMYA7lskuXOBf0SbuFBmmrvbTtww"
+
+- name: "Project repo/website"
+  weight: "5%"
+  cumulative: "(extra point)"
+  link: "" 
