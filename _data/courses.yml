@@ -1,7 +1,7 @@
 - id: 2024-gasal
   title: "Analytics Projects, Gasal 2024 - Part 2"
   description: "A graduate course on prescriptive analytics approaches, focusing on optimization and decision-making algorithms through hands-on group projects."
-  semester: "Gasal 2024"
+  semester: "2024 Gasal"
   students: 21
   projects: 5
   url: "/past-courses/2024-gasal"
@@ -11,7 +11,7 @@
 - id: 2024-genap
   title: "Analytics Projects, Genap 2024 - Part 2"
   description: "The main instructor's first run of the course at SIMT ITS, focusing on building infrastructure for prescriptive analytics approaches with Python."
-  semester: "Genap 2024"
+  semester: "2024 Genap"
   students: 19
   projects: 5
   url: "/past-courses/2024-genap"
