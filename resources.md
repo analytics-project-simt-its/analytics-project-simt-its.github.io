@@ -56,6 +56,11 @@ This page contains various resources to support your learning in the Analytics P
 
 - Nonlinear optimization with ZOOpt [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/analytics-project-simt-its/analytics-project-simt-its.github.io/blob/main/notebooks/zoopt_with_exact_objective_function.ipynb)
 
+### 4.2 Tutorials
+
+- Sets Definition [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/analytics-project-simt-its/analytics-project-simt-its.github.io/blob/main/notebooks/1_Sets_Definition.ipynb)
+- Decision Variables Definition [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/analytics-project-simt-its/analytics-project-simt-its.github.io/blob/main/notebooks/2_Decision_Variables_Definition.ipynb)
+
 ## 5. Past Projects
 
 - [Project Template](https://colab.research.google.com/drive/1jC-uPCJsBEE-OUNbxAqs9MYOjy45zyCu?usp=sharing) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1jC-uPCJsBEE-OUNbxAqs9MYOjy45zyCu?usp=sharing)

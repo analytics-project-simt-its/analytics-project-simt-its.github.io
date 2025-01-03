@@ -5,8 +5,8 @@
     <description>Course page for Analytics Project at SIMT ITS</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 02 Jan 2025 20:58:23 -0800</pubDate>
-    <lastBuildDate>Thu, 02 Jan 2025 20:58:23 -0800</lastBuildDate>
+    <pubDate>Fri, 03 Jan 2025 12:00:05 -0800</pubDate>
+    <lastBuildDate>Fri, 03 Jan 2025 12:00:05 -0800</lastBuildDate>
     <generator>Jekyll v3.9.3</generator>
     
     
@@ -168,7 +168,7 @@
       <item>
         <title>Past Courses</title>
         <description>Archive of previous Analytics Project courses at SIMT ITS</description>
-        <pubDate>Thu, 02 Jan 2025 20:58:23 -0800</pubDate>
+        <pubDate>Fri, 03 Jan 2025 12:00:05 -0800</pubDate>
         <link>http://localhost:4000/past-courses/</link>
         <guid isPermaLink="true">http://localhost:4000/past-courses/</guid>
         
@@ -188,7 +188,7 @@
       <item>
         <title>Page Not Found</title>
         <description>404 error - page not found</description>
-        <pubDate>Thu, 02 Jan 2025 20:58:23 -0800</pubDate>
+        <pubDate>Fri, 03 Jan 2025 12:00:05 -0800</pubDate>
         <link>http://localhost:4000/404.html</link>
         <guid isPermaLink="true">http://localhost:4000/404.html</guid>
         
