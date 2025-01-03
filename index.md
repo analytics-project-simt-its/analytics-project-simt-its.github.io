@@ -144,7 +144,7 @@ I look forward to assisting you!
 
 ## Acknowledgment {#acknowledgment}
 
-- Most contents are adopted from the [previous semester's webpages](/past-courses). 
+- Most contents are adopted from the [previous semesters webpages](/past-courses). 
 - Some contents are paraphrased using ChatGPT with the prompt "*revise any grammatical errors and improve clarity*".
 - The web layout is composed by Github Copilot and Claude via Cursor's composer.
 - The AI usage policy is customized based on [Stanford CTL workshop "AI in Education: Creating Your Course Policy"](https://docs.google.com/presentation/d/1XgN7uLrYvxYrZoKAVrlKL05Ng_uIxl_Y/edit?usp=sharing&ouid=109376912442294374565&rtpof=true&sd=true) by Kenji Ikemoto. 

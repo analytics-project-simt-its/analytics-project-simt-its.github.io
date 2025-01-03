@@ -86,3 +86,8 @@ This page contains various resources to support your learning in the Analytics P
 - [CPLEX](https://www.ibm.com/products/cplex-optimization-studio) - Optimization solver
 - [Bonmin](https://www.coin-or.org/Bonmin/) - Nonlinear programming solver
 - [Couenne](https://www.coin-or.org/Couenne/) - Nonlinear programming solver
+
+## 8. FAQs
+
+- [What is "reflections" for?](/resources/what-is-reflections-for)
+- [Who is this course for?](/resources/who-is-this-course-for)
