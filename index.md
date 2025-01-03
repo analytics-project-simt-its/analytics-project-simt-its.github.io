@@ -4,7 +4,7 @@ title: "Analytics Projects"
 subtitle: "SIMT ITS"
 description: "A graduate course on prescriptive analytics approaches, focusing on optimization and decision-making algorithms through hands-on group projects."
 keywords: "analytics project, prescriptive analytics, optimization, decision-making, SIMT ITS, data science"
-instructor: "Dr. Mansur M. Arief"
+instructor: "Mansur M. Arief"
 og_image: "https://mansurarief.github.io/assets/img/simt-header.png"
 last_updated: "Dec 31, 2024"
 toc: true
