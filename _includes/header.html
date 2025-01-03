@@ -42,15 +42,21 @@
 
 <nav class="breadcrumbs" aria-label="Breadcrumb">
     <ol>
-        <li><a href="/">Home</a></li>
-        {% if page.url contains 'previous-classes' %}
-            <li><a href="/previous-classes">Previous Classes</a></li>
-            {% if page.url != '/previous-classes/' %}
-                <li aria-current="page">{{ page.title }}</li>
+        <li><a href="/">HOME</a></li>
+        {% assign url_parts = page.url | split: '/' %}
+        {% assign url_parts = url_parts | shift %}
+        {% assign crumb_path = '' %}
+        {% for part in url_parts %}
+            {% if part != '' %}
+                {% assign crumb_path = crumb_path | append: '/' | append: part %}
+                {% assign crumb_title = part | replace: '-', ' ' | replace: '.html', '' | replace: '.md', '' | upcase %}
+                {% if forloop.last %}
+                    <li aria-current="page">{{ crumb_title }}</li>
+                {% else %}
+                    <li><a href="{{ crumb_path }}">{{ crumb_title }}</a></li>
+                {% endif %}
             {% endif %}
-        {% else %}
-            <li aria-current="page">{{ page.title }}</li>
-        {% endif %}
+        {% endfor %}
     </ol>
 </nav>
 

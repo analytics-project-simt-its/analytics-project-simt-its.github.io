@@ -2,7 +2,7 @@ main:
   - title: Home
     url: /
   - title: Past Courses
-    url: /previous-classes
+    url: /past-courses
   - title: Resources
     url: /resources
   - title: Contact

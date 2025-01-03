@@ -49,6 +49,6 @@ The best way to reach me is via email:  **mansur.maturidi@its.ac.id**
 
 - [Course Homepage](/)
 - [Resources Page](/resources)
-- [Previous Classes](/previous-classes)
-- [Personal Website](https://mansurarief.github.io/)
+- [Past Courses](/past-courses)
+- [Instructor's Personal Website](https://mansurarief.github.io/)
 - [SIMT ITS](https://www.its.ac.id/simt/) 
