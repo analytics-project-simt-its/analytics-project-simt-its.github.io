@@ -20,6 +20,9 @@
   ></div>
 {% endif %}
 
+<!-- Skip link for keyboard users -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 <header class="site-header" role="banner">
     <div class="site-logo">
         <a href="/" aria-label="Home">
@@ -27,33 +30,26 @@
         </a>
     </div>
 
-    <nav class="main-nav" id="main-nav" role="navigation" aria-label="Main navigation">
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/previous-classes">Previous Classes</a></li>
-            <li><a href="/resources">Resources</a></li>
-            <li><a href="/contact">Contact</a></li>
-        </ul>
-    </nav>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">
+        <span class="sr-only">Toggle menu</span>
+        <svg width="24" height="24" aria-hidden="true" focusable="false">
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+        </svg>
+    </button>
+
+    {% include nav.html %}
 </header>
 
 <nav class="breadcrumbs" aria-label="Breadcrumb">
     <ol>
         <li><a href="/">Home</a></li>
-        {% if page.layout == 'gallery' %}
+        {% if page.url contains 'previous-classes' %}
             <li><a href="/previous-classes">Previous Classes</a></li>
-            {% assign course = site.data.courses | where: "id", page.course_id | first %}
-            <li><a href="{{ course.url }}">{{ course.semester }}</a></li>
-            <li aria-current="page">Project Gallery</li>
-        {% else %}
-            {% if page.url contains 'previous-classes' %}
-                <li><a href="/previous-classes">Previous Classes</a></li>
-                {% if page.url != '/previous-classes/' %}
-                    <li aria-current="page">{{ page.title }}</li>
-                {% endif %}
-            {% else %}
+            {% if page.url != '/previous-classes/' %}
                 <li aria-current="page">{{ page.title }}</li>
             {% endif %}
+        {% else %}
+            <li aria-current="page">{{ page.title }}</li>
         {% endif %}
     </ol>
 </nav>

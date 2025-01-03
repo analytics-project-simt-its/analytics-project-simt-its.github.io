@@ -48,46 +48,7 @@
     </script>
 </head>
 <body>
-    <!-- Skip link for keyboard users -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-
-    <header class="site-header" role="banner">
-        <div class="site-logo">
-            <a href="/" aria-label="Home">
-                <img src="https://mansurarief.github.io/assets/img/simt-header.png" alt="SIMT ITS Logo" width="200" height="60">
-            </a>
-        </div>
-
-        <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">
-            <span class="sr-only">Toggle menu</span>
-            <svg width="24" height="24" aria-hidden="true" focusable="false">
-                <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
-            </svg>
-        </button>
-
-        <nav class="main-nav" id="main-nav" role="navigation" aria-label="Main navigation">
-            <ul>
-                <li><a href="/" aria-current="page">Home</a></li>
-                <li><a href="/previous-classes">Previous Classes</a></li>
-                <li><a href="/resources">Resources</a></li>
-                <li><a href="/contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <nav class="breadcrumbs" aria-label="Breadcrumb">
-        <ol>
-            <li><a href="/">Home</a></li>
-            {% if page.url contains 'previous-classes' %}
-                <li><a href="/previous-classes">Previous Classes</a></li>
-                {% if page.url != '/previous-classes/' %}
-                    <li aria-current="page">{{ page.title }}</li>
-                {% endif %}
-            {% else %}
-                <li aria-current="page">{{ page.title }}</li>
-            {% endif %}
-        </ol>
-    </nav>
+    {% include header.html %}
 
     <main id="main-content" class="main-content" role="main" tabindex="-1">
         <div class="table-wrapper">
@@ -133,37 +94,6 @@
     </aside>
     {% endif %}
 
-    <footer class="footer" role="contentinfo">
-        <nav aria-label="Footer navigation">
-            <p>
-                <a href="/">Home</a> |
-                <a href="/previous-classes">Previous Classes</a> |
-                <a href="/resources">Resources</a> |
-                <a href="/contact">Contact</a>
-            </p>
-        </nav>
-        <p>© {{ 'now' | date: "%Y" }} SIMT ITS. Created with Jekyll.</p>
-        <p>Last updated: {{ page.last_updated | default: site.time | date: "%b %d, %Y" }}</p>
-    </footer>
-
-    <script>
-        // Mobile menu toggle
-        document.querySelector('.menu-toggle').addEventListener('click', function() {
-            const nav = document.querySelector('.main-nav');
-            const expanded = this.getAttribute('aria-expanded') === 'true';
-            this.setAttribute('aria-expanded', !expanded);
-            nav.classList.toggle('active');
-        });
-
-        // Add current page indicator
-        document.addEventListener('DOMContentLoaded', function() {
-            const currentPath = window.location.pathname;
-            document.querySelectorAll('.main-nav a').forEach(link => {
-                if (link.getAttribute('href') === currentPath) {
-                    link.setAttribute('aria-current', 'page');
-                }
-            });
-        });
-    </script>
+    {% include footer.html %}
 </body>
 </html> 

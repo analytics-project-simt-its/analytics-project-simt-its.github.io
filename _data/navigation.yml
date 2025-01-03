@@ -1,0 +1,9 @@
+main:
+  - title: Home
+    url: /
+  - title: Past Courses
+    url: /previous-classes
+  - title: Resources
+    url: /resources
+  - title: Contact
+    url: /contact 

@@ -33,12 +33,11 @@ redirect_from:
         <p>The page you're looking for doesn't exist or has been moved.</p>
         
         <div class="error-actions">
-            <p>You might want to:</p>
+            <p>You might want to try:</p>
             <div class="action-buttons">
-                <a href="/" class="action-button">Go to Homepage</a>
-                <a href="/previous-classes" class="action-button">Previous Classes</a>
-                <a href="/resources" class="action-button">Resources</a>
-                <a href="/contact" class="action-button">Contact</a>
+                {% for item in site.data.navigation.main %}
+                <a href="{{ item.url }}" class="action-button">{{ item.title }}</a>
+                {% endfor %}
             </div>
         </div>
     </div>

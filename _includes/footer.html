@@ -1,12 +1,21 @@
 <footer class="footer" role="contentinfo">
     <nav aria-label="Footer navigation">
         <p>
-            <a href="/">Home</a> |
-            <a href="/previous-classes">Previous Classes</a> |
-            <a href="/resources">Resources</a> |
-            <a href="/contact">Contact</a>
+            {% for item in site.data.navigation.main %}
+            <a href="{{ item.url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.title }}</a>{% unless forloop.last %} | {% endunless %}
+            {% endfor %}
         </p>
     </nav>
     <p>© {{ 'now' | date: "%Y" }} SIMT ITS. Created with Jekyll.</p>
     <p>Last updated: {{ page.last_updated | default: site.time | date: "%b %d, %Y" }}</p>
 </footer>
+
+<script>
+    // Mobile menu toggle
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
+        const nav = document.querySelector('.main-nav');
+        const expanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !expanded);
+        nav.classList.toggle('active');
+    });
+</script>
