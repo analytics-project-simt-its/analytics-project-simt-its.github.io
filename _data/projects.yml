@@ -1,4 +1,4 @@
-- semester: "2024-gasal"
+- semester: "2024-genap"
   projects:
     - id: "delivery-optimization"
       title: "Delivery Fleet Management and Optimization: Case Study of JNE Bogor"
@@ -42,7 +42,7 @@
       tags: ["marketing", "internet-service-provider", "optimization"]
       status: "completed"
 
-- semester: "2024-genap"
+- semester: "2024-gasal"
   projects:
     - id: "portfolio-stock-optimization"
       title: "Investment Portfolio Optimization"
