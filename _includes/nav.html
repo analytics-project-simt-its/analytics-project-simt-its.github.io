@@ -1,7 +1,22 @@
+<!-- Add Font Awesome for the search icon -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
 <nav class="main-nav" id="main-nav" role="navigation" aria-label="Main navigation">
     <ul>
         {% for item in site.data.navigation.main %}
         <li><a href="{{ item.url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.title }}</a></li>
         {% endfor %}
+        <li><a href="/search" aria-label="Search"><i class="fas fa-search"></i></a></li>
     </ul>
 </nav>
+
+<style>
+.main-nav .fa-search {
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+.main-nav a:hover .fa-search {
+    color: var(--accent-color);
+}
+</style>

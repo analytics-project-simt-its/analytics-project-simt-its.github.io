@@ -1,0 +1,15 @@
+---
+layout: null
+---
+{
+  "docs": [
+    {% for page in site.pages %}
+      {
+        "title": {{ page.title | jsonify }},
+        "content": {{ page.content | strip_html | strip_newlines | jsonify }},
+        "url": {{ page.url | jsonify }},
+        "category": {{ page.category | jsonify }}
+      }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+} 

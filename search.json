@@ -1,0 +1,17 @@
+---
+layout: null
+---
+{
+  "docs": [
+    {% assign filtered_pages = site.pages | where_exp: "page", "page.url != '/assets/js/search-data.json'" | where_exp: "page", "page.url != '/search.json'" | where_exp: "page", "page.title != nil" %}
+    {% for page in filtered_pages %}
+      {
+        "title": {{ page.title | jsonify }},
+        "content": {{ page.content | strip_html | strip_newlines | jsonify }},
+        "description": {{ page.description | jsonify }},
+        "url": {{ page.url | jsonify }},
+        "category": {{ page.category | jsonify }}
+      }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+} 

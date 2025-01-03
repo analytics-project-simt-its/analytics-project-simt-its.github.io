@@ -108,6 +108,27 @@ body {
     color: var(--accent-color);
 }
 
+.search-nav-item {
+    display: flex;
+    align-items: center;
+}
+
+.search-nav-item a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+    border-radius: 50%;
+    background: var(--sidebar-bg);
+}
+
+.search-nav-item a:hover {
+    background: var(--accent-color);
+    color: white;
+}
+
 /* Skip to main content link for keyboard users */
 .skip-link {
     position: absolute;
