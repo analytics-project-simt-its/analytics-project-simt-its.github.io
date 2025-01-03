@@ -1,13 +1,198 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    
     <title>Analytics Project</title>
-    
-    
+    <description>Course page for Analytics Project at SIMT ITS</description>
     <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Thu, 02 Jan 2025 20:58:23 -0800</pubDate>
+    <lastBuildDate>Thu, 02 Jan 2025 20:58:23 -0800</lastBuildDate>
+    <generator>Jekyll v3.9.3</generator>
     
+    
+      <item>
+        <title>What is Reflections for?</title>
+        <description>If you are wondering why we do a *lot* of reflections in this course, this page is for you.</description>
+        <pubDate>Fri, 03 Jan 2025 00:00:00 -0800</pubDate>
+        <link>http://localhost:4000/resources/what-is-reflections-for/</link>
+        <guid isPermaLink="true">http://localhost:4000/resources/what-is-reflections-for/</guid>
+        
+        
+        
+        <category>reflections</category>
+        
+        <category>analytics project</category>
+        
+        <category>SIMT ITS</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Analytics Projects</title>
+        <description>A graduate course on prescriptive analytics approaches, focusing on optimization and decision-making algorithms through hands-on group projects.</description>
+        <pubDate>Fri, 03 Jan 2025 00:00:00 -0800</pubDate>
+        <link>http://localhost:4000/</link>
+        <guid isPermaLink="true">http://localhost:4000/</guid>
+        
+        
+        
+        <category>analytics project</category>
+        
+        <category>prescriptive analytics</category>
+        
+        <category>optimization</category>
+        
+        <category>decision-making</category>
+        
+        <category>SIMT ITS</category>
+        
+        <category>data science</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Who is This Course For?</title>
+        <description>This page is for you if you are wondering who is this course designed for, why should you take it, and why you might not need it.</description>
+        <pubDate>Fri, 03 Jan 2025 00:00:00 -0800</pubDate>
+        <link>http://localhost:4000/resources/who-is-this-course-for/</link>
+        <guid isPermaLink="true">http://localhost:4000/resources/who-is-this-course-for/</guid>
+        
+        
+        
+        <category>analytics project</category>
+        
+        <category>SIMT ITS</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Search</title>
+        <description>Search the site</description>
+        <pubDate>Thu, 02 Jan 2025 00:00:00 -0800</pubDate>
+        <link>http://localhost:4000/search/</link>
+        <guid isPermaLink="true">http://localhost:4000/search/</guid>
+        
+      </item>
+    
+      <item>
+        <title>Resources</title>
+        <description>Resources for Analytics Project course at SIMT ITS, including theory, lectures, assignments, examples, and tools.</description>
+        <pubDate>Thu, 02 Jan 2025 00:00:00 -0800</pubDate>
+        <link>http://localhost:4000/resources/</link>
+        <guid isPermaLink="true">http://localhost:4000/resources/</guid>
+        
+        
+        
+        <category>analytics project</category>
+        
+        <category>resources</category>
+        
+        <category>lectures</category>
+        
+        <category>assignments</category>
+        
+        <category>examples</category>
+        
+        <category>tools</category>
+        
+        <category>SIMT ITS</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Analytics Project, Gasal 2024 - Part 2</title>
+        <description>A graduate course on prescriptive analytics approaches, focusing on optimization and decision-making algorithms through hands-on group projects.</description>
+        <pubDate>Thu, 02 Jan 2025 00:00:00 -0800</pubDate>
+        <link>http://localhost:4000/past-courses/2024-gasal/</link>
+        <guid isPermaLink="true">http://localhost:4000/past-courses/2024-gasal/</guid>
+        
+        
+        
+        <category>analytics project</category>
+        
+        <category>prescriptive analytics</category>
+        
+        <category>optimization</category>
+        
+        <category>decision-making</category>
+        
+        <category>SIMT ITS</category>
+        
+        <category>data science</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Projects Gallery - 2024 Gasal</title>
+        <description>The gallery of student projects from the 2024 Gasal semester.</description>
+        <pubDate>Thu, 02 Jan 2025 00:00:00 -0800</pubDate>
+        <link>http://localhost:4000/past-courses/2024-gasal/gallery</link>
+        <guid isPermaLink="true">http://localhost:4000/past-courses/2024-gasal/gallery</guid>
+        
+      </item>
+    
+      <item>
+        <title>Contact</title>
+        <description>Contact information for Analytics Project course at SIMT ITS</description>
+        <pubDate>Thu, 02 Jan 2025 00:00:00 -0800</pubDate>
+        <link>http://localhost:4000/contact/</link>
+        <guid isPermaLink="true">http://localhost:4000/contact/</guid>
+        
+        
+        
+        <category>contact</category>
+        
+        <category>office hours</category>
+        
+        <category>email</category>
+        
+        <category>SIMT ITS</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Projects Gallery - 2024 Genap</title>
+        <description>The gallery of student projects from the 2024 Genap semester.</description>
+        <pubDate>Thu, 02 Jan 2025 00:00:00 -0800</pubDate>
+        <link>http://localhost:4000/past-courses/2024-genap/gallery</link>
+        <guid isPermaLink="true">http://localhost:4000/past-courses/2024-genap/gallery</guid>
+        
+      </item>
+    
+      <item>
+        <title>Past Courses</title>
+        <description>Archive of previous Analytics Project courses at SIMT ITS</description>
+        <pubDate>Thu, 02 Jan 2025 20:58:23 -0800</pubDate>
+        <link>http://localhost:4000/past-courses/</link>
+        <guid isPermaLink="true">http://localhost:4000/past-courses/</guid>
+        
+        
+        
+        <category>analytics project</category>
+        
+        <category>course history</category>
+        
+        <category>SIMT ITS</category>
+        
+        <category>data science education</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Page Not Found</title>
+        <description>404 error - page not found</description>
+        <pubDate>Thu, 02 Jan 2025 20:58:23 -0800</pubDate>
+        <link>http://localhost:4000/404.html</link>
+        <guid isPermaLink="true">http://localhost:4000/404.html</guid>
+        
+      </item>
     
   </channel>
 </rss>

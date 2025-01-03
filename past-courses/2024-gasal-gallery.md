@@ -6,4 +6,5 @@ description: "The gallery of student projects from the 2024 Gasal semester."
 last_updated: "Jan 2, 2024"
 semester: "2024 Gasal"
 permalink: /past-courses/2024-gasal/gallery
+date: 2025-01-02
 --- 

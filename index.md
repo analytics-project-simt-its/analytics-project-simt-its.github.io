@@ -9,6 +9,7 @@ og_image: "https://mansurarief.github.io/assets/img/simt-header.png"
 last_updated: "Jan 02, 2025"
 toc: true
 auto_toc: true
+date: 2025-01-03
 ---
 
 # Analytics Projects

@@ -6,6 +6,7 @@ description: "If you are wondering why we do a *lot* of reflections in this cour
 keywords: "reflections, analytics project, SIMT ITS"
 toc: true
 auto_toc: true
+date: 2025-01-03
 ---
 
 # What is Reflections for?

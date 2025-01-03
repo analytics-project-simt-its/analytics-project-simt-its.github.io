@@ -4,25 +4,27 @@ layout: null
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    {% if site.title %}
     <title>{{ site.title | xml_escape }}</title>
-    {% endif %}
-    {% if site.rss-description %}
-    <description>{{ site.rss-description | xml_escape }}</description>
-    {% endif %}
-    <link>{{ '' | absolute_url }}</link>
-    <atom:link href="{{ 'feed.xml' | absolute_url }}" rel="self" type="application/rss+xml" />
-    {% assign excerpt_length = site.excerpt_length | default: 50 %}
-    {% for post in site.posts limit:20 %}
+    <description>{{ site.description | xml_escape }}</description>
+    <link>{{ site.url }}{{ site.baseurl }}/</link>
+    <atom:link href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" rel="self" type="application/rss+xml"/>
+    <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
+    <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
+    <generator>Jekyll v{{ jekyll.version }}</generator>
+    {% assign filtered_pages = site.pages | where_exp: "page", "page.title != nil" | sort: 'date' | reverse %}
+    {% for page in filtered_pages %}
       <item>
-        <title>{{ post.title | xml_escape }}</title>
-        <description>
-          {% if post.subtitle %}{{ post.subtitle | xml_escape }} - {% endif %}
-          {{ post.content | strip_html | xml_escape | truncatewords: excerpt_length }}
-        </description>
-        <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
-        <link>{{ post.url | absolute_url }}</link>
-        <guid isPermaLink="true">{{ post.url | absolute_url }}</guid>
+        <title>{{ page.title | xml_escape }}</title>
+        <description>{{ page.description | default: page.content | strip_html | truncate: 200 | xml_escape }}</description>
+        <pubDate>{{ page.date | default: site.time | date_to_rfc822 }}</pubDate>
+        <link>{{ page.url | prepend: site.baseurl | prepend: site.url }}</link>
+        <guid isPermaLink="true">{{ page.url | prepend: site.baseurl | prepend: site.url }}</guid>
+        {% if page.keywords %}
+        {% assign keywords = page.keywords | split: "," %}
+        {% for keyword in keywords %}
+        <category>{{ keyword | strip | xml_escape }}</category>
+        {% endfor %}
+        {% endif %}
       </item>
     {% endfor %}
   </channel>

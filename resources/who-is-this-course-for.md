@@ -6,6 +6,7 @@ description: "This page is for you if you are wondering who is this course desig
 keywords: "analytics project, SIMT ITS"
 toc: true
 auto_toc: true
+date: 2025-01-03
 ---
 
 # Who is This Course For?

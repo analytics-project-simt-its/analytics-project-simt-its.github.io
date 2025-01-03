@@ -10,6 +10,7 @@ last_updated: "Dec 31, 2024"
 permalink: /past-courses/2024-gasal/
 toc: true
 auto_toc: true
+date: 2025-01-02
 ---
 
 # Analytics Project, Gasal 2024 - Part 2

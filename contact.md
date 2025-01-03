@@ -6,6 +6,7 @@ description: "Contact information for Analytics Project course at SIMT ITS"
 keywords: "contact, office hours, email, SIMT ITS"
 toc: true
 auto_toc: true
+date: 2025-01-02
 ---
 
 # Contact Information
