@@ -42,19 +42,16 @@ Office hours (optional) are Saturday, 8am-9am WIB. During this time, feel free t
 
 ## Textbooks {#textbooks}
 
-NO required textbook for this course. I will provide reading materials in MyITS classrooms from chapters of the book we are currently preparing for this course. It is useful to consult materials from the following sources:
+NO required textbook for this course. I will provide reading materials in MyITS classrooms from chapters of the book we are currently preparing for this course. 
+
+It is useful to consult materials from the following sources from time to time:
 
 1. Algorithms for Optimization (M. J. Kochenderfer and T. A. Wheeler) textbook ([chapters available for free](https://algorithmsbook.com/optimization/)), 
 2. Algorithms for Decision Making (Mykel J. Kochenderfer, Tim A. Wheeler, and Kyle H. Wray) [available for free](https://algorithmsbook.com/#download).
 
-A great additional resource is the Engineering Design Optimization (Joaquim Martins and Andrew Ning) [also available for free](http://websites.umich.edu/~mdolaboratory/pdf/Martins2021.pdf).
+A great additional resource is the Engineering Design Optimization (Joaquim Martins and Andrew Ning) [also available for free](http://websites.umich.edu/~mdolaboratory/pdf/Martins2021.pdf). 
 
-## Other Resources {#other-resources}
-
-- [Jupyter Notebook Examples](https://drive.google.com/drive/folders/16iH4A39rBLvV7AHJK97SuMvefr3EGzx0?usp=sharing)
-- [Prescriptive Analytics Project (Book Draft)](https://drive.google.com/file/d/1etdEPF0Sk_IZ1FpGHhg0sevBoPK0kMnE/view?usp=drive_link)
-- [Project Webpage Template](https://colab.research.google.com/drive/1jC-uPCJsBEE-OUNbxAqs9MYOjy45zyCu?usp=sharing)
-- Previous Projects Gallery
+Check out also the [Resources](/resources) page for other relevant resources.
 
 ## Grading and assignments {#grading}
 
