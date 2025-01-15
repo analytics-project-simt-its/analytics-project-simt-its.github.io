@@ -2,7 +2,7 @@
 title: Analytics Project
 description: The webpage for Analytics Projects course at the SIMT ITS
 baseurl: ""
-url: "https://analytics-project-simt-its.github.io"
+url: "https://analyticsprojects.id"
 
 # Build settings
 markdown: kramdown
