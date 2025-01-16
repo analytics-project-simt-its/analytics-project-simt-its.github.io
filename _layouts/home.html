@@ -1,6 +1,74 @@
----
-layout: page
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} | {{ page.subtitle }}</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="{{ page.description | default: 'Course page for ' | append: page.title | append: ' at ' | append: page.subtitle }}">
+    <meta name="author" content="{{ page.instructor | default: site.author }}">
+    <meta name="keywords" content="{{ page.keywords | default: page.title | append: ', ' | append: page.subtitle | append: ', course, education' }}">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="{{ page.title }} | {{ page.subtitle }}">
+    <meta property="og:description" content="{{ page.description | default: 'Course page for ' | append: page.title | append: ' at ' | append: page.subtitle }}">
+    <meta property="og:image" content="{{ page.og_image | default: 'https://mansurarief.github.io/assets/img/simt-header.png' }}">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ page.title }} | {{ page.subtitle }}">
+    <meta name="twitter:description" content="{{ page.description | default: 'Course page for ' | append: page.title | append: ' at ' | append: page.subtitle }}">
+    <meta name="twitter:image" content="{{ page.og_image | default: 'https://mansurarief.github.io/assets/img/simt-header.png' }}">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/css/course.css">
 
-{{ content }}
+    <!-- Schema.org markup for Google -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": "{{ page.title }}",
+        "description": "{{ page.description }}",
+        "provider": {
+            "@type": "Organization",
+            "name": "{{ page.subtitle }}",
+            "sameAs": "https://www.its.ac.id/"
+        },
+        "instructor": {
+            "@type": "Person",
+            "name": "{{ page.instructor }}"
+        }
+    }
+    </script>
 
+    <!-- Override the default grid template columns -->
+    <style>
+        body {
+            grid-template-columns: none !important;
+        }
+        .breadcrumbs {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+    {% include header.html %}
+
+    <main id="main-content" class="main-content" role="main" tabindex="-1">
+        <div class="table-wrapper">
+            {{ content | replace: '<table>', '<table class="table-schedule">' | 
+            replace: '<td style="text-align: left">', '<td style="text-align: left" data-label="Assignment">' |
+            replace: '<td style="text-align: center">', '<td style="text-align: center" data-label="Weight">' |
+            replace: '<td style="text-align: center">', '<td style="text-align: center" data-label="Cumulative">' }}
+        </div>
+    </main>
+
+    {% include footer.html %}
+</body>
+</html> 

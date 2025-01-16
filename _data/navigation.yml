@@ -1,6 +1,8 @@
 main:
   - title: Home
     url: /
+  - title: Course
+    url: /course
   - title: Past Courses
     url: /past-courses
   - title: Resources
