@@ -139,7 +139,7 @@ function authenticate(event) {
     const authString = btoa(`${username}:${password}`);
     
     // Valid hashes loaded during build time
-    const validHashes = ["ZGVtbzpwb2x5dGFtYTIwMjU=","YWRtaW46VGltUHJvZkl3YW4yMDI1IQ==","bWluc3VyOmlUczIwMjU="];
+    const validHashes = ["cG9seXRhbWE6RGVtbzIwMjU=","YWRtaW46VGltUHJvZkl3YW4yMDI1"];
     
     if (validHashes.includes(authString)) {
         document.getElementById('loginForm').style.display = 'none';

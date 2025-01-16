@@ -11,6 +11,5 @@ styles:
 # Hashed credentials (username:password pairs)
 auth:
   valid_hashes:
-    - "ZGVtbzpwb2x5dGFtYTIwMjU="  # demo:polytama2025
-    - "YWRtaW46VGltUHJvZkl3YW4yMDI1IQ=="  # admin:TimProfIwan2025! 
-    - "bWluc3VyOmlUczIwMjU="  # mansur:ITS2025
+    - "cG9seXRhbWE6RGVtbzIwMjU="  # polytama:Demo2025
+    - "YWRtaW46VGltUHJvZkl3YW4yMDI1"  # admin:TimProfIwan2025
