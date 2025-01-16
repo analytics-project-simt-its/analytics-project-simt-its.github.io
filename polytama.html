@@ -1,0 +1,78 @@
+---
+layout: full-width-demo
+title: Optimal Production Planning
+subtitle: Polytama - ITS 
+description: Optimal production planning demo project for Polytama, led by Prof. Iwan Vanany and Mansur M. Arief's team
+date: 2025-01-15
+toc: false
+---
+
+<!-- Add Font Awesome for the search icon -->
+<link rel="stylesheet" href="{{ site.data.src_demo.styles.font_awesome }}">
+
+<div class="page-container">
+    <div class="login-container" id="loginForm">
+        <h2>Login</h2>
+        <form class="login-form" onsubmit="return authenticate(event)">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+        <p class="error-message" id="errorMessage">Invalid username or password</p>
+    </div>
+
+    <div class="app-container" id="appContainer">
+        <button class="logout-button" onclick="logout()">Logout</button>
+        <script
+            type="module"
+            src="{{ site.data.src_demo.gradio.js_src }}"
+        ></script>
+
+        <gradio-app
+            src="{{ site.data.src_demo.gradio.app_src }}"
+            eager="{{ site.data.src_demo.gradio.eager }}"
+            initial_height="{{ site.data.src_demo.gradio.initial_height }}"
+        ></gradio-app>
+    </div>
+</div>
+
+<script>
+function authenticate(event) {
+    event.preventDefault();
+    
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+    const authString = btoa(`${username}:${password}`);
+    
+    // Valid hashes loaded during build time
+    const validHashes = {{ site.data.src_demo.auth.valid_hashes | jsonify }};
+    
+    if (validHashes.includes(authString)) {
+        document.getElementById('loginForm').style.display = 'none';
+        document.getElementById('appContainer').style.display = 'block';
+        document.getElementById('errorMessage').style.display = 'none';
+        // Store auth state (but not credentials)
+        sessionStorage.setItem('authenticated', 'true');
+    } else {
+        document.getElementById('errorMessage').style.display = 'block';
+    }
+    
+    return false;
+}
+
+function logout() {
+    sessionStorage.removeItem('authenticated');
+    document.getElementById('loginForm').style.display = 'block';
+    document.getElementById('appContainer').style.display = 'none';
+    document.getElementById('username').value = '';
+    document.getElementById('password').value = '';
+}
+
+// Check if user is already authenticated
+window.onload = function() {
+    if (sessionStorage.getItem('authenticated') === 'true') {
+        document.getElementById('loginForm').style.display = 'none';
+        document.getElementById('appContainer').style.display = 'block';
+    }
+}
+</script>

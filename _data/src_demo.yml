@@ -1,0 +1,16 @@
+# Demo source configurations
+gradio:
+  js_src: https://gradio.s3-us-west-2.amazonaws.com/5.9.1/gradio.js
+  app_src: https://56e21e83b44a0fcfe2.gradio.live/
+  initial_height: 0px
+  eager: true
+
+styles:
+  font_awesome: https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css
+
+# Hashed credentials (username:password pairs)
+auth:
+  valid_hashes:
+    - "ZGVtbzpwb2x5dGFtYTIwMjU="  # demo:polytama2025
+    - "YWRtaW46VGltUHJvZkl3YW4yMDI1IQ=="  # admin:TimProfIwan2025! 
+    - "bWluc3VyOmlUczIwMjU="  # mansur:ITS2025
