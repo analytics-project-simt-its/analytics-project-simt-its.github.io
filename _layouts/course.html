@@ -46,6 +46,20 @@
         }
     }
     </script>
+    {% if page.fullwidth %}
+    <style>
+        body {
+            grid-template-columns: none !important;
+        }
+    </style>
+    {% endif %}
+    {% if page.hidebreadcrumbs %}
+    <style>
+        .breadcrumbs {
+            display: none !important;
+        }
+    </style>
+    {% endif %}
 </head>
 <body>
     {% include header.html %}

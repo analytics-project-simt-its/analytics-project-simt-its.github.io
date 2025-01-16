@@ -6,6 +6,7 @@ description: "Archive of previous Analytics Project courses at SIMT ITS"
 keywords: "analytics project, course history, SIMT ITS, data science education"
 toc: false
 auto_toc: false
+fullwidth: true
 ---
 # Past Courses
 

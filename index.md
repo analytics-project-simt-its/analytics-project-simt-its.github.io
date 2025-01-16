@@ -8,6 +8,7 @@ instructor: "Mansur M. Arief"
 og_image: "https://mansurarief.github.io/assets/img/simt-header.png"
 last_updated: "Jan 15, 2025"
 date: 2025-01-15
+hidebreadcrumbs: true
 ---
 
 <style>

@@ -58,26 +58,31 @@ This page contains various resources to support your learning in the Analytics P
 
 ### 4.2 Tutorials
 
-**OptimizationModeling**
+Tutorials are great way to get hands-on experience with the concepts and tools we'll be using in the course.
 
-- Sets Definition [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/analytics-project-simt-its/analytics-project-simt-its.github.io/blob/main/notebooks/1_Set_Definition.ipynb)
-- Decision Variables Definition [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/analytics-project-simt-its/analytics-project-simt-its.github.io/blob/main/notebooks/2_Decision_Variables_Definition.ipynb)
-- Parameter Definition [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/analytics-project-simt-its/analytics-project-simt-its.github.io/blob/main/notebooks/3_Parameters_Definition.ipynb)
-- Expressions Definition [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/analytics-project-simt-its/analytics-project-simt-its.github.io/blob/main/notebooks/4_Expressions_Definition.ipynb)
-- Objective Function Definition [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/analytics-project-simt-its/analytics-project-simt-its.github.io/blob/main/notebooks/5_Objective_Function_Definition.ipynb)
-- Constraints Definition [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/analytics-project-simt-its/analytics-project-simt-its.github.io/blob/main/notebooks/6_Constraints_Definition.ipynb)
+- **Optimization Modeling**
 
-**Verification & Validation**
+    - Sets Definition [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/analytics-project-simt-its/analytics-project-simt-its.github.io/blob/main/notebooks/1_Set_Definition.ipynb)
+    - Decision Variables Definition [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/analytics-project-simt-its/analytics-project-simt-its.github.io/blob/main/notebooks/2_Decision_Variables_Definition.ipynb)
+    - Parameter Definition [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/analytics-project-simt-its/analytics-project-simt-its.github.io/blob/main/notebooks/3_Parameters_Definition.ipynb)
+    - Expressions Definition [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/analytics-project-simt-its/analytics-project-simt-its.github.io/blob/main/notebooks/4_Expressions_Definition.ipynb)
+    - Objective Function Definition [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/analytics-project-simt-its/analytics-project-simt-its.github.io/blob/main/notebooks/5_Objective_Function_Definition.ipynb)
+    - Constraints Definition [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/analytics-project-simt-its/analytics-project-simt-its.github.io/blob/main/notebooks/6_Constraints_Definition.ipynb)
 
-- Verification & Validation [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/analytics-project-simt-its/analytics-project-simt-its.github.io/blob/main/notebooks/Verification_Validation.ipynb)
+<!-- - **Data Preprocessing (TBA)** -->
 
-**Prototyping and Deployment (TBA)**
+- **Verification & Validation** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/analytics-project-simt-its/analytics-project-simt-its.github.io/blob/main/notebooks/Verification_Validation.ipynb)
+
+<!-- - **Benchmarking (TBA)** -->
+
+<!-- - **Prototyping (TBA)** -->
 
 ## 5. Past Projects
 
 - [Project Template](https://colab.research.google.com/drive/1jC-uPCJsBEE-OUNbxAqs9MYOjy45zyCu?usp=sharing) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1jC-uPCJsBEE-OUNbxAqs9MYOjy45zyCu?usp=sharing)
 - [2024 Gasal Project Galleries](/past-courses/2024-gasal/gallery)
 - [2024 Genap Project Gallery](/past-courses/2024-genap/gallery)
+- [Polytama-ITS Demo](/polytama)🔒
 
 ## 6. Open-source Modeling Tools
 

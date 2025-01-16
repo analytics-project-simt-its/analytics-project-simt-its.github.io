@@ -13,7 +13,7 @@ date: 2025-01-02
 
 ## Email
 
-The best way to reach me is via email:  **mansur.maturidi@its.ac.id**
+The best way to reach me is via email:  **mansur (dot) maturidi (at) its (dot) ac (dot) id**
 
 ## Office Hours
 

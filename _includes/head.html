@@ -42,3 +42,19 @@
 {% if page.layout == 'gallery' %}
 <link rel="stylesheet" href="/assets/css/gallery.css">
 {% endif %}
+
+{% if page.fullwidth %}
+<style>
+    body {
+        grid-template-columns: none !important;
+    }
+</style>
+{% endif %}
+
+{% if page.hidebreadcrumbs %}
+<style>
+    .breadcrumbs {
+        display: none !important;
+    }
+</style>
+{% endif %}

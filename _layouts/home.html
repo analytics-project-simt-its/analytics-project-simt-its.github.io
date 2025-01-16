@@ -52,9 +52,11 @@
         body {
             grid-template-columns: none !important;
         }
+        {% if page.hidebreadcrumbs %}
         .breadcrumbs {
             display: none !important;
         }
+        {% endif %}
     </style>
 </head>
 <body>
