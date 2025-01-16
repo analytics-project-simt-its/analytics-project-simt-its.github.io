@@ -58,12 +58,22 @@ This page contains various resources to support your learning in the Analytics P
 
 ### 4.2 Tutorials
 
+**OptimizationModeling**
+
 - [Sets Definition](/notebooks/1_Set_Definition.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/analytics-project-simt-its/analytics-project-simt-its.github.io/blob/main/notebooks/1_Set_Definition.ipynb)
 - [Decision Variables Definition](/notebooks/2_Decision_Variables_Definition.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/analytics-project-simt-its/analytics-project-simt-its.github.io/blob/main/notebooks/2_Decision_Variables_Definition.ipynb)
 - [Parameter Definition](/notebooks/3_Parameters_Definition.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/analytics-project-simt-its/analytics-project-simt-its.github.io/blob/main/notebooks/3_Parameters_Definition.ipynb)
 - [Expressions Definition](/notebooks/4_Expressions_Definition.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/analytics-project-simt-its/analytics-project-simt-its.github.io/blob/main/notebooks/4_Expressions_Definition.ipynb)
 - [Objective Function Definition](/notebooks/5_Objective_Function_Definition.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/analytics-project-simt-its/analytics-project-simt-its.github.io/blob/main/notebooks/5_Objective_Function_Definition.ipynb)
 - [Constraints Definition](/notebooks/6_Constraints_Definition.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/analytics-project-simt-its/analytics-project-simt-its.github.io/blob/main/notebooks/6_Constraints_Definition.ipynb)
+
+**Verification & Validation**
+
+- [Verification & Validation](/notebooks/verification_and_validation.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/analytics-project-simt-its/analytics-project-simt-its.github.io/blob/main/notebooks/verification_and_validation.ipynb)
+
+**Prototyping and Deployment (TBA)**
+
+**Monitoring (TBA)**
 
 ## 5. Past Projects
 

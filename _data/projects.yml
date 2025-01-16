@@ -44,18 +44,20 @@
 
 - semester: "2024-gasal"
   projects:
-    - id: "contoh-project"
-      title: "Project Title"
-      description: "This is a short description of the project, it should be a few sentences long."
+    - id: "portfolio-stock-optimization"
+      title: "Investment Portfolio Optimization"
+      description: "Portfolio stock optimization is a crucial task for investors to maximize returns while minimizing risk. The goal is to optimize the allocation of funds across different stocks to achieve the highest return on investment (ROI). The challenge lies in balancing the risk and return of each stock while ensuring that the overall portfolio is well-diversified and aligned with the investor's risk tolerance and investment goals."
       # team_lead: "Alex Johnson"
       team_members:
-        - "Member 1"
-        - "Member 2"
-        - "Member 3"
-      main_image: "/assets/img/img-placeholder.webp"
+        - "Kurniadi Ahmad Wijaya"
+        - "Thania Muhammad"
+        - "Dimas Noviar Setiawan"
+        - "Franky Napitupulu"
+        - "Bangkit Hernawanto"
+      main_image: "/assets/img/portfolio-stock-optimization.png"
       links:
-        code: "#"
-        report: "#"
-        webpage: "#"
-      tags: ["supply chain", "gradio", "optimization", "MILP", "Gurobi"]
+        code: "https://colab.research.google.com/drive/1mcKFb3FfPppB99HHeTEMeksfS7kM4UGu?usp=sharing"
+        #report: "#"
+        webpage: "https://github.com/ShinyQ/Streamlit_Stock-Allocation-Optimization-SLSQP"
+      tags: ["finance", "investment", "slsqp", "streamlit"]
       status: "completed" 

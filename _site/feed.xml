@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Analytics Project</title>
-    <description>Course page for Analytics Project at SIMT ITS</description>
+    <description>The webpage for Analytics Projects course at the SIMT ITS</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 03 Jan 2025 12:00:05 -0800</pubDate>
-    <lastBuildDate>Fri, 03 Jan 2025 12:00:05 -0800</lastBuildDate>
+    <pubDate>Wed, 15 Jan 2025 22:56:54 -0800</pubDate>
+    <lastBuildDate>Wed, 15 Jan 2025 22:56:54 -0800</lastBuildDate>
     <generator>Jekyll v3.9.3</generator>
     
     
@@ -168,7 +168,7 @@
       <item>
         <title>Past Courses</title>
         <description>Archive of previous Analytics Project courses at SIMT ITS</description>
-        <pubDate>Fri, 03 Jan 2025 12:00:05 -0800</pubDate>
+        <pubDate>Wed, 15 Jan 2025 22:56:54 -0800</pubDate>
         <link>http://localhost:4000/past-courses/</link>
         <guid isPermaLink="true">http://localhost:4000/past-courses/</guid>
         
@@ -188,7 +188,7 @@
       <item>
         <title>Page Not Found</title>
         <description>404 error - page not found</description>
-        <pubDate>Fri, 03 Jan 2025 12:00:05 -0800</pubDate>
+        <pubDate>Wed, 15 Jan 2025 22:56:54 -0800</pubDate>
         <link>http://localhost:4000/404.html</link>
         <guid isPermaLink="true">http://localhost:4000/404.html</guid>
         
