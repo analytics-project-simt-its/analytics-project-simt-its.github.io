@@ -75,7 +75,8 @@ Tutorials are great way to get hands-on experience with the concepts and tools w
 
 <!-- - **Benchmarking (TBA)** -->
 
-<!-- - **Prototyping (TBA)** -->
+- **Prototyping** 
+    - Building a demo in Gradio [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/analytics-project-simt-its/analytics-project-simt-its.github.io/blob/main/notebooks/Prototyping_Gradio.ipynb)
 
 ## 5. Past Projects
 
