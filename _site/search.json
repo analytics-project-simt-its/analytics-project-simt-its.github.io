@@ -51,6 +51,14 @@
       },
     
       {
+        "title": "Demos",
+        "content": "DemosCheckout these public demos we have hosted on Hugging Face:  PPC Demo with Gradio  PPC Demo with Streamlit",
+        "description": "Demos for projects we do outside of the course.",
+        "url": "/demos/",
+        "category": null
+      },
+    
+      {
         "title": "Past Courses",
         "content": "Past CoursesBrowse through our previous Analytics Project courses. Each semester brings unique projects and learning experiences.            Analytics Projects, Gasal 2024 (I) - Part 2      2024 Gasal      A graduate course on prescriptive analytics approaches, focusing on optimization and decision-making algorithms through hands-on group projects.              21 Students        5 Projects            Course Details      Project Gallery                  Analytics Projects, Genap 2024 (U) - Part 2      2024 Genap      The main instructor's first run of the course at SIMT ITS, focusing on building infrastructure for prescriptive analytics approaches with Python.              19 Students        5 Projects            Course Details      Project Gallery      ",
         "description": "Archive of previous Analytics Project courses at SIMT ITS",
@@ -75,8 +83,24 @@
       },
     
       {
+        "title": "Prototyping with Gradio",
+        "content": "    ",
+        "description": "A demo of a production planning model using Gradio",
+        "url": "/demos/ppc_demo_gradio/",
+        "category": null
+      },
+    
+      {
+        "title": "Prototyping with Streamlit",
+        "content": "    ",
+        "description": "A demo of a production planning model using Streamlit",
+        "url": "/demos/ppc_demo_streamlit/",
+        "category": null
+      },
+    
+      {
         "title": "Resources",
-        "content": "Course ResourcesThis page contains various resources to support your learning in the Analytics Project course. The resources are organized into categories for easy navigation.1. Theory &amp; Concepts  Algorithms for Optimization - Free online textbook by M. J. Kochenderfer and T. A. Wheeler  Algorithms for Decision Making - Free online textbook by M. J. Kochenderfer, T. A. Wheeler, and K. H. Wray  Engineering Design Optimization - Free textbook by J. Martins and A. Ning  Prescriptive Analytics Project Book - Course book draft2. Lectures2.1 Slides  2024 Course Overview  2024 Optimization Modeling2.2 Recordings  Available in MyITS Classroom (requires login)3. Assignments &amp; Guidelines  Project Proposal Guidelines  Peer Review Guidelines  Midterm Report Guidelines  Final Report Guidelines  Final Presentation Guidelines  AI Usage and Reflection Form4. Model Examples4.1 Optimization Models      Mixed integer linear optimization with Pyomo and GLPK         Mixed integer linear programming with Pyomo and Gurobi         Surrogate objective optimization with ZOOpt         Simple 1D nonlinear optimization with Pyomo and Ipopt         Simple 2D nonlinear optimization with Pyomo and Ipopt         Nonlinear optimization with ZOOpt   4.2 TutorialsTutorials are great way to get hands-on experience with the concepts and tools we’ll be using in the course.      Optimization Modeling          Sets Definition       Decision Variables Definition       Parameter Definition       Expressions Definition       Objective Function Definition       Constraints Definition         Verification &amp; Validation   Prototyping          Building a demo in Gradio       5. Past Projects  Project Template   2024 Gasal Project Galleries  2024 Genap Project Gallery  Polytama-ITS Demo🔒6. Open-source Modeling Tools6.1 Python Packages  Pyomo - Optimization modeling language  PuLP - Linear programming toolkit  CVXPY - Convex optimization  OR-Tools - Google’s optimization suite  PyTorch - Machine learning framework6.2 Julia Packages  JuMP.jl - Mathematical optimization in Julia  Optim.jl - Optimization package  Flux.jl - Machine learning library  POMDPs.jl - POMDP and MDP tools7. Solvers  GLPK - Linear programming solver  Gurobi - Optimization solver  Ipopt - Nonlinear programming solver  CPLEX - Optimization solver  Bonmin - Nonlinear programming solver  Couenne - Nonlinear programming solver8. FAQs  What is “reflections” for?  Who is this course for?",
+        "content": "Course ResourcesThis page contains various resources to support your learning in the Analytics Project course. The resources are organized into categories for easy navigation.1. Theory &amp; Concepts  Algorithms for Optimization - Free online textbook by M. J. Kochenderfer and T. A. Wheeler  Algorithms for Decision Making - Free online textbook by M. J. Kochenderfer, T. A. Wheeler, and K. H. Wray  Engineering Design Optimization - Free textbook by J. Martins and A. Ning  Prescriptive Analytics Project Book - Course book draft2. Lectures2.1 Slides  2024 Course Overview  2024 Optimization Modeling2.2 Recordings  Available in MyITS Classroom (requires login)3. Assignments &amp; Guidelines  Project Proposal Guidelines  Peer Review Guidelines  Midterm Report Guidelines  Final Report Guidelines  Final Presentation Guidelines  AI Usage and Reflection Form4. Model Examples4.1 Optimization Models      Mixed integer linear optimization with Pyomo and GLPK         Mixed integer linear programming with Pyomo and Gurobi         Surrogate objective optimization with ZOOpt         Simple 1D nonlinear optimization with Pyomo and Ipopt         Simple 2D nonlinear optimization with Pyomo and Ipopt         Nonlinear optimization with ZOOpt   4.2 TutorialsTutorials are great way to get hands-on experience with the concepts and tools we’ll be using in the course.      Optimization Modeling          Sets Definition       Decision Variables Definition       Parameter Definition       Expressions Definition       Objective Function Definition       Constraints Definition         Verification &amp; Validation   Prototyping          Building a demo in Gradio       5. Past Projects  Project Template   2024 Gasal Project Galleries  2024 Genap Project Gallery  Polytama-ITS Demo🔒  Demos          PPC Demo with Gradio      PPC Demo with Streamlit      6. Open-source Modeling Tools6.1 Python Packages  Pyomo - Optimization modeling language  PuLP - Linear programming toolkit  CVXPY - Convex optimization  OR-Tools - Google’s optimization suite  PyTorch - Machine learning framework6.2 Julia Packages  JuMP.jl - Mathematical optimization in Julia  Optim.jl - Optimization package  Flux.jl - Machine learning library  POMDPs.jl - POMDP and MDP tools7. Solvers  GLPK - Linear programming solver  Gurobi - Optimization solver  Ipopt - Nonlinear programming solver  CPLEX - Optimization solver  Bonmin - Nonlinear programming solver  Couenne - Nonlinear programming solver8. FAQs  What is “reflections” for?  Who is this course for?",
         "description": "Resources for Analytics Project course at SIMT ITS, including theory, lectures, assignments, examples, and tools.",
         "url": "/resources/",
         "category": null

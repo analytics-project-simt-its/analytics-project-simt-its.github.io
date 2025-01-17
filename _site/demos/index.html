@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demos | SIMT ITS</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Demos for projects we do outside of the course.Demos at SIMT ITS">
+    <meta name="author" content="">
+    <meta name="keywords" content="analytics project, demos, projects, SIMT ITS, SIMT ITS, course, education">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Demos | SIMT ITS">
+    <meta property="og:description" content="Demos for projects we do outside of the course.Demos at SIMT ITS">
+    <meta property="og:image" content="https://mansurarief.github.io/assets/img/simt-header.png">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Demos | SIMT ITS">
+    <meta name="twitter:description" content="Demos for projects we do outside of the course.Demos at SIMT ITS">
+    <meta name="twitter:image" content="https://mansurarief.github.io/assets/img/simt-header.png">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/css/course.css">
+
+    <!-- Schema.org markup for Google -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": "Demos",
+        "description": "Demos for projects we do outside of the course.",
+        "provider": {
+            "@type": "Organization",
+            "name": "SIMT ITS",
+            "sameAs": "https://www.its.ac.id/"
+        },
+        "instructor": {
+            "@type": "Person",
+            "name": ""
+        }
+    }
+    </script>
+    
+    <style>
+        body {
+            grid-template-columns: none !important;
+        }
+    </style>
+    
+    
+</head>
+<body>
+    <!-- TODO this file has become a mess, refactor it -->
+
+
+
+
+
+
+
+<!-- Skip link for keyboard users -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header class="site-header" role="banner">
+    <div class="site-logo">
+        <a href="/" aria-label="Home">
+            <img src="https://mansurarief.github.io/assets/img/simt-header.png" alt="SIMT ITS Logo" width="200" height="60">
+        </a>
+    </div>
+
+    <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">
+        <span class="sr-only">Toggle menu</span>
+        <svg width="24" height="24" aria-hidden="true" focusable="false">
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+        </svg>
+    </button>
+
+    <!-- Add Font Awesome for the search icon -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<nav class="main-nav" id="main-nav" role="navigation" aria-label="Main navigation">
+    <ul>
+        
+        <li><a href="/">Home</a></li>
+        
+        <li><a href="/course">Course</a></li>
+        
+        <li><a href="/past-courses">Past Courses</a></li>
+        
+        <li><a href="/resources">Resources</a></li>
+        
+        <li><a href="/contact">Contact</a></li>
+        
+        <li><a href="/search" aria-label="Search"><i class="fas fa-search"></i></a></li>
+    </ul>
+</nav>
+
+<style>
+.main-nav .fa-search {
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+.main-nav a:hover .fa-search {
+    color: var(--accent-color);
+}
+</style>
+
+</header>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+        <li><a href="/">HOME</a></li>
+        
+        
+        
+        
+            
+                
+                
+                
+                    <li aria-current="page">DEMOS</li>
+                
+            
+        
+    </ol>
+</nav>
+
+
+
+
+    <main id="main-content" class="main-content" role="main" tabindex="-1">
+        <div class="table-wrapper">
+            <h1 id="demos">Demos</h1>
+
+<p>Checkout these public demos we have hosted on Hugging Face:</p>
+
+<ul>
+  <li><a href="/demos/ppc_demo_gradio">PPC Demo with Gradio</a></li>
+  <li><a href="/demos/ppc_demo_streamlit">PPC Demo with Streamlit</a></li>
+</ul>
+
+        </div>
+    </main>
+
+    
+
+    <footer class="footer" role="contentinfo">
+    <nav aria-label="Footer navigation">
+        <p>
+            
+            <a href="/">Home</a> | 
+            
+            <a href="/course">Course</a> | 
+            
+            <a href="/past-courses">Past Courses</a> | 
+            
+            <a href="/resources">Resources</a> | 
+            
+            <a href="/contact">Contact</a>
+            
+        </p>
+    </nav>
+    <p>© 2025 SIMT ITS. Created with Jekyll.</p>
+    <p>Last updated: Jan 16, 2025</p>
+</footer>
+
+<script>
+    // Mobile menu toggle
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
+        const nav = document.querySelector('.main-nav');
+        const expanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !expanded);
+        nav.classList.toggle('active');
+    });
+</script>
+
+</body>
+</html> 

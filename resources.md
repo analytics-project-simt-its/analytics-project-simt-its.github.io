@@ -84,6 +84,9 @@ Tutorials are great way to get hands-on experience with the concepts and tools w
 - [2024 Gasal Project Galleries](/past-courses/2024-gasal/gallery)
 - [2024 Genap Project Gallery](/past-courses/2024-genap/gallery)
 - [Polytama-ITS Demo](/polytama)🔒
+- [Demos](/demos)
+    - [PPC Demo with Gradio](/demos/ppc_demo_gradio)
+    - [PPC Demo with Streamlit](/demos/ppc_demo_streamlit)
 
 ## 6. Open-source Modeling Tools
 
