@@ -83,10 +83,12 @@ Tutorials are great way to get hands-on experience with the concepts and tools w
 - [Project Template](https://colab.research.google.com/drive/1jC-uPCJsBEE-OUNbxAqs9MYOjy45zyCu?usp=sharing) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1jC-uPCJsBEE-OUNbxAqs9MYOjy45zyCu?usp=sharing)
 - [2024 Gasal Project Galleries](/past-courses/2024-gasal/gallery)
 - [2024 Genap Project Gallery](/past-courses/2024-genap/gallery)
-- [Polytama-ITS Demo](/polytama)🔒
 - [Demos](/demos)
+    - [Polytama-ITS Demo](/polytama)🔒 (access restricted)
     - [PPC Demo with Gradio](/demos/ppc_demo_gradio)
     - [PPC Demo with Streamlit](/demos/ppc_demo_streamlit)
+    - [Stock Portfolio Demo with Streamlit](https://stock-optimization-slsqp-group2.streamlit.app/)
+
 
 ## 6. Open-source Modeling Tools
 
