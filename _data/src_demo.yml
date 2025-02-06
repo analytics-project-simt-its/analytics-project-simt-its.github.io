@@ -1,7 +1,7 @@
 # Demo source configurations
 gradio:
   js_src: https://gradio.s3-us-west-2.amazonaws.com/5.9.1/gradio.js
-  app_src: https://22de1d319a02cb7acc.gradio.live
+  app_src: https://7421360c0868432e90.gradio.live/
   initial_height: 0px
   eager: true
 
