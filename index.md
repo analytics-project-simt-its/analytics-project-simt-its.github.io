@@ -6,8 +6,8 @@ description: "AnalyticsProjects.id is a platform for students to learn and apply
 keywords: "analytics project, prescriptive analytics, optimization, decision-making, SIMT ITS, data science, AnalyticsProjects.id"
 instructor: "Mansur M. Arief"
 og_image: "https://mansurarief.github.io/assets/img/simt-header.png"
-last_updated: "Jan 15, 2025"
-date: 2025-01-15
+last_updated: "Feb 18, 2025"
+date: 2025-02-18
 hidebreadcrumbs: true
 ---
 

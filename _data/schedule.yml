@@ -1,5 +1,5 @@
-- week: 9
-  date: "-"
+- week: 1
+  date: "28/02"
   details:
     - name: "Class Overview"
       link: "#"
@@ -8,17 +8,19 @@
       link: "#"
       type: "L"
   assignment: "-"
+  assignment_link: ""
 
-- week: 10
-  date: "-"
+- week: 2
+  date: "07/03"
   details:
     - name: "Optimization Modeling"
       link: "#"
       type: "L"
   assignment: "Reflection 1"
+  assignment_link: "https://forms.gle/NjzMwFMCCvCRMMym6"
 
-- week: 11
-  date: "-"
+- week: 3
+  date: "14/03"
   details:
     - name: "Data Collection and Processing"
       link: "#"
@@ -26,9 +28,10 @@
     - name: "Discussion"
       type: "O"
   assignment: "-"
+  assignment_link: ""
 
-- week: 12
-  date: "-"
+- week: 4
+  date: "21/03"
   details:
     - name: "V&V"
       link: "#"
@@ -36,9 +39,10 @@
     - name: "Proposal Presentation"
       type: "P"
   assignment: "Midterm Report"
+  assignment_link: "https://classroom.its.ac.id/mod/assign/view.php?id=1249559"
 
-- week: 13
-  date: "-"
+- week: 5
+  date: "28/03"
   details:
     - name: "Benchmarking"
       link: "#"
@@ -46,9 +50,10 @@
     - name: "Proposal Presentation"
       type: "P"
   assignment: "Peer Review"
+  assignment_link: "https://forms.gle/GqFcsXHGD1XfeNST6"
 
-- week: 14
-  date: "-"
+- week: 6
+  date: "04/04"
   details:
     - name: "Prototyping"
       link: "#"
@@ -56,16 +61,18 @@
     - name: "Proposal Presentation"
       type: "P"
   assignment: "Midterm Feedback"
+  assignment_link: ""
 
-- week: 15
-  date: "-"
+- week: 7
+  date: "11/04"
   details:
     - name: "In-Class Workshops"
       type: "O"
   assignment: "-"
+  assignment_link: ""
 
-- week: 16
-  date: "-"
+- week: 8
+  date: "18/04"
   details:
     - name: "Final Presentation"
       type: "P"
@@ -73,13 +80,16 @@
       link: "#"
       type: "L"
   assignment: "Final Presentation"
+  assignment_link: "https://classroom.its.ac.id/mod/assign/view.php?id=1249564"
 
 - week: ""
   date: "-"
   details: []
   assignment: "Final Report"
+  assignment_link: "https://classroom.its.ac.id/mod/assign/view.php?id=1249562"
 
 - week: ""
   date: "-"
-  details: []
+  details: 
   assignment: "Reflection 2"
+  assignment_link: "https://forms.gle/JGZT4ka6U2XkEMeM6"

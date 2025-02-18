@@ -12,16 +12,16 @@ auto_toc: true
 date: 2025-01-03
 ---
 
-# Analytics Projects
+# Analytics Projects 2025 (PJJ/I)
 
-**Instructor(s)**: [Mansur M. Arief, Ph.D.](https://mansurarief.github.io/) (Week 9-16), [R. Mohamad Atok, Ph.D.](https://www.its.ac.id/statistika/dosen-staff/daftar-dosen/r-mohamad-atok/) (Week 1-8)
+**Instructor(s)**: [Mansur M. Arief, Ph.D.](https://mansurarief.github.io/) (Week 1-8), [R. Mohamad Atok, Ph.D.](https://www.its.ac.id/statistika/dosen-staff/daftar-dosen/r-mohamad-atok/) (Week 9-16)
 
 
-<div class="course-diagram">
+<!-- <div class="course-diagram">
 {% include_relative assets/svg/course-diagram.svg %}
-</div>
+</div> -->
 
-This graduate course digs into the application of analytics to projects based on (semi)realistic datasets, guided by theories and algorithmic principles. In Part 2 of the course, students will focus on **prescriptive analytics approaches** (including linear and nonlinear programming one-shot decisions as well as sequential decisions), with a particular emphasis on optimization and decision-making algorithms. Building on the foundations laid in Part 1 (descriptive and predictive analytics), the course continues to prioritize hands-on group projects. This approach creates a sandbox learning environment where students can collaboratively apply their skills in ideation, modeling, and communication to solve complex, real-world challenges.
+This graduate course digs into the application of analytics to projects based on (semi)realistic datasets, guided by theories and algorithmic principles. In Part 1 of the course, students will focus on **prescriptive analytics approaches** (including linear and nonlinear programming one-shot decisions as well as sequential decisions), with a particular emphasis on optimization and decision-making algorithms. In Part 2, students will focus on descriptive and predictive analytics approaches. This approach creates a sandbox learning environment where students can collaboratively apply their skills in ideation, modeling, and communication to solve complex, real-world challenges.
 
 ## Course objectives {#course-objectives}
 
@@ -39,7 +39,7 @@ Upon the completion of the course, the students are able to
 
 ## Office hours {#office-hours}
 
-Office hours (optional) are Saturday, 8am-9am WIB. During this time, feel free to use the **Office Hours** Zoom link to chat with me. If you want to meet with me outside of these hours, use this [calendar](https://mansurarief.github.io/calendar/).
+Office hours (optional) are Saturday, 9am-10am WIB. During this time, feel free to use the [**Office Hours** Zoom link](https://classroom.its.ac.id/mod/url/view.php?id=1249539) to chat with me. If you want to meet with me outside of these hours, use this [calendar](https://mansurarief.github.io/calendar/).
 
 ## Textbooks {#textbooks}
 
@@ -104,7 +104,13 @@ Please submit your assignments either by filling the form online or by uploading
           {% unless forloop.last %}, {% endunless %}
         {% endfor %}
       </td>
-      <td style="text-align: left">{{ week.assignment }}</td>
+      <td style="text-align: left">
+        {% if week.assignment_link != "" %}
+          <a href="{{ week.assignment_link }}">{{ week.assignment }}</a>
+        {% else %}
+          {{ week.assignment }}
+        {% endif %}
+      </td>
     </tr>
     {% endfor %}
   </tbody>
