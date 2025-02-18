@@ -1,11 +1,9 @@
 - week: 1
   date: "28/02"
   details:
-    - name: "Class Overview"
-      link: "#"
+    - name: "Overview"
       type: "L"
     - name: "Data-driven Modeling"
-      link: "#"
       type: "L"
   assignment: "-"
   assignment_link: ""
@@ -14,7 +12,6 @@
   date: "07/03"
   details:
     - name: "Optimization Modeling"
-      link: "#"
       type: "L"
   assignment: "Reflection 1"
   assignment_link: "https://forms.gle/NjzMwFMCCvCRMMym6"
@@ -22,8 +19,7 @@
 - week: 3
   date: "14/03"
   details:
-    - name: "Data Collection and Processing"
-      link: "#"
+    - name: "Data Strategy"
       type: "L"
     - name: "Discussion"
       type: "O"
@@ -34,7 +30,6 @@
   date: "21/03"
   details:
     - name: "V&V"
-      link: "#"
       type: "L"
     - name: "Proposal Presentation"
       type: "P"
@@ -44,41 +39,42 @@
 - week: 5
   date: "28/03"
   details:
+    - name: "No Class"
+      type: "Cuti Bersama"
+  assignment: "-"
+  assignment_link: ""
+
+- week: "-"
+  date: "04/04"
+  details:
+    - name: "No Class"
+      type: "Eid Holiday"
+  assignment: "-"
+  assignment_link: ""
+
+- week: 6
+  date: "11/04"
+  details:
     - name: "Benchmarking"
-      link: "#"
       type: "L"
     - name: "Proposal Presentation"
       type: "P"
   assignment: "Peer Review"
   assignment_link: "https://forms.gle/GqFcsXHGD1XfeNST6"
 
-- week: 6
-  date: "04/04"
-  details:
-    - name: "Prototyping"
-      link: "#"
-      type: "L"
-    - name: "Proposal Presentation"
-      type: "P"
-  assignment: "Midterm Feedback"
-  assignment_link: ""
-
 - week: 7
-  date: "11/04"
+  date: "18/04"
   details:
     - name: "In-Class Workshops"
       type: "O"
-  assignment: "-"
+  assignment: "Midterm Survey"
   assignment_link: ""
 
 - week: 8
-  date: "18/04"
+  date: "25/04"
   details:
     - name: "Final Presentation"
       type: "P"
-    - name: "Remarks"
-      link: "#"
-      type: "L"
   assignment: "Final Presentation"
   assignment_link: "https://classroom.its.ac.id/mod/assign/view.php?id=1249564"
 
