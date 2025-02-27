@@ -26,7 +26,7 @@ presentation_id: demo-123
 
 {% include slide_layouts/tufte_animated.html 
   title="Animated Slide with Image" 
-  image="/path/to/your/image.jpg"
+  image="/assets/img/hello_world.jpeg"
   image_alt="Description of the image"
   content="
 * First point with note <span class='sidenote'>This is the first sidenote that will appear with the point.</span>
