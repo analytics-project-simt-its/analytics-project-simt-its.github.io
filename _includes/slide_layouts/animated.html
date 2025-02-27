@@ -1,0 +1,117 @@
+<div class="slide slide-animated">
+  <div class="slide-header">
+    {% if include.title %}
+      <h2>{{ include.title }}</h2>
+    {% endif %}
+  </div>
+  
+  <div class="slide-body">
+    <div class="slide-content-main">
+      {{ include.content | markdownify }}
+    </div>
+  </div>
+  
+  {% if include.footnote %}
+    <div class="slide-footnote">
+      {{ include.footnote | markdownify }}
+    </div>
+  {% endif %}
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Process all animated slides
+    document.querySelectorAll('.slide-animated').forEach(function(slide) {
+      // Find all elements with the 'animate-item' class
+      let animatedItems = slide.querySelectorAll('.animate-item');
+      
+      // Also automatically animate list items if auto-animate is enabled
+      if (slide.classList.contains('auto-animate') || {{ include.auto_animate | default: true }}) {
+        // Find all lists
+        const lists = slide.querySelectorAll('ul, ol');
+        
+        lists.forEach(list => {
+          // Get all list items
+          const listItems = list.querySelectorAll('li');
+          
+          // Add animation class to each list item that doesn't already have it
+          listItems.forEach(item => {
+            if (!item.classList.contains('animate-item') && !item.classList.contains('no-animate')) {
+              item.classList.add('animate-item');
+            }
+          });
+        });
+        
+        // Update our collection of animated items
+        animatedItems = slide.querySelectorAll('.animate-item');
+      }
+      
+      // Function to reset animations
+      function resetAnimations() {
+        animatedItems.forEach(item => {
+          item.style.opacity = '0';
+          item.style.transform = 'translateY(10px)';
+          item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        });
+        slide.classList.remove('all-revealed');
+      }
+      
+      // Store the reset function on the slide element for external access
+      slide.resetAnimations = resetAnimations;
+      
+      // Initially hide all animated items
+      resetAnimations();
+      
+      // Add a click handler to the slide to reveal items one by one
+      slide.addEventListener('click', function() {
+        // Find the next hidden item
+        const nextItem = Array.from(animatedItems).find(item => 
+          item.style.opacity === '0' || parseFloat(item.style.opacity) < 0.5
+        );
+        
+        if (nextItem) {
+          nextItem.style.opacity = '1';
+          nextItem.style.transform = 'translateY(0)';
+          
+          // Check if all items are now revealed
+          const allRevealed = !Array.from(animatedItems).some(item => 
+            item.style.opacity === '0' || parseFloat(item.style.opacity) < 0.5
+          );
+          
+          if (allRevealed) {
+            slide.classList.add('all-revealed');
+          }
+        }
+      });
+      
+      // Also handle keyboard events for the entire document
+      document.addEventListener('keydown', function(e) {
+        // Only process if this slide is active
+        if (!slide.classList.contains('active')) return;
+        
+        // Space or right arrow reveals the next item
+        if (e.key === ' ' || e.key === 'ArrowRight') {
+          // Find the next hidden item
+          const nextItem = Array.from(animatedItems).find(item => 
+            item.style.opacity === '0' || parseFloat(item.style.opacity) < 0.5
+          );
+          
+          if (nextItem) {
+            e.preventDefault(); // Prevent default slide navigation
+            nextItem.style.opacity = '1';
+            nextItem.style.transform = 'translateY(0)';
+            
+            // Check if all items are now revealed
+            const allRevealed = !Array.from(animatedItems).some(item => 
+              item.style.opacity === '0' || parseFloat(item.style.opacity) < 0.5
+            );
+            
+            if (allRevealed) {
+              slide.classList.add('all-revealed');
+            }
+          }
+        }
+      });
+    });
+  });
+</script> 

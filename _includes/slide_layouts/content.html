@@ -1,0 +1,114 @@
+<div class="slide slide-content auto-animate">
+  <div class="slide-header">
+    {% if include.title %}
+      <h2>{{ include.title }}</h2>
+    {% endif %}
+  </div>
+  
+  <div class="slide-body">
+    <div class="slide-content-main">
+      {{ include.content | markdownify }}
+    </div>
+  </div>
+  
+  {% if include.footnote %}
+    <div class="slide-footnote">
+      {{ include.footnote | markdownify }}
+    </div>
+  {% endif %}
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Process all content slides with auto-animate
+    document.querySelectorAll('.slide-content.auto-animate').forEach(function(slide) {
+      // Find all lists
+      const lists = slide.querySelectorAll('ul, ol');
+      
+      if (lists.length > 0) {
+        // Create an array to store all items that should be animated
+        let animatedItems = [];
+        
+        // Process each list
+        lists.forEach(list => {
+          // Get all list items
+          const listItems = list.querySelectorAll('li');
+          
+          // Add each list item to our animation array
+          listItems.forEach(item => {
+            if (!item.classList.contains('no-animate')) {
+              animatedItems.push(item);
+            }
+          });
+        });
+        
+        // Function to reset animations
+        function resetAnimations() {
+          // Hide all animated items
+          animatedItems.forEach(item => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(10px)';
+            item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+          });
+          
+          // Add the indicator if we have items to animate
+          if (animatedItems.length > 0) {
+            slide.classList.add('has-animations');
+            slide.classList.remove('all-revealed');
+          }
+        }
+        
+        // Store the reset function on the slide element for external access
+        slide.resetAnimations = resetAnimations;
+        
+        // Initially hide all animated items
+        resetAnimations();
+        
+        // Track the current animation index
+        let currentAnimationIndex = 0;
+        
+        // Function to reveal the next item
+        function revealNextItem() {
+          if (currentAnimationIndex < animatedItems.length) {
+            const item = animatedItems[currentAnimationIndex];
+            item.style.opacity = '1';
+            item.style.transform = 'translateY(0)';
+            currentAnimationIndex++;
+            
+            // Check if all items are now revealed
+            if (currentAnimationIndex >= animatedItems.length) {
+              slide.classList.add('all-revealed');
+              slide.classList.remove('has-animations');
+            }
+            
+            return true; // Indicated we revealed an item
+          }
+          return false; // No more items to reveal
+        }
+        
+        // Add a click handler to the slide to reveal items one by one
+        slide.addEventListener('click', function(e) {
+          // Don't trigger if clicking on a link or button
+          if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
+            return;
+          }
+          
+          revealNextItem();
+        });
+        
+        // Also handle keyboard events for the entire document
+        document.addEventListener('keydown', function(e) {
+          // Only process if this slide is active
+          if (!slide.classList.contains('active')) return;
+          
+          // Space or right arrow reveals the next item
+          if (e.key === ' ' || e.key === 'ArrowRight') {
+            if (revealNextItem()) {
+              e.preventDefault(); // Prevent default slide navigation
+            }
+          }
+        });
+      }
+    });
+  });
+</script> 

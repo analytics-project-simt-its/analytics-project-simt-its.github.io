@@ -1,0 +1,102 @@
+<div class="slide slide-tufte">
+  <div class="slide-header">
+    {% if include.title %}
+      <h2>{{ include.title }}</h2>
+    {% endif %}
+  </div>
+  
+  <div class="slide-body">
+    <div class="slide-content-main">
+      {{ include.content | markdownify }}
+    </div>
+  </div>
+  
+  {% if include.footnote %}
+    <div class="slide-footnote">
+      {{ include.footnote | markdownify }}
+    </div>
+  {% endif %}
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Process all tufte slides
+    document.querySelectorAll('.slide-tufte').forEach(function(tufte) {
+      const slideContent = tufte.querySelector('.slide-content-main');
+      
+      if (slideContent) {
+        // Find all sidenotes in the content
+        const sidenotes = slideContent.querySelectorAll('.sidenote');
+        
+        if (sidenotes.length > 0) {
+          // Create a sidenotes container if it doesn't exist
+          let sidenotesContainer = tufte.querySelector('.slide-sidenotes');
+          if (!sidenotesContainer) {
+            sidenotesContainer = document.createElement('div');
+            sidenotesContainer.className = 'slide-sidenotes';
+            slideContent.parentNode.insertBefore(sidenotesContainer, slideContent.nextSibling);
+          }
+          
+          // Process each sidenote
+          sidenotes.forEach((sidenote, index) => {
+            // Create a number reference
+            const noteNumber = index + 1;
+            const reference = document.createElement('span');
+            reference.className = 'sidenote-ref';
+            reference.textContent = noteNumber;
+            reference.setAttribute('tabindex', '0'); // Make it focusable
+            reference.setAttribute('aria-label', `Sidenote ${noteNumber}`);
+            
+            // Insert the reference before the sidenote
+            sidenote.parentNode.insertBefore(reference, sidenote);
+            
+            // Move the sidenote to the sidenotes container
+            const noteClone = sidenote.cloneNode(true);
+            noteClone.id = `sidenote-${noteNumber}`;
+            
+            // Add the number to the sidenote
+            const numberSpan = document.createElement('span');
+            numberSpan.className = 'sidenote-number';
+            numberSpan.textContent = noteNumber;
+            noteClone.prepend(numberSpan);
+            
+            sidenotesContainer.appendChild(noteClone);
+            
+            // Remove the original sidenote
+            sidenote.remove();
+            
+            // Add highlighting functionality
+            reference.addEventListener('mouseenter', () => {
+              noteClone.classList.add('highlight');
+            });
+            
+            reference.addEventListener('mouseleave', () => {
+              noteClone.classList.remove('highlight');
+            });
+            
+            reference.addEventListener('focus', () => {
+              noteClone.classList.add('highlight');
+              // Ensure the sidenote is visible in the viewport
+              noteClone.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            });
+            
+            reference.addEventListener('blur', () => {
+              noteClone.classList.remove('highlight');
+            });
+            
+            // Also highlight when hovering over the sidenote itself
+            noteClone.addEventListener('mouseenter', () => {
+              noteClone.classList.add('highlight');
+              reference.style.color = '#0077cc'; // Match hover color
+            });
+            
+            noteClone.addEventListener('mouseleave', () => {
+              noteClone.classList.remove('highlight');
+              reference.style.color = ''; // Reset to default
+            });
+          });
+        }
+      }
+    });
+  });
+</script> 

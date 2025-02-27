@@ -1,0 +1,58 @@
+<div class="slide slide-tufte slide-animated">
+  <div class="slide-header">
+    {% if include.title %}
+      <h2>{{ include.title }}</h2>
+    {% endif %}
+  </div>
+  
+  <div class="slide-body">
+    <div class="slide-content-main">
+      {% if include.image %}
+        <div class="slide-image-container animate-item">
+          <img src="{{ include.image }}" alt="{{ include.image_alt | default: 'Slide image' }}">
+        </div>
+      {% endif %}
+      
+      {% assign lines = include.content | newline_to_br | split: "<br />" %}
+      {% assign note_counter = 0 %}
+      <ul>
+      {% for line in lines %}
+        {% if line contains "* " %}
+          {% assign item = line | remove_first: "* " %}
+          {% assign sidenote = item | split: "<span class='sidenote'>" | last | split: "</span>" | first %}
+          {% assign main_text = item | split: "<span class='sidenote'>" | first %}
+          {% if sidenote != "" %}
+            {% assign note_counter = note_counter | plus: 1 %}
+          {% endif %}
+          <li class="animate-item">
+            {{ main_text }}
+            {% if sidenote != "" %}
+              <sup class="sidenote-ref" tabindex="0">{{ note_counter }}</sup>
+            {% endif %}
+          </li>
+        {% endif %}
+      {% endfor %}
+      </ul>
+    </div>
+    
+    <div class="slide-sidenotes">
+      {% assign note_counter = 0 %}
+      {% for line in lines %}
+        {% if line contains "<span class='sidenote'>" %}
+          {% assign sidenote = line | split: "<span class='sidenote'>" | last | split: "</span>" | first %}
+          {% assign note_counter = note_counter | plus: 1 %}
+          <div class="sidenote" id="sidenote-{{ note_counter }}">
+            <span class="sidenote-number">{{ note_counter }}</span>
+            {{ sidenote }}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+  
+  {% if include.footnote %}
+    <div class="slide-footnote">
+      {{ include.footnote | markdownify }}
+    </div>
+  {% endif %}
+</div> 

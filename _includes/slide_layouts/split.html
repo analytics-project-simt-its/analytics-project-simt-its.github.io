@@ -1,0 +1,26 @@
+<div class="slide slide-split">
+  <div class="slide-header">
+    {% if include.title %}
+      <h2>{{ include.title }}</h2>
+    {% endif %}
+  </div>
+  
+  <div class="slide-body">
+    <div class="slide-column">
+      {{ include.left_content | markdownify }}
+    </div>
+    <div class="slide-column">
+      {% if include.image_path %}
+        <img src="{{ include.image_path }}" alt="{{ include.alt | default: 'Slide image' }}">
+      {% else %}
+        {{ include.right_content | markdownify }}
+      {% endif %}
+    </div>
+  </div>
+  
+  {% if include.footnote %}
+    <div class="slide-footnote">
+      {{ include.footnote | markdownify }}
+    </div>
+  {% endif %}
+</div> 

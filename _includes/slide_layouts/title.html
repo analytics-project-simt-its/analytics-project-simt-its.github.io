@@ -1,0 +1,14 @@
+<div class="slide slide-title">
+  <div class="slide-content">
+    <h1>{{ include.title }}</h1>
+    {% if include.subtitle %}
+      <h2>{{ include.subtitle }}</h2>
+    {% endif %}
+    {% if include.author %}
+      <div class="slide-author">{{ include.author }}</div>
+    {% endif %}
+    {% if include.date %}
+      <div class="slide-date">{{ include.date }}</div>
+    {% endif %}
+  </div>
+</div> 

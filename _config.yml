@@ -24,3 +24,14 @@ exclude:
   - LICENSE
   - .gitignore
 
+# Firebase configuration
+firebase:
+  api_key: <%= ENV['FIREBASE_API_KEY'] %>
+  auth_domain: <%= ENV['FIREBASE_AUTH_DOMAIN'] %>
+  database_url: <%= ENV['FIREBASE_DATABASE_URL'] %>
+  project_id: <%= ENV['FIREBASE_PROJECT_ID'] %>
+  storage_bucket: <%= ENV['FIREBASE_STORAGE_BUCKET'] %>
+  messaging_sender_id: <%= ENV['FIREBASE_MESSAGING_SENDER_ID'] %>
+  app_id: <%= ENV['FIREBASE_APP_ID'] %>
+  measurement_id: <%= ENV['FIREBASE_MEASUREMENT_ID'] %>
+

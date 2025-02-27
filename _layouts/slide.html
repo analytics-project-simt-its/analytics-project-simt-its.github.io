@@ -1,0 +1,913 @@
+---
+layout: default
+---
+
+<link rel="stylesheet" href="{{ '/assets/css/slide.css' | relative_url }}">
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+
+<div class="slide-container">
+  <div class="slide-controls">
+    <button id="theme-toggle" class="btn-theme" title="Toggle theme">
+      <span class="theme-icon dark-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </span>
+      <span class="theme-icon light-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+      </span>
+    </button>
+    <button id="fullscreen-btn" class="btn-fullscreen" title="Toggle fullscreen">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
+      </svg>
+    </button>
+    <button id="prev-slide" class="btn-nav" title="Previous slide">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </button>
+    <button id="next-slide" class="btn-nav" title="Next slide">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </button>
+    <button id="speaker-mode" class="btn-nav" title="Toggle speaker mode">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5-9h10v2H7z"/>
+      </svg>
+    </button>
+    <div id="slide-counter" class="slide-counter">1/1</div>
+  </div>
+
+  <div class="slide-progress">
+    <div id="progress-bar" class="progress-bar"></div>
+  </div>
+
+  <div class="slide-deck">
+    <div id="debug-info" style="position: absolute; top: 10px; left: 10px; background: rgba(255,255,255,0.8); padding: 10px; z-index: 1000; display: none;"></div>
+    {{ content }}
+  </div>
+
+  <!-- Move notification div inside slide-container -->
+  <div id="speaker-notification" class="speaker-notification" style="display: none;">
+    <div class="notification-content">
+      Speaker mode is active - Following presenter's slides
+      <button class="close-notification">×</button>
+    </div>
+  </div>
+
+  <!-- Move modal elements inside slide-container -->
+  <div class="modal-overlay" id="modal-overlay"></div>
+  <div class="password-modal" id="password-modal">
+    <h3>Enter Speaker Password</h3>
+    <input type="password" id="speaker-password" class="password-input" placeholder="Enter password">
+    <button class="password-submit" id="submit-password">Submit</button>
+    <div class="password-error" id="password-error">Incorrect password</div>
+  </div>
+
+  <!-- Add consent dialog HTML inside slide-container -->
+  <div class="consent-dialog" id="consent-dialog">
+    <h2>Welcome to the Presentation</h2>
+    <p>This presentation supports a synchronized viewing experience. By continuing, you acknowledge that:</p>
+    <ul style="text-align: left; margin: 20px 0;">
+      <li>A presenter may activate speaker mode at any time</li>
+      <li>When speaker mode is active, your view will be controlled by the presenter</li>
+      <li>Your navigation controls will be disabled during speaker mode</li>
+    </ul>
+    <div class="consent-buttons">
+      <button class="consent-button consent-accept" id="accept-consent">I Understand</button>
+      <button class="consent-button consent-decline" id="decline-consent">Leave Presentation</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const fullscreenBtn = document.getElementById('fullscreen-btn');
+    const slideContainer = document.querySelector('.slide-container');
+    const slides = document.querySelectorAll('.slide');
+    const prevBtn = document.getElementById('prev-slide');
+    const nextBtn = document.getElementById('next-slide');
+    const debugInfo = document.getElementById('debug-info');
+    let currentSlideIndex = 0;
+
+  
+    // Initialize slides
+    if (slides.length > 0) {
+      slides.forEach((slide, index) => {
+        if (index === 0) {
+          slide.style.display = 'flex';
+          setTimeout(() => {
+            slide.classList.add('active');
+          }, 10);
+        } else {
+          slide.style.display = 'none';
+        }
+      });
+      
+      // Initialize counter and progress bar
+      document.getElementById('slide-counter').textContent = `1/${slides.length}`;
+      document.getElementById('progress-bar').style.width = `${(1 / slides.length) * 100}%`;
+    } else {
+      debugInfo.innerHTML += '<br>No slides found! Check includes.';
+    }
+
+    // Fullscreen toggle
+    fullscreenBtn.addEventListener('click', function() {
+      if (!document.fullscreenElement) {
+        slideContainer.requestFullscreen().catch(err => {
+          console.error(`Error attempting to enable fullscreen: ${err.message}`);
+        });
+      } else {
+        document.exitFullscreen();
+      }
+    });
+
+    // Firebase configuration
+    const firebaseConfig = {
+      apiKey: "{{ site.firebase.api_key }}",
+      authDomain: "{{ site.firebase.auth_domain }}",
+      databaseURL: "{{ site.firebase.database_url }}",
+      projectId: "{{ site.firebase.project_id }}",
+      storageBucket: "{{ site.firebase.storage_bucket }}",
+      messagingSenderId: "{{ site.firebase.messaging_sender_id }}",
+      appId: "{{ site.firebase.app_id }}",
+      measurementId: "{{ site.firebase.measurement_id }}"
+    };
+
+    // Initialize Firebase
+    if (!firebase.apps.length) {
+      firebase.initializeApp(firebaseConfig);
+    }
+
+    const database = firebase.database();
+    let isSpeakerMode = false;
+    // Use presentation_id from front matter if available, otherwise use URL path
+    const presentationId = '{{ page.presentation_id }}' || window.location.pathname.replace(/\//g, '_');
+    const dbRef = database.ref(`presentations/${presentationId}`);
+    const speakerModeBtn = document.getElementById('speaker-mode');
+
+    const SPEAKER_PASSWORD_HASH = '186655259ae9442b8fdb142f569de8681be53ebba830c012ad88d645fbbd21e9'; // hash of 'SIMTITS'
+    const notification = document.getElementById('speaker-notification');
+    const passwordModal = document.getElementById('password-modal');
+    const modalOverlay = document.getElementById('modal-overlay');
+    const passwordInput = document.getElementById('speaker-password');
+    const passwordError = document.getElementById('password-error');
+    
+    const consentDialog = document.getElementById('consent-dialog');
+    const navigationButtons = [prevBtn, nextBtn];
+
+    // Check for consent
+    function checkConsent() {
+      const hasConsent = localStorage.getItem('slideConsentGiven');
+      if (!hasConsent) {
+        consentDialog.style.display = 'block';
+        modalOverlay.style.display = 'block';
+      }
+    }
+
+    // Handle consent actions
+    document.getElementById('accept-consent').addEventListener('click', function() {
+      localStorage.setItem('slideConsentGiven', 'true');
+      consentDialog.style.display = 'none';
+      modalOverlay.style.display = 'none';
+    });
+
+    document.getElementById('decline-consent').addEventListener('click', function() {
+      window.location.href = '/'; // Redirect to home page or appropriate location
+    });
+
+    // Update speaker mode status
+    function updateSpeakerMode(isActive) {
+      isSpeakerMode = isActive;
+      speakerModeBtn.classList.toggle('active', isActive);
+      
+      // Toggle disabled state for navigation buttons
+      navigationButtons.forEach(btn => {
+        btn.classList.toggle('disabled', isActive && !isSpeakerMode);
+      });
+      
+      if (isActive) {
+        // Enter fullscreen when activating speaker mode
+        if (!document.fullscreenElement) {
+          slideContainer.requestFullscreen().catch(err => {
+            console.error(`Error attempting to enable fullscreen: ${err.message}`);
+          });
+        }
+        
+        // Write current slide to Firebase when entering speaker mode
+        dbRef.set({
+          currentSlide: currentSlideIndex,
+          timestamp: firebase.database.ServerValue.TIMESTAMP,
+          speakerMode: true,
+          speakerActive: true
+        });
+      } else {
+        dbRef.update({
+          speakerActive: false
+        });
+      }
+    }
+
+    // Show password modal
+    function showPasswordModal() {
+      modalOverlay.style.display = 'block';
+      passwordModal.style.display = 'block';
+      passwordInput.value = '';
+      passwordError.style.display = 'none';
+      passwordInput.focus();
+    }
+
+    // Hide password modal
+    function hidePasswordModal() {
+      modalOverlay.style.display = 'none';
+      passwordModal.style.display = 'none';
+    }
+
+    // Handle password submission
+    async function handlePasswordSubmit() {
+      const hashedInput = await sha256(passwordInput.value);
+      if (hashedInput === SPEAKER_PASSWORD_HASH) {
+        hidePasswordModal();
+        updateSpeakerMode(true);
+      } else {
+        passwordError.style.display = 'block';
+      }
+    }
+
+    // Show notification for viewers
+    function showNotification() {
+      notification.style.display = 'block';
+    }
+
+    // Hide notification
+    function hideNotification() {
+      notification.style.display = 'none';
+    }
+
+    // Modified showSlide function
+    function showSlide(index) {
+      if (index < 0) index = 0;
+      if (index >= slides.length) index = slides.length - 1;
+      
+      // If we're moving to a different slide
+      if (index !== currentSlideIndex) {
+        // Hide current slide
+        if (currentSlideIndex >= 0) {
+          slides[currentSlideIndex].style.display = 'none';
+          slides[currentSlideIndex].classList.remove('active');
+        }
+        
+        const nextSlide = slides[index];
+        
+        // Only reset animations if we're not in viewer mode
+        if (!document.querySelector('.speaker-notification').style.display || 
+            document.querySelector('.speaker-notification').style.display === 'none') {
+          if (nextSlide.classList.contains('slide-animated') && nextSlide.animationState) {
+            nextSlide.animationState.setIndex(-1);
+          }
+        }
+        
+        // Show new slide
+        nextSlide.style.display = 'flex';
+        setTimeout(() => {
+          nextSlide.classList.add('active');
+        }, 10);
+        
+        currentSlideIndex = index;
+        
+        // Update counter and progress bar
+        document.getElementById('slide-counter').textContent = `${currentSlideIndex + 1}/${slides.length}`;
+        const progressPercent = ((currentSlideIndex + 1) / slides.length) * 100;
+        document.getElementById('progress-bar').style.width = `${progressPercent}%`;
+
+        // Update Firebase if in speaker mode
+        if (isSpeakerMode) {
+          dbRef.set({
+            currentSlide: index,
+            currentAnimationIndex: -1,
+            timestamp: firebase.database.ServerValue.TIMESTAMP,
+            speakerMode: true,
+            speakerActive: true
+          });
+        }
+      }
+    }
+
+    // Listen for Firebase updates
+    dbRef.on('value', (snapshot) => {
+      const data = snapshot.val();
+      if (data && data.speakerActive) {
+        if (!isSpeakerMode) {
+          showNotification();
+          // Disable navigation buttons for viewers
+          navigationButtons.forEach(btn => btn.classList.add('disabled'));
+          
+          // First update the current slide if needed
+          if (data.currentSlide !== undefined && data.currentSlide !== currentSlideIndex) {
+            showSlide(data.currentSlide);
+          }
+          
+          // Then update the animation state
+          if (data.currentAnimationIndex !== undefined) {
+            const currentSlide = slides[data.currentSlide];
+            if (currentSlide && currentSlide.animationState) {
+              currentSlide.animationState.setIndex(data.currentAnimationIndex);
+            }
+          }
+        }
+      } else {
+        hideNotification();
+        // Enable navigation buttons when speaker mode is inactive
+        navigationButtons.forEach(btn => btn.classList.remove('disabled'));
+      }
+    });
+
+    // Show consent dialog on page load
+    checkConsent();
+
+    // Modify speaker mode toggle
+    speakerModeBtn.addEventListener('click', function() {
+      if (isSpeakerMode) {
+        updateSpeakerMode(false);
+      } else {
+        showPasswordModal();
+      }
+    });
+
+    // Password modal event listeners
+    document.getElementById('submit-password').addEventListener('click', handlePasswordSubmit);
+    passwordInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        handlePasswordSubmit();
+      }
+    });
+
+    modalOverlay.addEventListener('click', hidePasswordModal);
+
+    // Close notification button
+    document.querySelector('.close-notification').addEventListener('click', hideNotification);
+
+    // Update consent dialog theme when theme changes
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.target.classList.contains('dark-theme')) {
+          passwordModal.classList.add('dark-theme');
+          consentDialog.classList.add('dark-theme');
+        } else {
+          passwordModal.classList.remove('dark-theme');
+          consentDialog.classList.remove('dark-theme');
+        }
+      });
+    });
+
+    observer.observe(document.body, {
+      attributes: true,
+      attributeFilter: ['class']
+    });
+
+    // Add consent dialog to theme observer
+    const updateTheme = (isDark) => {
+      passwordModal.classList.toggle('dark-theme', isDark);
+      consentDialog.classList.toggle('dark-theme', isDark);
+    };
+
+    // Navigation functions
+    prevBtn.addEventListener('click', function() {
+      dbRef.once('value').then((snapshot) => {
+        const data = snapshot.val();
+        if (!isSpeakerMode && data && data.speakerActive) {
+          return;
+        }
+        showSlide(currentSlideIndex - 1);
+      });
+    });
+
+    nextBtn.addEventListener('click', function() {
+      dbRef.once('value').then((snapshot) => {
+        const data = snapshot.val();
+        if (!isSpeakerMode && data && data.speakerActive) {
+          return;
+        }
+        showSlide(currentSlideIndex + 1);
+      });
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+      dbRef.once('value').then((snapshot) => {
+        const data = snapshot.val();
+        if (!isSpeakerMode && data && data.speakerActive) {
+          return;
+        }
+        
+        const currentSlide = slides[currentSlideIndex];
+        
+        if (e.key === 'ArrowDown' || e.key === ' ') {
+          // If the current slide has animations and not all items are revealed,
+          // let the slide handle the animation
+          if (currentSlide && 
+              currentSlide.classList.contains('slide-animated') && 
+              !currentSlide.classList.contains('all-revealed')) {
+            const event = new KeyboardEvent('keydown', { key: 'ArrowRight' });
+            currentSlide.dispatchEvent(event);
+          } else {
+            // Otherwise move to next slide
+            showSlide(currentSlideIndex + 1);
+          }
+        } else if (e.key === 'ArrowUp') {
+          // If the current slide has animations and items are revealed,
+          // let the slide handle the reverse animation
+          if (currentSlide && 
+              currentSlide.classList.contains('slide-animated') && 
+              currentSlide.querySelector('.animate-item.visible')) {
+            const event = new KeyboardEvent('keydown', { key: 'ArrowLeft' });
+            currentSlide.dispatchEvent(event);
+          } else {
+            // Otherwise move to previous slide
+            showSlide(currentSlideIndex - 1);
+          }
+        } else if (e.key === 'f') {
+          fullscreenBtn.click();
+        }
+        // Handle left/right arrow keys for bullet point animations
+        else if (e.key === 'ArrowRight') {
+          if (currentSlide && currentSlide.classList.contains('slide-animated')) {
+            const event = new KeyboardEvent('keydown', { key: 'ArrowRight' });
+            currentSlide.dispatchEvent(event);
+          }
+        }
+        else if (e.key === 'ArrowLeft') {
+          if (currentSlide && currentSlide.classList.contains('slide-animated')) {
+            const event = new KeyboardEvent('keydown', { key: 'ArrowLeft' });
+            currentSlide.dispatchEvent(event);
+          }
+        }
+      });
+    });
+
+    // Theme toggle functionality
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+    
+    // Check for saved theme preference or respect OS preference
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+      body.classList.add('dark-theme');
+    }
+    
+    // Toggle theme when button is clicked
+    themeToggle.addEventListener('click', function() {
+      body.classList.toggle('dark-theme');
+      
+      // Save preference to localStorage
+      if (body.classList.contains('dark-theme')) {
+        localStorage.setItem('theme', 'dark');
+      } else {
+        localStorage.setItem('theme', 'light');
+      }
+    });
+
+    // Modified initSlideAnimations function
+    function initSlideAnimations() {
+      slides.forEach(slide => {
+        if (slide.classList.contains('slide-animated')) {
+          const items = Array.from(slide.querySelectorAll('.animate-item'));
+          const sidenotes = Array.from(slide.querySelectorAll('.sidenote'));
+          const sidenoteRefs = Array.from(slide.querySelectorAll('.sidenote-ref'));
+          let currentIndex = -1;
+
+          // Hide all items and sidenotes initially
+          items.forEach(item => {
+            item.classList.remove('visible');
+            item.style.opacity = '0';
+            item.style.transition = 'opacity 0.3s ease';
+          });
+
+          sidenotes.forEach(note => {
+            note.classList.remove('visible', 'highlight');
+            note.style.opacity = '0';
+            note.style.transition = 'opacity 0.3s ease';
+          });
+
+          // Add event listeners for sidenote references
+          sidenoteRefs.forEach((ref, i) => {
+            ref.addEventListener('mouseenter', () => {
+              if (sidenotes[i] && sidenotes[i].classList.contains('visible')) {
+                sidenotes[i].classList.add('highlight');
+              }
+            });
+
+            ref.addEventListener('mouseleave', () => {
+              if (sidenotes[i]) {
+                sidenotes[i].classList.remove('highlight');
+              }
+            });
+
+            ref.addEventListener('focus', () => {
+              if (sidenotes[i] && sidenotes[i].classList.contains('visible')) {
+                sidenotes[i].classList.add('highlight');
+              }
+            });
+
+            ref.addEventListener('blur', () => {
+              if (sidenotes[i]) {
+                sidenotes[i].classList.remove('highlight');
+              }
+            });
+          });
+
+          slide.addEventListener('keydown', (e) => {
+            const hasImage = slide.querySelector('.slide-image-container') !== null;
+            const imageOffset = hasImage ? 1 : 0;
+            
+            if (e.key === 'ArrowRight') {
+              if (currentIndex < items.length - 1) {
+                currentIndex++;
+                items[currentIndex].classList.add('visible');
+                items[currentIndex].style.opacity = '1';
+                
+                // Show associated sidenote if it exists, accounting for image offset
+                if (sidenotes[currentIndex - imageOffset] && currentIndex >= imageOffset) {
+                  sidenotes[currentIndex - imageOffset].classList.add('visible');
+                  sidenotes[currentIndex - imageOffset].style.opacity = '1';
+                }
+                
+                if (currentIndex === items.length - 1) {
+                  slide.classList.add('all-revealed');
+                }
+
+                // Update Firebase if in speaker mode
+                if (isSpeakerMode) {
+                  dbRef.set({
+                    currentSlide: currentSlideIndex,
+                    currentAnimationIndex: currentIndex,
+                    timestamp: firebase.database.ServerValue.TIMESTAMP,
+                    speakerMode: true,
+                    speakerActive: true
+                  });
+                }
+              }
+            } else if (e.key === 'ArrowLeft') {
+              if (currentIndex >= 0) {
+                items[currentIndex].classList.remove('visible');
+                items[currentIndex].style.opacity = '0';
+                
+                // Hide associated sidenote if it exists, accounting for image offset
+                if (sidenotes[currentIndex - imageOffset] && currentIndex >= imageOffset) {
+                  sidenotes[currentIndex - imageOffset].classList.remove('visible');
+                  sidenotes[currentIndex - imageOffset].style.opacity = '0';
+                }
+                
+                currentIndex--;
+                slide.classList.remove('all-revealed');
+
+                // Update Firebase if in speaker mode
+                if (isSpeakerMode) {
+                  dbRef.set({
+                    currentSlide: currentSlideIndex,
+                    currentAnimationIndex: currentIndex,
+                    timestamp: firebase.database.ServerValue.TIMESTAMP,
+                    speakerMode: true,
+                    speakerActive: true
+                  });
+                }
+              }
+            }
+          });
+
+          // Store the current animation state and methods on the slide
+          slide.animationState = {
+            setIndex: (index) => {
+              // Reset all items first
+              items.forEach((item, i) => {
+                item.classList.remove('visible');
+                item.style.opacity = '0';
+                if (sidenotes[i]) {
+                  sidenotes[i].classList.remove('visible', 'highlight');
+                  sidenotes[i].style.opacity = '0';
+                }
+              });
+
+              // Calculate offset for image
+              const hasImage = slide.querySelector('.slide-image-container') !== null;
+              const imageOffset = hasImage ? 1 : 0;
+
+              // Show items up to the current index
+              for (let i = 0; i <= index; i++) {
+                if (items[i]) {
+                  items[i].classList.add('visible');
+                  items[i].style.opacity = '1';
+                }
+                // Adjust sidenote index to account for image
+                if (sidenotes[i - imageOffset] && i >= imageOffset) {
+                  sidenotes[i - imageOffset].classList.add('visible');
+                  sidenotes[i - imageOffset].style.opacity = '1';
+                }
+              }
+
+              currentIndex = index;
+              if (index === items.length - 1) {
+                slide.classList.add('all-revealed');
+              } else {
+                slide.classList.remove('all-revealed');
+              }
+            },
+            getCurrentIndex: () => currentIndex
+          };
+        }
+      });
+    }
+
+    // Call initSlideAnimations after slides are initialized
+    initSlideAnimations();
+  });
+
+  // Add this function at the start of the script
+  async function sha256(message) {
+    // encode as UTF-8
+    const msgBuffer = new TextEncoder().encode(message);                    
+    // hash the message
+    const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
+    // convert to hex string
+    return Array.from(new Uint8Array(hashBuffer))
+      .map(b => b.toString(16).padStart(2, '0'))
+      .join('');
+  }
+</script>
+
+<style>
+  /* Add to existing styles */
+  .btn-nav.active {
+    background-color: #4CAF50;
+    color: white;
+  }
+
+  .btn-nav.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  .speaker-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 4px;
+    z-index: 1001;  /* Increased z-index to show over other elements */
+    display: none;
+    animation: slideIn 0.3s ease-out;
+  }
+
+  .notification-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .close-notification {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0 5px;
+  }
+
+  @keyframes slideIn {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  .password-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1001;
+  }
+
+  .password-modal.dark-theme {
+    background: #333;
+    color: white;
+  }
+
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+  }
+
+  .password-input {
+    padding: 8px;
+    margin: 10px 0;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+
+  .password-submit {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .password-error {
+    color: red;
+    margin-top: 10px;
+    display: none;
+  }
+
+  /* Consent dialog styles */
+  .consent-dialog {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 2000;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+  }
+
+  .consent-dialog.dark-theme {
+    background: #333;
+    color: white;
+  }
+
+  .consent-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .consent-button {
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+  }
+
+  .consent-accept {
+    background: #4CAF50;
+    color: white;
+  }
+
+  .consent-decline {
+    background: #f44336;
+    color: white;
+  }
+
+  .animate-item {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    height: 1.7em; /* Adjust this value based on your line height */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .animate-item.visible {
+    opacity: 1;
+  }
+
+  /* Add CSS variables for theming */
+  :root {
+    --background-color: #FFFFFF;  /* Changed from #FFFFF8 to #FFFFFF */
+    --text-color: #111;
+    --secondary-text-color: #555;
+    --muted-text-color: #666;
+    --border-color: #ddd;
+    --highlight-color: rgba(255, 253, 200, 0.5);
+    --link-hover-color: #0077cc;
+    --code-background: #f8f8f8;
+    --control-background: rgba(100, 100, 100, 0.7);
+    --control-hover-background: rgba(50, 50, 50, 0.9);
+  }
+
+  /* Dark theme variables remain unchanged */
+  .dark-theme {
+    --background-color: #1a1a1a;
+    --text-color: #f0f0f0;
+    --secondary-text-color: #c0c0c0;
+    --muted-text-color: #a0a0a0;
+    --border-color: #444;
+    --highlight-color: rgba(70, 70, 90, 0.5);
+    --link-hover-color: #66b2ff;
+    --code-background: #2d2d2d;
+    --control-background: rgba(80, 80, 80, 0.7);
+    --control-hover-background: rgba(120, 120, 120, 0.9);
+  }
+
+  /* Animated sidenote styles */
+  .slide-sidenotes .sidenote {
+    position: relative;
+    padding-left: 2em;
+    margin-bottom: 1em;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .sidenote-number {
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 0.8em;
+    color: var(--text-color);
+    opacity: 0.7;
+  }
+
+  .slide-sidenotes .sidenote.visible {
+    opacity: 1;
+  }
+
+  .slide-sidenotes .sidenote.highlight {
+    background-color: var(--highlight-color);
+    border-radius: 4px;
+  }
+
+  /* Image container styling */
+  .slide-image-container {
+    width: 100%;
+    margin-bottom: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .slide-image-container img {
+    max-width: 100%;
+    max-height: 40vh;
+    object-fit: contain;
+  }
+
+  /* Improved sidenote reference styling */
+  .sidenote-ref {
+    display: inline-block;
+    font-size: 0.7em;
+    color: var(--text-color);
+    background: var(--highlight-color);
+    width: 1.5em;
+    height: 1.5em;
+    line-height: 1.5em;
+    text-align: center;
+    border-radius: 50%;
+    margin-left: 0.5em;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.3s ease;
+  }
+
+  .sidenote-ref:hover,
+  .sidenote-ref:focus {
+    background: var(--link-hover-color);
+    color: white;
+    outline: none;
+  }
+</style> 

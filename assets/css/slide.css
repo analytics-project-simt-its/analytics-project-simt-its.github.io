@@ -1,0 +1,623 @@
+/* Tufte-inspired Slide Layout Styles */
+.slide-container {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  background-color: var(--background-color);
+  overflow: hidden;
+  font-family: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
+}
+
+.slide-controls {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+  display: flex;
+  gap: 10px;
+  opacity: 0.3;
+  transition: opacity 0.3s ease;
+}
+
+.slide-controls:hover {
+  opacity: 1;
+}
+
+.btn-fullscreen, .btn-nav, .btn-theme {
+  background-color: var(--control-background);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-fullscreen:hover, .btn-nav:hover, .btn-theme:hover {
+  background-color: var(--control-hover-background);
+}
+
+.slide-deck {
+  width: 100%;
+  height: 100%;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 80px;
+  box-sizing: border-box;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  line-height: 1.6;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+/* Slide progress */
+.slide-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  z-index: 100;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #111;
+  width: 0;
+  transition: width 0.3s ease;
+}
+
+.slide-counter {
+  background-color: rgba(100, 100, 100, 0.7);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 14px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+}
+
+/* Slide types */
+.slide-title {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.slide-title h1 {
+  font-size: 3.2rem;
+  margin-bottom: 1.5rem;
+  font-weight: normal;
+  color: var(--text-color);
+}
+
+.slide-title h2 {
+  font-size: 1.8rem;
+  font-weight: normal;
+  margin-bottom: 2.5rem;
+  font-style: italic;
+  color: var(--secondary-text-color);
+}
+
+.slide-author, .slide-date {
+  margin-top: 0.8rem;
+  font-size: 1.2rem;
+  color: var(--secondary-text-color);
+}
+
+/* Content slide */
+.slide-header {
+  margin-bottom: 2rem;
+}
+
+.slide-header h2 {
+  font-size: 2.4rem;
+  color: var(--text-color);
+  font-weight: normal;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+.slide-body {
+  flex: 1;
+  overflow: auto;
+  font-size: 1.5rem;
+  line-height: 1.7;
+  display: flex;
+}
+
+.slide-content-main {
+  flex: 3;
+  padding-right: 2rem;
+}
+
+.slide-sidenotes {
+  position: relative;
+  flex: 1;
+  font-size: 1rem;
+  color: var(--muted-text-color);
+  padding-left: 1.5rem;
+  border-left: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-top: 1rem;
+}
+
+.sidenote {
+  display: none; /* Hide in the main content */
+}
+
+.slide-sidenotes .sidenote {
+  display: block;
+  position: relative;
+  font-style: italic;
+  padding-left: 1.5rem;
+  color: var(--muted-text-color);
+  font-size: 1rem;
+  opacity: 0.7;
+  transition: opacity 0.3s ease, background-color 0.3s ease;
+}
+
+.slide-sidenotes .sidenote.highlight {
+  opacity: 1;
+  background-color: var(--highlight-color);
+}
+
+.sidenote-number {
+  display: inline-block;
+  font-size: 0.8rem;
+  position: absolute;
+  left: 0;
+  font-style: normal;
+  color: var(--text-color);
+}
+
+.sidenote-ref {
+  display: inline-block;
+  vertical-align: super;
+  font-size: 0.7em;
+  color: var(--text-color);
+  font-weight: bold;
+  margin: 0 0.2em;
+  text-decoration: none;
+  cursor: pointer; /* Show pointer cursor on hover */
+  transition: color 0.3s ease;
+}
+
+.sidenote-ref:hover, .sidenote-ref:focus {
+  color: var(--link-hover-color);
+}
+
+.slide-body ul, .slide-body ol {
+  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.slide-body li {
+  margin-bottom: 0.8rem;
+}
+
+.slide-body p {
+  margin-bottom: 1.5rem;
+}
+
+.slide-footnote {
+  font-size: 1rem;
+  color: var(--secondary-text-color);
+  margin-top: 2rem;
+  font-style: italic;
+}
+
+/* Image slide */
+.slide-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70%;
+  margin: 1rem 0;
+}
+
+.slide-image-container img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.slide-caption {
+  text-align: center;
+  font-style: italic;
+  margin-top: 1rem;
+  color: var(--secondary-text-color);
+}
+
+/* Split slide */
+.slide-split .slide-body {
+  display: flex;
+  gap: 2rem;
+}
+
+.slide-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.slide-column img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Code blocks */
+pre {
+  background-color: var(--code-background);
+  border-left: 3px solid var(--border-color);
+  padding: 1rem;
+  font-size: 1.1rem;
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+}
+
+code {
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+}
+
+/* Blockquotes */
+blockquote {
+  margin-left: 0;
+  padding-left: 1.5rem;
+  border-left: 3px solid var(--border-color);
+  font-style: italic;
+  color: var(--secondary-text-color);
+}
+
+/* Fullscreen mode adjustments */
+:fullscreen .slide-container {
+  background-color: var(--background-color);
+}
+
+:fullscreen .slide {
+  padding: 60px 120px;
+}
+
+:fullscreen .slide-title h1 {
+  font-size: 4rem;
+}
+
+:fullscreen .slide-title h2 {
+  font-size: 2.2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .slide {
+    padding: 20px 40px;
+  }
+  
+  .slide-title h1 {
+    font-size: 2rem;
+  }
+  
+  .slide-title h2 {
+    font-size: 1.4rem;
+  }
+  
+  .slide-header h2 {
+    font-size: 1.8rem;
+  }
+  
+  .slide-body {
+    font-size: 1.2rem;
+    flex-direction: column;
+  }
+  
+  .slide-sidenotes {
+    border-left: none;
+    border-top: 1px solid var(--border-color);
+    padding-left: 0;
+    padding-top: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .slide-split .slide-body {
+    flex-direction: column;
+  }
+}
+
+@media print {
+  .slide-controls, .slide-progress {
+    display: none;
+  }
+  
+  .slide {
+    page-break-after: always;
+    height: 100vh;
+    display: flex !important;
+    opacity: 1 !important;
+  }
+  
+  body {
+    background: var(--background-color);
+  }
+}
+
+/* Font sizing classes */
+.text-xs {
+  font-size: 0.75rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+}
+
+.text-base {
+  font-size: 1rem;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+}
+
+.text-5xl {
+  font-size: 3rem;
+}
+
+/* Font weight classes */
+.font-light {
+  font-weight: 300;
+}
+
+.font-normal {
+  font-weight: 400;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+/* Text alignment */
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+/* Text styling */
+.italic {
+  font-style: italic;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.lowercase {
+  text-transform: lowercase;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+/* Text colors */
+.text-primary {
+  color: var(--text-color);
+}
+
+.text-secondary {
+  color: var(--secondary-text-color);
+}
+
+.text-muted {
+  color: var(--muted-text-color);
+}
+
+.text-light {
+  color: #999;
+}
+
+/* Add CSS variables for theming */
+:root {
+  --background-color: #fffff8;
+  --text-color: #111;
+  --secondary-text-color: #555;
+  --muted-text-color: #666;
+  --border-color: #ddd;
+  --highlight-color: rgba(255, 253, 200, 0.5);
+  --link-hover-color: #0077cc;
+  --code-background: #f8f8f8;
+  --control-background: rgba(100, 100, 100, 0.7);
+  --control-hover-background: rgba(50, 50, 50, 0.9);
+}
+
+/* Dark theme variables */
+.dark-theme {
+  --background-color: #1a1a1a;
+  --text-color: #f0f0f0;
+  --secondary-text-color: #c0c0c0;
+  --muted-text-color: #a0a0a0;
+  --border-color: #444;
+  --highlight-color: rgba(70, 70, 90, 0.5);
+  --link-hover-color: #66b2ff;
+  --code-background: #2d2d2d;
+  --control-background: rgba(80, 80, 80, 0.7);
+  --control-hover-background: rgba(120, 120, 120, 0.9);
+}
+
+/* Update existing styles to use variables */
+.slide-container {
+  background-color: var(--background-color);
+}
+
+.slide {
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+.btn-fullscreen, .btn-nav, .btn-theme {
+  background-color: var(--control-background);
+}
+
+.btn-fullscreen:hover, .btn-nav:hover, .btn-theme:hover {
+  background-color: var(--control-hover-background);
+}
+
+/* Continue updating other elements with variables */
+.slide-header h2 {
+  color: var(--text-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.slide-sidenotes {
+  color: var(--muted-text-color);
+  border-left: 1px solid var(--border-color);
+}
+
+.slide-sidenotes .sidenote {
+  color: var(--muted-text-color);
+}
+
+.slide-sidenotes .sidenote.highlight {
+  background-color: var(--highlight-color);
+}
+
+.sidenote-number {
+  color: var(--text-color);
+}
+
+.sidenote-ref {
+  color: var(--text-color);
+}
+
+.sidenote-ref:hover, .sidenote-ref:focus {
+  color: var(--link-hover-color);
+}
+
+pre {
+  background-color: var(--code-background);
+  border-left: 3px solid var(--border-color);
+}
+
+blockquote {
+  border-left: 3px solid var(--border-color);
+  color: var(--secondary-text-color);
+}
+
+/* Theme toggle button styles */
+.btn-theme {
+  position: relative;
+}
+
+.theme-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s ease;
+}
+
+.light-icon {
+  opacity: 0;
+}
+
+.dark-theme .light-icon {
+  opacity: 1;
+}
+
+.dark-theme .dark-icon {
+  opacity: 0;
+}
+
+/* Animation styles */
+.animate-item {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.animate-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Add a subtle indicator that there are more items to reveal */
+.slide-content.has-animations::after,
+.slide-animated::after {
+  content: "";
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--link-hover-color);
+  opacity: 0.7;
+  animation: pulse 2s infinite;
+  pointer-events: none;
+}
+
+/* Hide the indicator when all items are revealed */
+.slide-content.all-revealed::after,
+.slide-animated.all-revealed::after {
+  display: none;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.7;
+  }
+} 

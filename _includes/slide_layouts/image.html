@@ -1,0 +1,22 @@
+<div class="slide slide-image">
+  <div class="slide-header">
+    {% if include.title %}
+      <h2>{{ include.title }}</h2>
+    {% endif %}
+  </div>
+  
+  <div class="slide-body">
+    <div class="slide-image-container">
+      <img src="{{ include.image_path }}" alt="{{ include.alt | default: 'Slide image' }}">
+    </div>
+    {% if include.caption %}
+      <div class="slide-caption">{{ include.caption | markdownify }}</div>
+    {% endif %}
+  </div>
+  
+  {% if include.footnote %}
+    <div class="slide-footnote">
+      {{ include.footnote | markdownify }}
+    </div>
+  {% endif %}
+</div> 
