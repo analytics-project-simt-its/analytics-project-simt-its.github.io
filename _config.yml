@@ -23,6 +23,13 @@ exclude:
   - README.md
   - LICENSE
   - .gitignore
+  - vendor
+  - vendor/bundle
+  - vendor/cache
+  - vendor/gems
+  - vendor/ruby
+  - node_modules
+  - .sass-cache
 
 # Firebase configuration
 firebase:
