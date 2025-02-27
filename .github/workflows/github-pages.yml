@@ -44,5 +44,5 @@ jobs:
       - name: Echo Firebase config
         run: |
           echo "Firebase config:"
-          echo "api_key: ${{ env.FIREBASE_API_KEY }}"
-          echo "auth_domain: ${{ env.FIREBASE_AUTH_DOMAIN }}"
+          echo "api_key: ${{ secrets.FIREBASE_API_KEY }}"
+          echo "auth_domain: ${{ secrets.FIREBASE_AUTH_DOMAIN }}"
