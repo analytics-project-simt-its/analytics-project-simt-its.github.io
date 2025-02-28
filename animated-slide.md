@@ -1,7 +1,7 @@
 ---
 layout: slide
-title: "Animated Tufte Presentation"
-permalink: sample-presentation-sync
+title: "Demo Slide"
+permalink: slide-demo
 fullwidth: true
 presentation_id: demo-123
 ---
