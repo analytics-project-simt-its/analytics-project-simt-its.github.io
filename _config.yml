@@ -33,12 +33,12 @@ exclude:
 
 # Firebase configuration
 firebase:
-  api_key: ${{ secrets.FIREBASE_API_KEY }}
-  auth_domain: ${{ secrets.FIREBASE_AUTH_DOMAIN }}
-  database_url: ${{ secrets.FIREBASE_DATABASE_URL }}
-  project_id: ${{ secrets.FIREBASE_PROJECT_ID }}
-  storage_bucket: ${{ secrets.FIREBASE_STORAGE_BUCKET }}
-  messaging_sender_id: ${{ secrets.FIREBASE_MESSAGING_SENDER_ID }}
-  app_id: ${{ secrets.FIREBASE_APP_ID }}
-  measurement_id: ${{ secrets.FIREBASE_MEASUREMENT_ID }}
+  api_key: "AIzaSyDs6aQSk9c6cSDvFINlwy2DJ0uqtTAds1g"
+  auth_domain: "sync-slide-40285.firebaseapp.com"
+  database_url: "https://sync-slide-40285-default-rtdb.asia-southeast1.firebasedatabase.app"
+  project_id: "sync-slide-40285"
+  storage_bucket: "sync-slide-40285.firebasestorage.app"
+  messaging_sender_id: "878059923546"
+  app_id: "1:878059923546:web:2dcf4e13ef7a8913735063"
+  measurement_id: "G-J1D5F11B8T"
 
