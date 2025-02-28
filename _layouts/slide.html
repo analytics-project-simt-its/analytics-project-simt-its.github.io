@@ -140,14 +140,14 @@ layout: default
 
     // Firebase configuration
     const firebaseConfig = {
-      apiKey: "{{ site.firebase.api_key }}",
-      authDomain: "{{ site.firebase.auth_domain }}",
-      databaseURL: "{{ site.firebase.database_url }}",
-      projectId: "{{ site.firebase.project_id }}",
-      storageBucket: "{{ site.firebase.storage_bucket }}",
-      messagingSenderId: "{{ site.firebase.messaging_sender_id }}",
-      appId: "{{ site.firebase.app_id }}",
-      measurementId: "{{ site.firebase.measurement_id }}"
+      apiKey: "{{ site.env.FIREBASE_API_KEY }}",
+      authDomain: "{{ site.env.FIREBASE_AUTH_DOMAIN }}",
+      databaseURL: "{{ site.env.FIREBASE_DATABASE_URL }}",
+      projectId: "{{ site.env.FIREBASE_PROJECT_ID }}",
+      storageBucket: "{{ site.env.FIREBASE_STORAGE_BUCKET }}",
+      messagingSenderId: "{{ site.env.FIREBASE_MESSAGING_SENDER_ID }}",
+      appId: "{{ site.env.FIREBASE_APP_ID }}",
+      measurementId: "{{ site.env.FIREBASE_MEASUREMENT_ID }}"
     };
 
     // Initialize Firebase
@@ -162,7 +162,7 @@ layout: default
     const dbRef = database.ref(`presentations/${presentationId}`);
     const speakerModeBtn = document.getElementById('speaker-mode');
 
-    const SPEAKER_PASSWORD_HASH = '186655259ae9442b8fdb142f569de8681be53ebba830c012ad88d645fbbd21e9'; // hash of 'SIMTITS'
+    const SPEAKER_PASSWORD_HASH = '186655259ae9442b8fdb142f569de8681be53ebba830c012ad88d645fbbd21e9'; 
     const notification = document.getElementById('speaker-notification');
     const passwordModal = document.getElementById('password-modal');
     const modalOverlay = document.getElementById('modal-overlay');
