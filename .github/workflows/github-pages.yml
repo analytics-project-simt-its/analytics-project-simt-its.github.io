@@ -11,6 +11,18 @@ jobs:
     permissions:
       contents: write
     steps:
+      - name: Append firebase config into _config.yml
+        run: |
+          echo "firebase:" >> _config.yml
+          echo "  api_key: ${{ vars.FIREBASE_API_KEY }}" >> _config.yml
+          echo "  auth_domain: ${{ vars.FIREBASE_AUTH_DOMAIN }}" >> _config.yml
+          echo "  database_url: ${{ vars.FIREBASE_DATABASE_URL }}" >> _config.yml
+          echo "  project_id: ${{ vars.FIREBASE_PROJECT_ID }}" >> _config.yml
+          echo "  storage_bucket: ${{ vars.FIREBASE_STORAGE_BUCKET }}" >> _config.yml
+          echo "  messaging_sender_id: ${{ vars.FIREBASE_MESSAGING_SENDER_ID }}" >> _config.yml
+          echo "  app_id: ${{ vars.FIREBASE_APP_ID }}" >> _config.yml
+          echo "  measurement_id: ${{ vars.FIREBASE_MEASUREMENT_ID }}" >> _config.yml
+
       - uses: actions/checkout@v4
 
       - uses: actions/cache@v3
@@ -19,13 +31,6 @@ jobs:
           key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile') }}
           restore-keys: |
             ${{ runner.os }}-gems-
-
-      # Add git configuration
-      - name: Git configuration
-        run: |
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git config --global user.name "github-actions[bot]"
-          git config --global --add safe.directory /github/workspace
 
       - uses: helaili/jekyll-action@v2
         with:
@@ -39,10 +44,6 @@ jobs:
           FIREBASE_STORAGE_BUCKET: ${{ vars.FIREBASE_STORAGE_BUCKET }}
           FIREBASE_MESSAGING_SENDER_ID: ${{ vars.FIREBASE_MESSAGING_SENDER_ID }}
           FIREBASE_APP_ID: ${{ vars.FIREBASE_APP_ID }}
-          FIREBASE_MEASUREMENT_ID: ${{ vars.FIREBASE_MEASUREMENT_ID }} 
+          FIREBASE_MEASUREMENT_ID: ${{ vars.FIREBASE_MEASUREMENT_ID }}
 
-      - name: Echo Firebase config
-        run: |
-          echo "Firebase config:"
-          echo "api_key: ${{ vars.FIREBASE_API_KEY }}"
-          echo "auth_domain: ${{ vars.FIREBASE_AUTH_DOMAIN }}"
+

@@ -140,14 +140,14 @@ layout: default
 
     // Firebase configuration
     const firebaseConfig = {
-      apiKey: "{{ site.env.FIREBASE_API_KEY }}",
-      authDomain: "{{ site.env.FIREBASE_AUTH_DOMAIN }}",
-      databaseURL: "{{ site.env.FIREBASE_DATABASE_URL }}",
-      projectId: "{{ site.env.FIREBASE_PROJECT_ID }}",
-      storageBucket: "{{ site.env.FIREBASE_STORAGE_BUCKET }}",
-      messagingSenderId: "{{ site.env.FIREBASE_MESSAGING_SENDER_ID }}",
-      appId: "{{ site.env.FIREBASE_APP_ID }}",
-      measurementId: "{{ site.env.FIREBASE_MEASUREMENT_ID }}"
+      apiKey: "{{ site.firebase.api_key }}",
+      authDomain: "{{ site.firebase.auth_domain }}",
+      databaseURL: "{{ site.firebase.database_url }}",
+      projectId: "{{ site.firebase.project_id }}",
+      storageBucket: "{{ site.firebase.storage_bucket }}",
+      messagingSenderId: "{{ site.firebase.messaging_sender_id }}",
+      appId: "{{ site.firebase.app_id }}",
+      measurementId: "{{ site.firebase.measurement_id }}"
     };
 
     // Initialize Firebase
