@@ -8,5 +8,5 @@ for tikz_file in _tikz/*.tex; do
     fi
 done
 
-# Build Jekyll site
+# Build Jekyll site 
 bundle exec jekyll serve 
