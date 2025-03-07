@@ -1,0 +1,272 @@
+/* Adjust main content grid for gallery pages */
+.gallery-page {
+    grid-template-columns: 1fr !important;
+    max-width: 100% !important;
+}
+
+/* Responsive header adjustments */
+@media (max-width: 768px) {
+    .site-header {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+    }
+
+    .site-logo {
+        margin-bottom: 1rem;
+    }
+
+    .main-nav {
+        width: 100%;
+    }
+
+    .main-nav ul {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+}
+
+/* Project card and content styles */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding: 2rem 0;
+}
+
+.project-card {
+    background: var(--bg-color);
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+    position: relative;
+    display: grid;
+    grid-template-columns: 450px 1fr;
+    width: 100%;
+    margin: 0 2rem;
+}
+
+.project-card:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.project-image-container {
+    position: relative;
+}
+
+.project-image {
+    width: 100%;
+    height: 100%;
+    min-height: 350px;
+    object-fit: cover;
+}
+
+.project-status-badge {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    padding: 0.5rem 1.25rem;
+    border-radius: 25px;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    z-index: 1;
+}
+
+.project-content {
+    padding: 2.5rem 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.project-title {
+    font-family: 'Lora', serif;
+    font-size: 2rem;
+    color: var(--text-color);
+    margin: 0;
+}
+
+.team-members {
+    margin: 0;
+}
+
+.team-members h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.team-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.team-lead {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.25rem;
+    background: var(--accent-color);
+    color: white;
+    border-radius: 25px;
+    font-size: 1rem;
+}
+
+.team-member {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.25rem;
+    background: var(--sidebar-bg);
+    border-radius: 25px;
+    font-size: 1rem;
+}
+
+.project-description {
+    font-size: 1.15rem;
+    color: var(--text-color);
+    line-height: 1.7;
+    margin: 0;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.project-tag {
+    background: var(--sidebar-bg);
+    color: var(--text-color);
+    padding: 0.5rem 1.25rem;
+    border-radius: 25px;
+    font-size: 1rem;
+}
+
+.project-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: auto;
+}
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--accent-color);
+    font-size: 1rem;
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid var(--accent-color);
+    border-radius: 25px;
+    transition: all 0.2s;
+}
+
+.project-link:hover {
+    background: var(--accent-color);
+    color: white;
+    text-decoration: none;
+}
+
+.status-completed { background-color: #28a745; }
+.status-in-progress { background-color: #ffc107; }
+.status-planning { background-color: #6c757d; }
+
+.gallery-header {
+    margin: 0 auto 4rem;
+    text-align: center;
+    max-width: 900px;
+    padding: 0 2rem;
+}
+
+.gallery-header h1 {
+    font-family: 'Lora', serif;
+    margin-bottom: 1.5rem;
+    font-size: 3rem;
+    color: var(--text-color);
+}
+
+.gallery-header p {
+    font-size: 1.25rem;
+    color: #666;
+    line-height: 1.7;
+}
+
+@media (max-width: 1200px) {
+    .project-card {
+        grid-template-columns: 350px 1fr;
+        margin: 0 1.5rem;
+    }
+    
+    .project-content {
+        padding: 2rem;
+    }
+
+    .project-description {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .project-card {
+        grid-template-columns: 1fr;
+        margin: 0 1rem;
+    }
+    
+    .project-image {
+        height: 300px;
+        min-height: unset;
+    }
+    
+    .project-content {
+        padding: 1.5rem;
+    }
+
+    .project-title {
+        font-size: 1.75rem;
+    }
+    
+    .project-description {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .team-members h3 {
+        font-size: 1.1rem;
+    }
+
+    .team-lead, .team-member {
+        font-size: 0.9rem;
+        padding: 0.4rem 1rem;
+    }
+
+    .project-tag {
+        font-size: 0.9rem;
+        padding: 0.4rem 1rem;
+    }
+
+    .project-links {
+        flex-wrap: wrap;
+    }
+
+    .project-link {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+    }
+    
+    .gallery-header {
+        padding: 0 1rem;
+    }
+
+    .gallery-header h1 {
+        font-size: 2rem;
+    }
+
+    .gallery-header p {
+        font-size: 1.1rem;
+    }
+} 
