@@ -1,8 +1,102 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="en">
+<!-- Beautiful Jekyll 5.0.0 | Copyright Dean Attali 2020 -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interactive Form Example</title>
 
-<link rel="stylesheet" href="{{ '/assets/css/slide.css' | relative_url }}">
+<!-- SEO Meta Tags -->
+<meta name="description" content="The webpage for Analytics Projects course at the SIMT ITS">
+<meta property="og:title" content="Interactive Form Example">
+<meta property="og:description" content="The webpage for Analytics Projects course at the SIMT ITS">
+<meta property="og:image" content="">
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="57x57" href="/assets/img/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/assets/img/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/assets/img/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/assets/img/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/assets/img/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/assets/img/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/assets/img/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/assets/img/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/img/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
+<link rel="manifest" href="/assets/img/manifest.json">
+<link rel="shortcut icon" href="/assets/img/favicon.ico">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/assets/img/ms-icon-144x144.png">
+<meta name="msapplication-config" content="/assets/img/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<!-- Base Styles -->
+<link rel="stylesheet" href="/assets/css/course.css">
+
+<!-- Additional Styles -->
+
+
+
+<style>
+    body {
+        grid-template-columns: none !important;
+    }
+</style>
+
+
+
+
+<body>
+
+  
+
+
+  <!-- Add Font Awesome for the search icon -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<nav class="main-nav" id="main-nav" role="navigation" aria-label="Main navigation">
+    <ul>
+        
+        <li><a href="/">Home</a></li>
+        
+        <li><a href="/course">Course</a></li>
+        
+        <li><a href="/past-courses">Past Courses</a></li>
+        
+        <li><a href="/resources">Resources</a></li>
+        
+        <li><a href="/contact">Contact</a></li>
+        
+        <li><a href="/search" aria-label="Search"><i class="fas fa-search"></i></a></li>
+    </ul>
+</nav>
+
+<style>
+.main-nav .fa-search {
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+.main-nav a:hover .fa-search {
+    color: var(--accent-color);
+}
+</style>
+
+
+  <div class="intro-header"></div>
+
+<div role="main" class=" container-md ">
+  
+
+  <link rel="stylesheet" href="/assets/css/slide.css">
 
 <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -60,7 +154,523 @@ layout: default
 
   <div class="slide-deck">
     <div id="debug-info" style="position: absolute; top: 10px; left: 10px; background: rgba(255,255,255,0.8); padding: 10px; z-index: 1000; display: none;"></div>
-    {{ content }}
+    <div class="slide slide-title">
+  <div class="slide-content">
+    <h1>Interactive Presentation Demo</h1>
+    
+      <h2>With real-time response tracking</h2>
+    
+    
+      <div class="slide-author">Your Name</div>
+    
+    
+      <div class="slide-date">2024</div>
+    
+  </div>
+</div>
+
+<div class="slide slide-interactive" data-slide-type="interactive">
+  <div class="slide-header">
+    <h2>Quick Poll</h2>
+  </div>
+  
+  <div class="slide-body">
+    <div class="slide-content-main">
+      <form id="programming-survey" class="form-container">
+        <div class="form-description">Please answer the following questions about your programming experience.</div>
+        
+        
+        <div class="form-group">
+          <label for="text_response">What programming language did you learn first?</label>
+          <input type="text" class="form-input" id="text_response" name="text_response" placeholder="Type your answer here..." />
+        </div>
+        
+        
+        
+        <div class="form-group">
+          <label for="paragraph_response">Describe a challenging programming problem you've solved recently.</label>
+          <textarea class="form-textarea" id="paragraph_response" name="paragraph_response" rows="4" placeholder="Type your detailed response here..."></textarea>
+        </div>
+        
+        
+        
+        <div class="form-group">
+          <label>How many years of programming experience do you have?</label>
+          <div class="radio-options">
+            
+            
+            <div class="radio-option">
+              <input type="radio" name="radio_response" value="Less than 1 year" id="radio-1-programming-survey" />
+              <label for="radio-1-programming-survey">Less than 1 year</label>
+            </div>
+            
+            <div class="radio-option">
+              <input type="radio" name="radio_response" value="1-3 years" id="radio-2-programming-survey" />
+              <label for="radio-2-programming-survey">1-3 years</label>
+            </div>
+            
+            <div class="radio-option">
+              <input type="radio" name="radio_response" value="3-5 years" id="radio-3-programming-survey" />
+              <label for="radio-3-programming-survey">3-5 years</label>
+            </div>
+            
+            <div class="radio-option">
+              <input type="radio" name="radio_response" value="5+ years" id="radio-4-programming-survey" />
+              <label for="radio-4-programming-survey">5+ years</label>
+            </div>
+            
+          </div>
+        </div>
+        
+        
+        
+        <div class="form-group">
+          <label>Which programming paradigms are you familiar with?</label>
+          <div class="checklist-options">
+            
+            
+            <div class="checkbox-option">
+              <input type="checkbox" name="checklist_response[]" value="Object-Oriented" id="checkbox-1-programming-survey" />
+              <label for="checkbox-1-programming-survey">Object-Oriented</label>
+            </div>
+            
+            <div class="checkbox-option">
+              <input type="checkbox" name="checklist_response[]" value="Functional" id="checkbox-2-programming-survey" />
+              <label for="checkbox-2-programming-survey">Functional</label>
+            </div>
+            
+            <div class="checkbox-option">
+              <input type="checkbox" name="checklist_response[]" value="Procedural" id="checkbox-3-programming-survey" />
+              <label for="checkbox-3-programming-survey">Procedural</label>
+            </div>
+            
+            <div class="checkbox-option">
+              <input type="checkbox" name="checklist_response[]" value="Event-Driven" id="checkbox-4-programming-survey" />
+              <label for="checkbox-4-programming-survey">Event-Driven</label>
+            </div>
+            
+          </div>
+        </div>
+        
+        
+        <div class="form-group">
+          <button type="submit" class="form-submit">Submit Response</button>
+        </div>
+      </form>
+      
+      <div class="response-confirmation" style="display: none;">
+        Thank you for your response!
+      </div>
+    </div>
+    
+    <!-- Simplified sidenotes section that just shows response count -->
+    <div class="slide-sidenotes">
+      <h3>Responses</h3>
+      <div class="response-counter">0 responses received</div>
+      
+      <!-- Individual response will be shown here after submission -->
+      <div class="user-response-container"></div>
+    </div>
+  </div>
+  
+  
+  <div class="slide-footnote">
+    Your responses will be collected anonymously
+  </div>
+  
+</div>
+
+<style>
+  /* Response counter styles */
+  .response-counter {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-color);
+    margin: 10px 0 20px;
+    padding: 8px 12px;
+    background-color: var(--code-background);
+    border-radius: 4px;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+  
+  .response-counter.updated {
+    animation: pulse-update 0.3s ease-in-out;
+  }
+  
+  @keyframes pulse-update {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+  
+  /* User response container */
+  .user-response-container {
+    margin-top: 20px;
+  }
+  
+  .user-response-container h4 {
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: var(--text-color);
+  }
+  
+  .response-item {
+    margin-bottom: 15px;
+  }
+  
+  .response-label {
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+  }
+  
+  .response-value {
+    color: var(--secondary-text-color);
+    font-style: italic;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    padding-left: 8px;
+    border-left: 2px solid var(--border-color);
+  }
+  
+  /* Form styles */
+  .form-container {
+    margin-bottom: 2rem;
+  }
+  
+  .form-description {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    color: var(--text-color);
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+  
+  .form-input, 
+  .form-textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+  
+  .form-submit {
+    background-color: var(--link-hover-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .form-submit:hover {
+    background-color: var(--control-hover-background);
+  }
+  
+  .response-confirmation {
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.2rem;
+    color: var(--text-color);
+  }
+  
+  /* Always show sidenotes */
+  .slide-content-main {
+    flex: 2;
+  }
+  
+  .slide-sidenotes {
+    flex: 1;
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Get the form ID from the include parameters
+    const formId = "programming-survey";
+    // Use the same presentation ID that's used for slide syncing
+    const presentationId = "interactive-demo";
+    
+    // Reference to the form responses in Firebase
+    // Using the question type as the key instead of form_id
+    const textQuestionRef = firebase.database().ref(`presentations/${presentationId}/forms/text-question/responses`);
+    const paragraphQuestionRef = firebase.database().ref(`presentations/${presentationId}/forms/paragraph-question/responses`);
+    const radioQuestionRef = firebase.database().ref(`presentations/${presentationId}/forms/radio-question/responses`);
+    const checklistQuestionRef = firebase.database().ref(`presentations/${presentationId}/forms/checklist-question/responses`);
+    
+    // Create a response counter reference
+    const responseCountRef = firebase.database().ref(`presentations/${presentationId}/forms/responseCount`);
+    
+    // Initialize response counter
+    const responseCounter = document.querySelector('.response-counter');
+    
+    // Count responses across all question types
+    Promise.all([
+      textQuestionRef.once('value'),
+      paragraphQuestionRef.once('value'),
+      radioQuestionRef.once('value'),
+      checklistQuestionRef.once('value')
+    ]).then(snapshots => {
+      let totalResponses = 0;
+      snapshots.forEach(snapshot => {
+        if (snapshot.exists()) {
+          totalResponses += Object.keys(snapshot.val()).length;
+        }
+      });
+      
+      // Update the counter display
+      if (responseCounter) {
+        responseCounter.textContent = `${totalResponses} responses received`;
+      }
+      
+      // Set the initial count in Firebase if it doesn't exist
+      responseCountRef.transaction(currentCount => {
+        return currentCount === null ? totalResponses : currentCount;
+      });
+    });
+    
+    // Listen for response count changes
+    responseCountRef.on('value', (snapshot) => {
+      const count = snapshot.val() || 0;
+      if (responseCounter) {
+        responseCounter.textContent = `${count} responses received`;
+        responseCounter.classList.add('updated');
+        setTimeout(() => {
+          responseCounter.classList.remove('updated');
+        }, 300);
+      }
+    });
+    
+    // Handle form submission
+    const form = document.getElementById(formId);
+    const confirmationMessage = document.querySelector('.response-confirmation');
+    const userResponseContainer = document.querySelector('.user-response-container');
+    
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Collect form data
+        const formData = {};
+        const formElements = form.elements;
+        
+        for (let i = 0; i < formElements.length; i++) {
+          const element = formElements[i];
+          if (element.name && element.name !== '' && element.type !== 'submit') {
+            if (element.type === 'checkbox') {
+              if (element.checked) {
+                if (!formData[element.name]) {
+                  formData[element.name] = [];
+                }
+                formData[element.name].push(element.value);
+              }
+            } else if (element.type === 'radio') {
+              if (element.checked) {
+                formData[element.name] = element.value;
+              }
+            } else {
+              formData[element.name] = element.value;
+            }
+          }
+        }
+        
+        // Add timestamp
+        formData.timestamp = firebase.database.ServerValue.TIMESTAMP;
+        
+        // Save each question type to its own path
+        const promises = [];
+        
+        if (formData.text_response) {
+          const textData = {
+            data: {
+              text_response: formData.text_response,
+              timestamp: firebase.database.ServerValue.TIMESTAMP
+            }
+          };
+          promises.push(textQuestionRef.push().set(textData));
+        }
+        
+        if (formData.paragraph_response) {
+          const paragraphData = {
+            data: {
+              paragraph_response: formData.paragraph_response,
+              timestamp: firebase.database.ServerValue.TIMESTAMP
+            }
+          };
+          promises.push(paragraphQuestionRef.push().set(paragraphData));
+        }
+        
+        if (formData.radio_response) {
+          const radioData = {
+            data: {
+              radio_response: formData.radio_response,
+              timestamp: firebase.database.ServerValue.TIMESTAMP
+            }
+          };
+          promises.push(radioQuestionRef.push().set(radioData));
+        }
+        
+        if (formData.checklist_response && formData.checklist_response.length > 0) {
+          const checklistData = {
+            data: {
+              checklist_response: formData.checklist_response,
+              timestamp: firebase.database.ServerValue.TIMESTAMP
+            }
+          };
+          promises.push(checklistQuestionRef.push().set(checklistData));
+        }
+        
+        Promise.all(promises)
+          .then(() => {
+            // Increment response count
+            responseCountRef.transaction(currentCount => {
+              return (currentCount || 0) + 1;
+            });
+            
+            // Show confirmation and user's response
+            form.style.display = 'none';
+            if (confirmationMessage) {
+              confirmationMessage.style.display = 'block';
+            }
+            
+            // Display user's response in the sidebar
+            if (userResponseContainer) {
+              displayUserResponse(formData);
+            }
+          })
+          .catch(error => {
+            console.error("Error saving response:", error);
+            alert("There was an error submitting your response. Please try again.");
+          });
+      });
+    }
+    
+    function displayUserResponse(data) {
+      userResponseContainer.innerHTML = '<h4>Your Response:</h4>';
+      
+      for (const [key, value] of Object.entries(data)) {
+        if (key !== 'timestamp') {
+          const responseItem = document.createElement('div');
+          responseItem.className = 'response-item';
+          
+          const label = document.createElement('div');
+          label.className = 'response-label';
+          
+          // Format the label from the field name
+          let labelText = key.replace(/_/g, ' ').replace(/\[\]/g, '');
+          labelText = labelText.charAt(0).toUpperCase() + labelText.slice(1);
+          label.textContent = labelText + ':';
+          
+          const valueElement = document.createElement('div');
+          valueElement.className = 'response-value';
+          
+          if (Array.isArray(value)) {
+            valueElement.textContent = value.join(', ');
+          } else {
+            valueElement.textContent = value;
+          }
+          
+          responseItem.appendChild(label);
+          responseItem.appendChild(valueElement);
+          userResponseContainer.appendChild(responseItem);
+        }
+      }
+    }
+  });
+</script>
+
+<div class="slide slide-tufte slide-animated">
+  <div class="slide-header">
+    
+      <h2>Thank You</h2>
+    
+  </div>
+  
+  <div class="slide-body">
+    <div class="slide-content-main">
+      
+      
+      
+      
+      <ol class="numbered-list">
+      
+        
+      
+        
+      
+        
+          
+          
+            <li class="animate-item">
+              
+Your feedback helps us improve
+            </li>
+          
+        
+      
+        
+          
+          
+            <li class="animate-item">
+              
+We'll analyze the responses after the session
+            </li>
+          
+        
+      
+        
+          
+          
+            <li class="animate-item">
+              
+Feel free to ask questions
+            </li>
+          
+        
+      
+        
+      
+      </ol>
+    </div>
+    
+    <div class="slide-sidenotes">
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+  </div>
+  
+  
+</div>
+
   </div>
 
   <!-- Move notification div inside slide-container -->
@@ -140,14 +750,14 @@ layout: default
 
     // Firebase configuration
     const firebaseConfig = {
-      apiKey: "{{ site.firebase.api_key }}",
-      authDomain: "{{ site.firebase.auth_domain }}",
-      databaseURL: "{{ site.firebase.database_url }}",
-      projectId: "{{ site.firebase.project_id }}",
-      storageBucket: "{{ site.firebase.storage_bucket }}",
-      messagingSenderId: "{{ site.firebase.messaging_sender_id }}",
-      appId: "{{ site.firebase.app_id }}",
-      measurementId: "{{ site.firebase.measurement_id }}"
+      apiKey: "AIzaSyDs6aQSk9c6cSDvFINlwy2DJ0uqtTAds1g",
+      authDomain: "sync-slide-40285.firebaseapp.com",
+      databaseURL: "https://sync-slide-40285-default-rtdb.asia-southeast1.firebasedatabase.app",
+      projectId: "sync-slide-40285",
+      storageBucket: "sync-slide-40285.firebasestorage.app",
+      messagingSenderId: "878059923546",
+      appId: "1:878059923546:web:2dcf4e13ef7a8913735063",
+      measurementId: "G-J1D5F11B8T"
     };
 
     // Initialize Firebase
@@ -158,7 +768,7 @@ layout: default
     const database = firebase.database();
     let isSpeakerMode = false;
     // Use presentation_id from front matter if available, otherwise use URL path
-    const presentationId = '{{ page.presentation_id }}' || window.location.pathname.replace(/\//g, '_');
+    const presentationId = 'interactive-demo' || window.location.pathname.replace(/\//g, '_');
     const dbRef = database.ref(`presentations/${presentationId}`);
     const speakerModeBtn = document.getElementById('speaker-mode');
 
@@ -1066,3 +1676,76 @@ layout: default
     animation: pulse-update 0.3s ease-in-out;
   }
 </style> 
+
+  
+</div>
+
+
+  <footer class="footer" role="contentinfo">
+    <nav aria-label="Footer navigation">
+        <p>
+            
+            <a href="/">Home</a> | 
+            
+            <a href="/course">Course</a> | 
+            
+            <a href="/past-courses">Past Courses</a> | 
+            
+            <a href="/resources">Resources</a> | 
+            
+            <a href="/contact">Contact</a>
+            
+        </p>
+    </nav>
+    <p>© 2025 SIMT ITS. Created with Jekyll.</p>
+    <p>Last updated: Mar 07, 2025</p>
+</footer>
+
+<!-- <script>
+    // Mobile menu toggle
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
+        const nav = document.querySelector('.main-nav');
+        const expanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !expanded);
+        nav.classList.toggle('active');
+    });
+</script> -->
+
+
+  
+  
+    
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+
+
+  
+    
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+
+  
+    
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+  
+
+
+
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+      <script src="/assets/js/beautifuljekyll.js"></script>
+    
+  
+
+
+
+
+
+
+
+
+
+</body>
+</html>

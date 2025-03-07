@@ -5,8 +5,8 @@
     <description>The webpage for Analytics Projects course at the SIMT ITS</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 18 Feb 2025 08:53:42 -0800</pubDate>
-    <lastBuildDate>Tue, 18 Feb 2025 08:53:42 -0800</lastBuildDate>
+    <pubDate>Fri, 07 Mar 2025 03:55:44 -0800</pubDate>
+    <lastBuildDate>Fri, 07 Mar 2025 03:55:44 -0800</lastBuildDate>
     <generator>Jekyll v3.9.3</generator>
     
     
@@ -122,90 +122,11 @@
       </item>
     
       <item>
-        <title>Resources</title>
-        <description>Resources for Analytics Project course at SIMT ITS, including theory, lectures, assignments, examples, and tools.</description>
-        <pubDate>Thu, 02 Jan 2025 00:00:00 -0800</pubDate>
-        <link>http://localhost:4000/resources/</link>
-        <guid isPermaLink="true">http://localhost:4000/resources/</guid>
-        
-        
-        
-        <category>analytics project</category>
-        
-        <category>resources</category>
-        
-        <category>lectures</category>
-        
-        <category>assignments</category>
-        
-        <category>examples</category>
-        
-        <category>tools</category>
-        
-        <category>SIMT ITS</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Projects Gallery - 2024 Gasal</title>
-        <description>The gallery of student projects from the 2024 Gasal semester.</description>
-        <pubDate>Thu, 02 Jan 2025 00:00:00 -0800</pubDate>
-        <link>http://localhost:4000/past-courses/2024-gasal/gallery</link>
-        <guid isPermaLink="true">http://localhost:4000/past-courses/2024-gasal/gallery</guid>
-        
-      </item>
-    
-      <item>
         <title>Search</title>
         <description>Search the site</description>
         <pubDate>Thu, 02 Jan 2025 00:00:00 -0800</pubDate>
         <link>http://localhost:4000/search/</link>
         <guid isPermaLink="true">http://localhost:4000/search/</guid>
-        
-      </item>
-    
-      <item>
-        <title>Demos</title>
-        <description>Demos for projects we do outside of the course.</description>
-        <pubDate>Thu, 02 Jan 2025 00:00:00 -0800</pubDate>
-        <link>http://localhost:4000/demos/</link>
-        <guid isPermaLink="true">http://localhost:4000/demos/</guid>
-        
-        
-        
-        <category>analytics project</category>
-        
-        <category>demos</category>
-        
-        <category>projects</category>
-        
-        <category>SIMT ITS</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Analytics Project, Gasal 2024 - Part 2</title>
-        <description>A graduate course on prescriptive analytics approaches, focusing on optimization and decision-making algorithms through hands-on group projects.</description>
-        <pubDate>Thu, 02 Jan 2025 00:00:00 -0800</pubDate>
-        <link>http://localhost:4000/past-courses/2024-gasal/</link>
-        <guid isPermaLink="true">http://localhost:4000/past-courses/2024-gasal/</guid>
-        
-        
-        
-        <category>analytics project</category>
-        
-        <category>prescriptive analytics</category>
-        
-        <category>optimization</category>
-        
-        <category>decision-making</category>
-        
-        <category>SIMT ITS</category>
-        
-        <category>data science</category>
-        
         
       </item>
     
@@ -239,18 +160,88 @@
       </item>
     
       <item>
-        <title>Page Not Found</title>
-        <description>404 error - page not found</description>
-        <pubDate>Tue, 18 Feb 2025 08:53:42 -0800</pubDate>
-        <link>http://localhost:4000/404.html</link>
-        <guid isPermaLink="true">http://localhost:4000/404.html</guid>
+        <title>Resources</title>
+        <description>Resources for Analytics Project course at SIMT ITS, including theory, lectures, assignments, examples, and tools.</description>
+        <pubDate>Thu, 02 Jan 2025 00:00:00 -0800</pubDate>
+        <link>http://localhost:4000/resources/</link>
+        <guid isPermaLink="true">http://localhost:4000/resources/</guid>
+        
+        
+        
+        <category>analytics project</category>
+        
+        <category>resources</category>
+        
+        <category>lectures</category>
+        
+        <category>assignments</category>
+        
+        <category>examples</category>
+        
+        <category>tools</category>
+        
+        <category>SIMT ITS</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Analytics Project, Gasal 2024 - Part 2</title>
+        <description>A graduate course on prescriptive analytics approaches, focusing on optimization and decision-making algorithms through hands-on group projects.</description>
+        <pubDate>Thu, 02 Jan 2025 00:00:00 -0800</pubDate>
+        <link>http://localhost:4000/past-courses/2024-gasal/</link>
+        <guid isPermaLink="true">http://localhost:4000/past-courses/2024-gasal/</guid>
+        
+        
+        
+        <category>analytics project</category>
+        
+        <category>prescriptive analytics</category>
+        
+        <category>optimization</category>
+        
+        <category>decision-making</category>
+        
+        <category>SIMT ITS</category>
+        
+        <category>data science</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Demos</title>
+        <description>Demos for projects we do outside of the course.</description>
+        <pubDate>Thu, 02 Jan 2025 00:00:00 -0800</pubDate>
+        <link>http://localhost:4000/demos/</link>
+        <guid isPermaLink="true">http://localhost:4000/demos/</guid>
+        
+        
+        
+        <category>analytics project</category>
+        
+        <category>demos</category>
+        
+        <category>projects</category>
+        
+        <category>SIMT ITS</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Projects Gallery - 2024 Gasal</title>
+        <description>The gallery of student projects from the 2024 Gasal semester.</description>
+        <pubDate>Thu, 02 Jan 2025 00:00:00 -0800</pubDate>
+        <link>http://localhost:4000/past-courses/2024-gasal/gallery</link>
+        <guid isPermaLink="true">http://localhost:4000/past-courses/2024-gasal/gallery</guid>
         
       </item>
     
       <item>
         <title>Past Courses</title>
         <description>Archive of previous Analytics Project courses at SIMT ITS</description>
-        <pubDate>Tue, 18 Feb 2025 08:53:42 -0800</pubDate>
+        <pubDate>Fri, 07 Mar 2025 03:55:44 -0800</pubDate>
         <link>http://localhost:4000/past-courses/</link>
         <guid isPermaLink="true">http://localhost:4000/past-courses/</guid>
         
@@ -264,6 +255,93 @@
         
         <category>data science education</category>
         
+        
+      </item>
+    
+      <item>
+        <title>Data-Driven Optimization Modeling</title>
+        <description>
+  
+    Data-Driven Optimization Modeling
+    
+      Analytics Projects, SIMT ITS 2024/2025
+    
+    
+      Mansur M. Arief
+    
+    
+      07 March 2025
+    
+  
+
+
+
+  
+    
+    
+    
+    
+    
+    ...</description>
+        <pubDate>Fri, 07 Mar 2025 03:55:44 -0800</pubDate>
+        <link>http://localhost:4000/lecture-2</link>
+        <guid isPermaLink="true">http://localhost:4000/lecture-2</guid>
+        
+      </item>
+    
+      <item>
+        <title>Page Not Found</title>
+        <description>404 error - page not found</description>
+        <pubDate>Fri, 07 Mar 2025 03:55:44 -0800</pubDate>
+        <link>http://localhost:4000/404.html</link>
+        <guid isPermaLink="true">http://localhost:4000/404.html</guid>
+        
+      </item>
+    
+      <item>
+        <title>Interactive Form Example</title>
+        <description>
+  
+    Interactive Presentation Demo
+    
+      With real-time response tracking
+    
+    
+      Your Name
+    
+    
+      2024
+    
+  
+
+
+
+  
+    Quick Poll
+  
+  
+  
+    
+      
+        Please ans...</description>
+        <pubDate>Fri, 07 Mar 2025 03:55:44 -0800</pubDate>
+        <link>http://localhost:4000/class-example</link>
+        <guid isPermaLink="true">http://localhost:4000/class-example</guid>
+        
+      </item>
+    
+      <item>
+        <title>Slide System Demo</title>
+        <description>Slide System Demo
+
+This page demonstrates how to use the Synchronized Tufte-Style Slide Presentation System with code examples and explanations.
+
+Basic Slide Structure
+
+Each slide is created using ...</description>
+        <pubDate>Fri, 07 Mar 2025 03:55:44 -0800</pubDate>
+        <link>http://localhost:4000/demo</link>
+        <guid isPermaLink="true">http://localhost:4000/demo</guid>
         
       </item>
     

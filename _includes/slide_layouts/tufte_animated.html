@@ -15,24 +15,26 @@
       
       {% assign lines = include.content | newline_to_br | split: "<br />" %}
       {% assign note_counter = 0 %}
-      <ul>
+      <ol class="numbered-list">
       {% for line in lines %}
         {% if line contains "* " %}
           {% assign item = line | remove_first: "* " %}
-          {% assign sidenote = item | split: "<span class='sidenote'>" | last | split: "</span>" | first %}
-          {% assign main_text = item | split: "<span class='sidenote'>" | first %}
-          {% if sidenote != "" %}
+          {% if item contains "<span class='sidenote'>" %}
+            {% assign sidenote = item | split: "<span class='sidenote'>" | last | split: "</span>" | first %}
+            {% assign main_text = item | split: "<span class='sidenote'>" | first %}
             {% assign note_counter = note_counter | plus: 1 %}
-          {% endif %}
-          <li class="animate-item">
-            {{ main_text }}
-            {% if sidenote != "" %}
+            <li class="animate-item">
+              {{ main_text }}
               <sup class="sidenote-ref" tabindex="0">{{ note_counter }}</sup>
-            {% endif %}
-          </li>
+            </li>
+          {% else %}
+            <li class="animate-item">
+              {{ item }}
+            </li>
+          {% endif %}
         {% endif %}
       {% endfor %}
-      </ul>
+      </ol>
     </div>
     
     <div class="slide-sidenotes">

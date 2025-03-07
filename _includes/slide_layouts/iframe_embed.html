@@ -1,0 +1,98 @@
+<div class="slide iframe-slide" id="{{ include.slide_id | default: 'slide-' | append: forloop.index0 }}">
+  <div class="slide-content">
+    <h2 class="slide-title">{{ include.title }}</h2>
+    
+    {% if include.description %}
+    <p class="slide-description">{{ include.description }}</p>
+    {% endif %}
+    
+    <div class="iframe-container">
+      <iframe 
+        src="{{ include.iframe_src }}" 
+        width="{{ include.width | default: '100%' }}" 
+        height="{{ include.height | default: '500px' }}"
+        frameborder="{{ include.frameborder | default: '0' }}"
+        allowfullscreen="{{ include.allowfullscreen | default: 'true' }}"
+        allow="{{ include.allow | default: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' }}"
+        loading="lazy">
+      </iframe>
+    </div>
+    
+    {% if include.footnote %}
+    <div class="slide-footnote">{{ include.footnote }}</div>
+    {% endif %}
+  </div>
+</div>
+
+<style>
+  .iframe-slide .slide-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  .iframe-container {
+    position: relative;
+    width: 100%;
+    margin: 1.5rem 0;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex-grow: 1;
+  }
+  
+  .iframe-container iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    border: none;
+  }
+  
+  /* Fullscreen adjustments */
+  :fullscreen .iframe-container,
+  :-webkit-full-screen .iframe-container {
+    height: calc(100vh - 200px);
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .iframe-container iframe {
+      height: 350px;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Find all iframe slides
+    const iframeSlides = document.querySelectorAll('.iframe-slide');
+    
+    iframeSlides.forEach(slide => {
+      // When this slide becomes inactive, pause/unload the iframe content
+      const observer = new MutationObserver(mutations => {
+        mutations.forEach(mutation => {
+          if (mutation.attributeName === 'class') {
+            const iframe = slide.querySelector('iframe');
+            if (iframe) {
+              // When slide becomes inactive, set src to about:blank to stop content
+              if (!slide.classList.contains('active')) {
+                const currentSrc = iframe.src;
+                if (currentSrc && currentSrc !== 'about:blank') {
+                  iframe.setAttribute('data-src', currentSrc);
+                  iframe.src = 'about:blank';
+                }
+              } 
+              // When slide becomes active again, restore the src
+              else if (slide.classList.contains('active') && iframe.getAttribute('data-src')) {
+                iframe.src = iframe.getAttribute('data-src');
+              }
+            }
+          }
+        });
+      });
+      
+      // Start observing the slide for class changes
+      observer.observe(slide, { attributes: true });
+    });
+  });
+</script>
