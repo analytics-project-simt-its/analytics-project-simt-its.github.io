@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics Projects | Bringing Analytics to Real-World Projects</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="AnalyticsProjects.id is a platform for students to learn and apply analytics to real-world projects. It is a spin-off from the course 'Analytics Projects' at SIMT ITS.Analytics Projects at Bringing Analytics to Real-World Projects">
+    <meta name="author" content="Mansur M. Arief">
+    <meta name="keywords" content="analytics project, prescriptive analytics, optimization, decision-making, SIMT ITS, data science, AnalyticsProjects.id, Bringing Analytics to Real-World Projects, course, education">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Analytics Projects | Bringing Analytics to Real-World Projects">
+    <meta property="og:description" content="AnalyticsProjects.id is a platform for students to learn and apply analytics to real-world projects. It is a spin-off from the course 'Analytics Projects' at SIMT ITS.Analytics Projects at Bringing Analytics to Real-World Projects">
+    <meta property="og:image" content="https://mansurarief.github.io/assets/img/simt-header.png">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Analytics Projects | Bringing Analytics to Real-World Projects">
+    <meta name="twitter:description" content="AnalyticsProjects.id is a platform for students to learn and apply analytics to real-world projects. It is a spin-off from the course 'Analytics Projects' at SIMT ITS.Analytics Projects at Bringing Analytics to Real-World Projects">
+    <meta name="twitter:image" content="https://mansurarief.github.io/assets/img/simt-header.png">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/css/course.css">
+
+    <!-- Schema.org markup for Google -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": "Analytics Projects",
+        "description": "AnalyticsProjects.id is a platform for students to learn and apply analytics to real-world projects. It is a spin-off from the course 'Analytics Projects' at SIMT ITS.",
+        "provider": {
+            "@type": "Organization",
+            "name": "Bringing Analytics to Real-World Projects",
+            "sameAs": "https://www.its.ac.id/"
+        },
+        "instructor": {
+            "@type": "Person",
+            "name": "Mansur M. Arief"
+        }
+    }
+    </script>
+
+    <!-- Override the default grid template columns -->
+    <style>
+        body {
+            grid-template-columns: none !important;
+        }
+        
+        .breadcrumbs {
+            display: none !important;
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- TODO this file has become a mess, refactor it -->
+
+
+
+
+
+
+
+<!-- Skip link for keyboard users -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header class="site-header" role="banner">
+    <div class="site-logo">
+        <a href="/" aria-label="Home">
+            <img src="https://mansurarief.github.io/assets/img/simt-header.png" alt="SIMT ITS Logo" width="200" height="60">
+        </a>
+    </div>
+
+    <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">
+        <span class="sr-only">Toggle menu</span>
+        <svg width="24" height="24" aria-hidden="true" focusable="false">
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+        </svg>
+    </button>
+
+    <!-- Add Font Awesome for the search icon -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<nav class="main-nav" id="main-nav" role="navigation" aria-label="Main navigation">
+    <ul>
+        
+        <li><a href="/" aria-current="page">Home</a></li>
+        
+        <li><a href="/course">Course</a></li>
+        
+        <li><a href="/past-courses">Past Courses</a></li>
+        
+        <li><a href="/resources">Resources</a></li>
+        
+        <li><a href="/contact">Contact</a></li>
+        
+        <li><a href="/search" aria-label="Search"><i class="fas fa-search"></i></a></li>
+    </ul>
+</nav>
+
+<style>
+.main-nav .fa-search {
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+.main-nav a:hover .fa-search {
+    color: var(--accent-color);
+}
+</style>
+
+</header>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+        <li><a href="/">HOME</a></li>
+        
+        
+        
+        
+    </ol>
+</nav>
+
+
+
+
+    <main id="main-content" class="main-content" role="main" tabindex="-1">
+        <div class="table-wrapper">
+            <style>
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.feature-item {
+    background: var(--card-bg);
+    border: 1px solid #e8e8e8;
+    border-left: 4px solid #ff7518;
+    border-radius: 4px;
+    padding: 1.5rem;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.feature-item:hover {
+    border-left-width: 6px;
+    transform: translateX(2px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+.feature-item h2 {
+    margin-top: 0;
+    color: var(--heading-color);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.feature-item p {
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.content-section {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: var(--card-bg);
+    border: 1px solid #e8e8e8;
+    border-radius: 4px;
+}
+
+.content-section h2 {
+    color: var(--heading-color);
+    margin-top: 0;
+}
+
+.content-section ul {
+    padding-left: 1.5rem;
+}
+
+.content-section li {
+    margin: 0.75rem 0;
+    line-height: 1.6;
+}
+</style>
+
+<div class="page-header">
+    <h1>Explore Innovative Analytics Projects</h1>
+    <p class="lead">Welcome to our showcase of analytics projects, developed by students at <a href="https://simt.its.ac.id/">SIMT ITS</a>. This site highlights the impressive work created in our <a href="/course">Analytics Projects</a> course. The key emphasis is on the course is real-world projects, resource-based learning, and experiential learning.</p>
+</div>
+
+<div class="feature-grid">
+    <div class="feature-item">
+        <h2>Real-World Applications</h2>
+        <p>Discover how analytics can be applied to various domains through our student projects. From concept to prototype to deployment, these projects demonstrate the practical impact of data-driven insights.</p>
+    </div>
+
+    <div class="feature-item">
+        <h2>Learning Resources</h2>
+        <p>Access the curated resources that helped our students build their understanding of key concepts and technologies. These tools can support you in developing your own analytics skills and projects.</p>
+    </div>
+
+    <div class="feature-item">
+        <h2>Past Course Highlights</h2>
+        <p>Explore our past courses to find additional inspiring projects. See how students have leveraged analytics to solve real-world challenges and create valuable solutions.</p>
+    </div>
+</div>
+
+<div class="content-section">
+    <h2>Get Involved</h2>
+    <p>A few ways you can get involved:</p>
+    <ul>
+        <li>Ready to start your own analytics journey? Visit our <a href="/course">course page</a> or the <a href="/past-courses">past courses</a> to learn more about how you can gain the skills to create meaningful, data-driven projects with us.</li>
+        <li>Have other projects you need help with? <a href="/contact">Contact</a> the instructor and let's see how we can help you.</li>
+        <li>Want to get connected with the Analytics Projects community? <a href="https://forms.gle/rMPaP7pxLmpZs24n7">Sign up here</a> to get updates on the latest projects and resources.</li>
+    </ul>
+</div>
+
+        </div>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+    <nav aria-label="Footer navigation">
+        <p>
+            
+            <a href="/" aria-current="page">Home</a> | 
+            
+            <a href="/course">Course</a> | 
+            
+            <a href="/past-courses">Past Courses</a> | 
+            
+            <a href="/resources">Resources</a> | 
+            
+            <a href="/contact">Contact</a>
+            
+        </p>
+    </nav>
+    <p>© 2025 SIMT ITS. Created with Jekyll.</p>
+    <p>Last updated: Feb 18, 2025</p>
+</footer>
+
+<!-- <script>
+    // Mobile menu toggle
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
+        const nav = document.querySelector('.main-nav');
+        const expanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !expanded);
+        nav.classList.toggle('active');
+    });
+</script> -->
+
+</body>
+</html> 

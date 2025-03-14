@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search | SIMT ITS</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Search the siteSearch at SIMT ITS">
+    <meta name="author" content="">
+    <meta name="keywords" content="Search, SIMT ITS, course, education">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Search | SIMT ITS">
+    <meta property="og:description" content="Search the siteSearch at SIMT ITS">
+    <meta property="og:image" content="https://mansurarief.github.io/assets/img/simt-header.png">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Search | SIMT ITS">
+    <meta name="twitter:description" content="Search the siteSearch at SIMT ITS">
+    <meta name="twitter:image" content="https://mansurarief.github.io/assets/img/simt-header.png">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/css/course.css">
+
+    <!-- Schema.org markup for Google -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": "Search",
+        "description": "Search the site",
+        "provider": {
+            "@type": "Organization",
+            "name": "SIMT ITS",
+            "sameAs": "https://www.its.ac.id/"
+        },
+        "instructor": {
+            "@type": "Person",
+            "name": ""
+        }
+    }
+    </script>
+    
+    <style>
+        body {
+            grid-template-columns: none !important;
+        }
+    </style>
+    
+    
+</head>
+<body>
+    <!-- TODO this file has become a mess, refactor it -->
+
+
+
+
+
+
+
+<!-- Skip link for keyboard users -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header class="site-header" role="banner">
+    <div class="site-logo">
+        <a href="/" aria-label="Home">
+            <img src="https://mansurarief.github.io/assets/img/simt-header.png" alt="SIMT ITS Logo" width="200" height="60">
+        </a>
+    </div>
+
+    <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">
+        <span class="sr-only">Toggle menu</span>
+        <svg width="24" height="24" aria-hidden="true" focusable="false">
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+        </svg>
+    </button>
+
+    <!-- Add Font Awesome for the search icon -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<nav class="main-nav" id="main-nav" role="navigation" aria-label="Main navigation">
+    <ul>
+        
+        <li><a href="/">Home</a></li>
+        
+        <li><a href="/course">Course</a></li>
+        
+        <li><a href="/past-courses">Past Courses</a></li>
+        
+        <li><a href="/resources">Resources</a></li>
+        
+        <li><a href="/contact">Contact</a></li>
+        
+        <li><a href="/search" aria-label="Search"><i class="fas fa-search"></i></a></li>
+    </ul>
+</nav>
+
+<style>
+.main-nav .fa-search {
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+.main-nav a:hover .fa-search {
+    color: var(--accent-color);
+}
+</style>
+
+</header>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+        <li><a href="/">HOME</a></li>
+        
+        
+        
+        
+            
+                
+                
+                
+                    <li aria-current="page">SEARCH</li>
+                
+            
+        
+    </ol>
+</nav>
+
+
+
+
+    <main id="main-content" class="main-content" role="main" tabindex="-1">
+        <div class="table-wrapper">
+            <!-- Add Font Awesome for the search icon -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<div class="search-container">
+    <form action="/search.html" method="get" class="search-form" role="search">
+        <input type="text" id="search-input" name="q" placeholder="Search..." aria-label="Search">
+        <button type="submit" aria-label="Submit search">
+            <i class="fas fa-search"></i> Search
+        </button>
+    </form>
+
+    <div id="search-results" class="search-results">
+        <!-- Results will be populated here -->
+    </div>
+</div>
+
+<style>
+.search-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.search-form {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+#search-input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    font-size: 1.1rem;
+    border: 2px solid var(--sidebar-bg);
+    border-radius: 6px;
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+#search-input:focus {
+    border-color: var(--accent-color);
+    outline: none;
+}
+
+.search-form button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+    background: var(--accent-color);
+    color: #ffffff;
+    border: 2px solid var(--accent-color);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+}
+
+.search-form button:hover {
+    background: var(--bg-color);
+    color: var(--accent-color);
+}
+
+.search-form button:active {
+    transform: translateY(1px);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.search-form button i {
+    font-size: 1rem;
+}
+
+.search-results {
+    margin-top: 2rem;
+}
+
+.search-result {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--sidebar-bg);
+}
+
+.search-result:last-child {
+    border-bottom: none;
+}
+
+.search-result h3 {
+    margin: 0 0 0.5rem 0;
+}
+
+.search-result p {
+    margin: 0;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+.search-result .url {
+    color: var(--accent-color);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .search-form {
+        flex-direction: column;
+    }
+    
+    .search-form button {
+        width: 100%;
+    }
+}
+</style>
+
+<!-- Load Lunr.js -->
+<script src="https://unpkg.com/lunr/lunr.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Get the query parameter
+    const params = new URLSearchParams(window.location.search);
+    const query = params.get('q');
+    
+    if (query) {
+        document.getElementById('search-input').value = query;
+        performSearch(query);
+    }
+});
+
+let idx;
+let docs = {};
+
+// Load the search index
+fetch('/search.json')
+    .then(response => response.json())
+    .then(data => {
+        // Build the index
+        idx = lunr(function() {
+            this.ref('url');
+            this.field('title', { boost: 10 });
+            this.field('content');
+            this.field('category');
+
+            data.docs.forEach(doc => {
+                this.add(doc);
+                docs[doc.url] = doc;
+            });
+        });
+    });
+
+function performSearch(query) {
+    if (!idx) return;
+
+    const results = idx.search(query);
+    const searchResults = document.getElementById('search-results');
+    
+    if (results.length === 0) {
+        searchResults.innerHTML = '<p>No results found.</p>';
+        return;
+    }
+
+    let output = '';
+    results.forEach(result => {
+        const doc = docs[result.ref];
+        const preview = doc.description || doc.content.substring(0, 200) + '...';
+        
+        output += `
+            <div class="search-result">
+                <h3><a href="${doc.url}">${doc.title || 'Untitled'}</a></h3>
+                <p>${preview}</p>
+                <div class="url">${doc.url}</div>
+            </div>
+        `;
+    });
+
+    searchResults.innerHTML = output;
+}
+
+// Handle form submission
+document.querySelector('.search-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const query = document.getElementById('search-input').value;
+    
+    // Update URL with search query
+    const url = new URL(window.location);
+    url.searchParams.set('q', query);
+    window.history.pushState({}, '', url);
+    
+    performSearch(query);
+});
+</script> 
+        </div>
+    </main>
+
+    
+
+    <footer class="footer" role="contentinfo">
+    <nav aria-label="Footer navigation">
+        <p>
+            
+            <a href="/">Home</a> | 
+            
+            <a href="/course">Course</a> | 
+            
+            <a href="/past-courses">Past Courses</a> | 
+            
+            <a href="/resources">Resources</a> | 
+            
+            <a href="/contact">Contact</a>
+            
+        </p>
+    </nav>
+    <p>© 2025 SIMT ITS. Created with Jekyll.</p>
+    <p>Last updated: Mar 14, 2025</p>
+</footer>
+
+<!-- <script>
+    // Mobile menu toggle
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
+        const nav = document.querySelector('.main-nav');
+        const expanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !expanded);
+        nav.classList.toggle('active');
+    });
+</script> -->
+
+</body>
+</html> 

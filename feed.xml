@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Analytics Project</title>
+    <description>The webpage for Analytics Projects course at the SIMT ITS</description>
+    <link>https://analyticsprojects.id/</link>
+    <atom:link href="https://analyticsprojects.id/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Fri, 14 Mar 2025 13:44:44 +0000</pubDate>
+    <lastBuildDate>Fri, 14 Mar 2025 13:44:44 +0000</lastBuildDate>
+    <generator>Jekyll v3.9.3</generator>
+    
+    
+      <item>
+        <title>Data-Driven Scheduling with Gradio</title>
+        <description>A demo of a data-driven scheduling optimization model using Gradio</description>
+        <pubDate>Fri, 14 Mar 2025 00:00:00 +0000</pubDate>
+        <link>https://analyticsprojects.id/demos/scheduling/</link>
+        <guid isPermaLink="true">https://analyticsprojects.id/demos/scheduling/</guid>
+        
+      </item>
+    
+      <item>
+        <title>Data-Driven Set Covering Problem (SCP)with Gradio</title>
+        <description>A demo of a data-driven set covering problem optimization model using Gradio</description>
+        <pubDate>Fri, 14 Mar 2025 00:00:00 +0000</pubDate>
+        <link>https://analyticsprojects.id/demos/scp/</link>
+        <guid isPermaLink="true">https://analyticsprojects.id/demos/scp/</guid>
+        
+      </item>
+    
+      <item>
+        <title>Data-Driven PPC with Gradio</title>
+        <description>A demo of a data-driven production planning model using Gradio</description>
+        <pubDate>Fri, 14 Mar 2025 00:00:00 +0000</pubDate>
+        <link>https://analyticsprojects.id/demos/ppc/</link>
+        <guid isPermaLink="true">https://analyticsprojects.id/demos/ppc/</guid>
+        
+      </item>
+    
+      <item>
+        <title>Analytics Projects</title>
+        <description>AnalyticsProjects.id is a platform for students to learn and apply analytics to real-world projects. It is a spin-off from the course 'Analytics Projects' at SIMT ITS.</description>
+        <pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate>
+        <link>https://analyticsprojects.id/</link>
+        <guid isPermaLink="true">https://analyticsprojects.id/</guid>
+        
+        
+        
+        <category>analytics project</category>
+        
+        <category>prescriptive analytics</category>
+        
+        <category>optimization</category>
+        
+        <category>decision-making</category>
+        
+        <category>SIMT ITS</category>
+        
+        <category>data science</category>
+        
+        <category>AnalyticsProjects.id</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Prototyping with Streamlit</title>
+        <description>A demo of a production planning model using Streamlit</description>
+        <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+        <link>https://analyticsprojects.id/demos/ppc_demo_streamlit/</link>
+        <guid isPermaLink="true">https://analyticsprojects.id/demos/ppc_demo_streamlit/</guid>
+        
+      </item>
+    
+      <item>
+        <title>Optimal Production Planning</title>
+        <description>Optimal production planning demo project for Polytama, led by Prof. Iwan Vanany and Mansur M. Arief's team</description>
+        <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+        <link>https://analyticsprojects.id/polytama/</link>
+        <guid isPermaLink="true">https://analyticsprojects.id/polytama/</guid>
+        
+      </item>
+    
+      <item>
+        <title>Prototyping with Gradio</title>
+        <description>A demo of a production planning model using Gradio</description>
+        <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+        <link>https://analyticsprojects.id/demos/ppc_demo_gradio/</link>
+        <guid isPermaLink="true">https://analyticsprojects.id/demos/ppc_demo_gradio/</guid>
+        
+      </item>
+    
+      <item>
+        <title>Who is This Course For?</title>
+        <description>This page is for you if you are wondering who is this course designed for, why should you take it, and why you might not need it.</description>
+        <pubDate>Fri, 03 Jan 2025 00:00:00 +0000</pubDate>
+        <link>https://analyticsprojects.id/resources/who-is-this-course-for/</link>
+        <guid isPermaLink="true">https://analyticsprojects.id/resources/who-is-this-course-for/</guid>
+        
+        
+        
+        <category>analytics project</category>
+        
+        <category>SIMT ITS</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>What is Reflections for?</title>
+        <description>If you are wondering why we do a *lot* of reflections in this course, this page is for you.</description>
+        <pubDate>Fri, 03 Jan 2025 00:00:00 +0000</pubDate>
+        <link>https://analyticsprojects.id/resources/what-is-reflections-for/</link>
+        <guid isPermaLink="true">https://analyticsprojects.id/resources/what-is-reflections-for/</guid>
+        
+        
+        
+        <category>reflections</category>
+        
+        <category>analytics project</category>
+        
+        <category>SIMT ITS</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Analytics Projects</title>
+        <description>A graduate course on prescriptive analytics approaches, focusing on optimization and decision-making algorithms through hands-on group projects.</description>
+        <pubDate>Fri, 03 Jan 2025 00:00:00 +0000</pubDate>
+        <link>https://analyticsprojects.id/course/</link>
+        <guid isPermaLink="true">https://analyticsprojects.id/course/</guid>
+        
+        
+        
+        <category>analytics project</category>
+        
+        <category>prescriptive analytics</category>
+        
+        <category>optimization</category>
+        
+        <category>decision-making</category>
+        
+        <category>SIMT ITS</category>
+        
+        <category>data science</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Resources</title>
+        <description>Resources for Analytics Project course at SIMT ITS, including theory, lectures, assignments, examples, and tools.</description>
+        <pubDate>Thu, 02 Jan 2025 00:00:00 +0000</pubDate>
+        <link>https://analyticsprojects.id/resources/</link>
+        <guid isPermaLink="true">https://analyticsprojects.id/resources/</guid>
+        
+        
+        
+        <category>analytics project</category>
+        
+        <category>resources</category>
+        
+        <category>lectures</category>
+        
+        <category>assignments</category>
+        
+        <category>examples</category>
+        
+        <category>tools</category>
+        
+        <category>SIMT ITS</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Projects Gallery - 2024 Genap</title>
+        <description>The gallery of student projects from the 2024 Genap semester.</description>
+        <pubDate>Thu, 02 Jan 2025 00:00:00 +0000</pubDate>
+        <link>https://analyticsprojects.id/past-courses/2024-genap/gallery</link>
+        <guid isPermaLink="true">https://analyticsprojects.id/past-courses/2024-genap/gallery</guid>
+        
+      </item>
+    
+      <item>
+        <title>Search</title>
+        <description>Search the site</description>
+        <pubDate>Thu, 02 Jan 2025 00:00:00 +0000</pubDate>
+        <link>https://analyticsprojects.id/search/</link>
+        <guid isPermaLink="true">https://analyticsprojects.id/search/</guid>
+        
+      </item>
+    
+      <item>
+        <title>Demos</title>
+        <description>Demos for projects we do outside of the course.</description>
+        <pubDate>Thu, 02 Jan 2025 00:00:00 +0000</pubDate>
+        <link>https://analyticsprojects.id/demos/</link>
+        <guid isPermaLink="true">https://analyticsprojects.id/demos/</guid>
+        
+        
+        
+        <category>analytics project</category>
+        
+        <category>demos</category>
+        
+        <category>projects</category>
+        
+        <category>SIMT ITS</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Contact</title>
+        <description>Contact information for Analytics Project course at SIMT ITS</description>
+        <pubDate>Thu, 02 Jan 2025 00:00:00 +0000</pubDate>
+        <link>https://analyticsprojects.id/contact/</link>
+        <guid isPermaLink="true">https://analyticsprojects.id/contact/</guid>
+        
+        
+        
+        <category>contact</category>
+        
+        <category>office hours</category>
+        
+        <category>email</category>
+        
+        <category>SIMT ITS</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Projects Gallery - 2024 Gasal</title>
+        <description>The gallery of student projects from the 2024 Gasal semester.</description>
+        <pubDate>Thu, 02 Jan 2025 00:00:00 +0000</pubDate>
+        <link>https://analyticsprojects.id/past-courses/2024-gasal/gallery</link>
+        <guid isPermaLink="true">https://analyticsprojects.id/past-courses/2024-gasal/gallery</guid>
+        
+      </item>
+    
+      <item>
+        <title>Analytics Project, Gasal 2024 - Part 2</title>
+        <description>A graduate course on prescriptive analytics approaches, focusing on optimization and decision-making algorithms through hands-on group projects.</description>
+        <pubDate>Thu, 02 Jan 2025 00:00:00 +0000</pubDate>
+        <link>https://analyticsprojects.id/past-courses/2024-gasal/</link>
+        <guid isPermaLink="true">https://analyticsprojects.id/past-courses/2024-gasal/</guid>
+        
+        
+        
+        <category>analytics project</category>
+        
+        <category>prescriptive analytics</category>
+        
+        <category>optimization</category>
+        
+        <category>decision-making</category>
+        
+        <category>SIMT ITS</category>
+        
+        <category>data science</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Page Not Found</title>
+        <description>404 error - page not found</description>
+        <pubDate>Fri, 14 Mar 2025 13:44:44 +0000</pubDate>
+        <link>https://analyticsprojects.id/404.html</link>
+        <guid isPermaLink="true">https://analyticsprojects.id/404.html</guid>
+        
+      </item>
+    
+      <item>
+        <title>Past Courses</title>
+        <description>Archive of previous Analytics Project courses at SIMT ITS</description>
+        <pubDate>Fri, 14 Mar 2025 13:44:44 +0000</pubDate>
+        <link>https://analyticsprojects.id/past-courses/</link>
+        <guid isPermaLink="true">https://analyticsprojects.id/past-courses/</guid>
+        
+        
+        
+        <category>analytics project</category>
+        
+        <category>course history</category>
+        
+        <category>SIMT ITS</category>
+        
+        <category>data science education</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Data-Driven Optimization Modeling</title>
+        <description>
+  
+    Data-Driven Optimization Modeling
+    
+      Analytics Projects, SIMT ITS 2024/2025
+    
+    
+      Mansur M. Arief
+    
+    
+      07 March 2025
+    
+  
+
+
+
+  
+    
+    
+    
+    
+    
+    ...</description>
+        <pubDate>Fri, 14 Mar 2025 13:44:44 +0000</pubDate>
+        <link>https://analyticsprojects.id/lecture-2</link>
+        <guid isPermaLink="true">https://analyticsprojects.id/lecture-2</guid>
+        
+      </item>
+    
+  </channel>
+</rss>

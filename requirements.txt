@@ -1,0 +1,7 @@
+numpy
+pandas
+pyomo
+openpyxl
+matplotlib
+gradio>=3.50.0
+plotly
